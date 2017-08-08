@@ -1,6 +1,6 @@
 export default {
     apiGateway: {
-        URL: 'https://dy94jv89f6.execute-api.us-east-1.amazonaws.com/prod',
+        URL: 'https://dy94jv89f6.execute-api.us-east-2.amazonaws.com/prod',
     },
     cognito: {
         USER_POOL_ID : 'us-east-1_BlIDDN1zx',

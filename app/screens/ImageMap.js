@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
 
-import { poiClusters } from '../config/mapData';
+// import { poiClusters } from '../config/mapData';
+import { poiClusters } from '../config/sampleMapClusters';
 
 import markerImage from "../assets/POIs/calibrationdrawing.png"
 
@@ -176,12 +177,12 @@ class Map extends React.Component {
           {
             this.state.polygons.map(polygon => (
             <MapView.Polygon
-              key={polygon.key}
-              coordinates={polygon.coordinates}
-              strokeColor="#F00"
-              fillColor="rgba(255,0,0,0.5)"
-              onPress={e => this.zoomToCluster(e, polygon.key)}
-              strokeWidth={1}
+              key={polygon.polygon.key}
+              coordinates={polygon.polygonOverlay.coordinates}
+              strokeColor={polygon.polygonOverlay.strokeColor}
+              fillColor={polygon.polygonOverlay.fillColor}
+              onPress={e => this.zoomToCluster(e, polygon.polygon.key)}
+              strokeWidth={polygon.polygonOverlay.strokeWidth}
             />
           ))}
         </MapView>

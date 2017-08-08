@@ -8,3 +8,16 @@ $ cd /Users/yashwant/Library/Android/sdk/tools/ && emulator -avd Nexus_6_API_23
 
 
 $ react-native link react-native-vector-icons
+
+Delete Cache - 
+
+$ watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf node_modules/ && npm cache clean && npm install && npm start -- --reset-cache
+
+
+$ rm -rf ios/build
+
+Remove xCode Cache
+
+$ rm -rf ~/Library/Developer/Xcode/DerivedData
+
+
