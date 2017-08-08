@@ -1,0 +1,5 @@
+target 'SwiftMile' do
+
+  pod 'GoogleMaps'
+
+end

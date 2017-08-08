@@ -1,0 +1,10 @@
+Get emulator executable installation path
+$ which emulator
+
+List avds 
+$ emulator -list-avds
+
+$ cd /Users/yashwant/Library/Android/sdk/tools/ && emulator -avd Nexus_6_API_23
+
+
+$ react-native link react-native-vector-icons
