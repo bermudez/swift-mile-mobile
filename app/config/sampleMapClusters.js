@@ -63,6 +63,7 @@ export const poiCluster1 =
                 title:"Tapcade NKC",
                 description:"1735 Swift St, North Kansas City, MO 64116",
                 image:"../assets/POIs/tapcade.png",
+                markerImage:"../assets/POIs/marker-tapcade.png"
             },
             {
                 key: "2",
@@ -73,6 +74,7 @@ export const poiCluster1 =
                 title:"Pat's Pub",
                 description:"1315 Swift St, North Kansas City, MO 64116 ",
                 image:"../assets/POIs/patspubdrawing.png",
+                markerImage:"../assets/POIs/marker-patspubdrawing.png"
             },
             {
                 key: "3",
@@ -83,6 +85,7 @@ export const poiCluster1 =
                 title:"Grain to Glass",
                 description:"1611 Swift St, North Kansas City, MO 64116",
                 image:"../assets/POIs/grain2glass.png",
+                markerImage:"../assets/POIs/marker-grain2glass.png"
             },
             {
                 key: "4",
@@ -93,6 +96,7 @@ export const poiCluster1 =
                 title:"Velo Garage",
                 description:"1403 Swift St, North Kansas City, MO 64116",
                 image:"../assets/POIs/veloGarage.png",
+                markerImage:"../assets/POIs/marker-veloGarage.png"
             },
             {
                 key: "5",
@@ -103,6 +107,7 @@ export const poiCluster1 =
                 title:"The Brewkery",
                 description:"1443 Swift St, North Kansas City, MO 64116",
                 image:"../assets/POIs/brewkery.png",
+                markerImage:"../assets/POIs/marker-brewkery.png"
             },
             {
                 key: "6",
@@ -113,6 +118,7 @@ export const poiCluster1 =
                 title:"FM Music & Vinyl",
                 description:"206 E 18th Ave, North Kansas City, MO 64116",
                 image:"../assets/POIs/FMMusic.png",
+                markerImage:"../assets/POIs/marker-FMMusic.png"
             },
             {
                 key: "7",
@@ -123,6 +129,7 @@ export const poiCluster1 =
                 title:"Christine's Firehouse on 20th Bar & Grill",
                 description:"220 E 20th Ave, North Kansas City, MO 64116",
                 image:"../assets/POIs/firehouse.png",
+                markerImage:"../assets/POIs/marker-firehouse.png"
             },
             {
                 key: "8",
@@ -133,6 +140,7 @@ export const poiCluster1 =
                 title:"River Aces",
                 description:"1800 Swift St, North Kansas City, MO 64116",
                 image:"../assets/POIs/RiverAces.png",
+                markerImage:"../assets/POIs/marker-RiverAces.png"
             }
         ]
     };
@@ -212,62 +220,90 @@ export const poiCluster2 =
             {
                 key: "1",
                 latlng:{
-                    latitude: 39.1422686,
-                    longitude: -94.5767153
+                    latitude: 39.14226,
+                    longitude: -94.57657
                   },
                 title:"Colony Espresso & Beer / RINO Music Venue",
                 description:"312 Armour Rd, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/colonydrawing.png",
+                markerImage:"../assets/POIs/marker-colonydrawing.png"
             },
             {
                 key: "2",
                 latlng:{
-                    latitude: 39.142223,
-                    longitude: -94.5761583
+                    latitude: 39.14256,
+                    longitude: -94.57569
                   },
                 title:"Screenland Armour Theater",
                 description:"408 Armour Rd, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/Screenland.png",
+                markerImage:"../assets/POIs/marker-Screenland.png"
             },
             {
                 key: "3",
                 latlng:{
-                    latitude: 39.1423059,
-                    longitude: -94.5770752
+                    latitude: 39.1422,
+                    longitude: -94.57702
                   },
                 title:"Kelso's",
                 description:"300 Armour Rd, Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/kelsos.png",
+                markerImage:"../assets/POIs/marker-kelsos.png"
             },
             {
                 key: "4",
                 latlng:{
-                    latitude: 39.1418469,
-                    longitude: -94.5766779
+                    latitude: 39.1419,
+                    longitude: -94.57656
                   },
                 title:"Chappell's",
                 description:"323 Armour Rd, Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/Chappells.png",
+                markerImage:"../assets/POIs/marker-Chappells.png"
             },
             {
                 key: "5",
                 latlng:{
-                    latitude: 39.1418339,
-                    longitude: -94.5768875
+                    latitude: 39.14183,
+                    longitude: -94.57675
                   },
                 title:"Jersey Boyz Subs & Deli",
                 description:"315 Armour Rd, Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/JerseyBoyz.png",
+                markerImage:"../assets/POIs/marker-JerseyBoyz.png"
             },
             {
                 key: "6",
                 latlng:{
-                    latitude: 39.1426848,
-                    longitude: -94.5752006
+                    latitude: 39.14268,
+                    longitude: -94.57506
                   },
                 title:"Tyler Kingston Store",
                 description:"422 Armour Rd, Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/TylerKingston.png",
+                markerImage:"../assets/POIs/marker-TylerKingston.png"
+            },
+            {
+                key: "7",
+                latlng:{
+                    latitude: 39.14472,
+                    longitude: -94.56937
+                  },
+                title:"Little Store & Cafe",
+                description:"2107 Knox St, North Kansas City, MO 64116",
+                image:"../assets/POIs/LittleStore.png",
+                markerImage:"../assets/POIs/marker-LittleStore.png"
+            },
+            {
+                key: "8",
+                latlng:{
+                    latitude: 39.14259,
+                    longitude: -94.57536
+                  },
+                title:"Shaka Noodle Shack",
+                description:"414 Armour Rd, Kansas City, MO 64116",
+                image:"../assets/POIs/Shaka.png",
+                markerImage:"../assets/POIs/marker-Shaka.png"
             }
         ]
     };
