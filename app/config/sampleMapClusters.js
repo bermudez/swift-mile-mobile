@@ -1,4 +1,4 @@
-export const poiCluster1 = 
+export const poiCluster1 =
     {
         polygon : {
             key: "1",
@@ -7,19 +7,19 @@ export const poiCluster1 =
             image:"../assets/POIs/calibrationdrawing.png",
             coordinates:[
               {
-                latitude: 39.142664, 
+                latitude: 39.142664,
                 longitude: -94.577915
               },
               {
-                latitude: 39.142664, 
+                latitude: 39.142664,
                 longitude: -94.577068
               },
               {
-                latitude: 39.130597, 
+                latitude: 39.130597,
                 longitude: -94.576714
               },
               {
-                latitude: 39.130514, 
+                latitude: 39.130514,
                 longitude: -94.578119
               }
             ]
@@ -31,23 +31,23 @@ export const poiCluster1 =
                 longitude: -94.578190
               },
               {
-                latitude: 39.145119, 
+                latitude: 39.145119,
                 longitude: -94.577194
               },
               {
-                latitude: 39.140267, 
+                latitude: 39.140267,
                 longitude: -94.577330
               },
               {
-                latitude: 39.140173, 
+                latitude: 39.140173,
                 longitude: -94.575552
               },
               {
-                latitude: 39.132381, 
+                latitude: 39.132381,
                 longitude: -94.575704
               },
               {
-                latitude: 39.132405, 
+                latitude: 39.132405,
                 longitude: -94.578306
               }
             ],
@@ -57,77 +57,87 @@ export const poiCluster1 =
             {
                 key: "1",
                 latlng:{
-                    latitude: 39.1400819,
-                    longitude: -94.5791139
+                    latitude: 39.14008,
+                    longitude: -94.57692
                   },
                 title:"Tapcade NKC",
                 description:"1735 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/tapcade.png",
             },
             {
                 key: "2",
                 latlng:{
-                    latitude: 39.1329349,
-                    longitude: -94.5793292
+                    latitude: 39.13293,
+                    longitude: -94.57718
                   },
                 title:"Pat's Pub",
                 description:"1315 Swift St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/patspubdrawing.png",
             },
             {
                 key: "3",
                 latlng:{
-                    latitude: 39.1382526,
-                    longitude: -94.579187
+                    latitude: 39.13825,
+                    longitude: -94.57712
                   },
                 title:"Grain to Glass",
                 description:"1611 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/grain2glass.png",
             },
             {
                 key: "4",
                 latlng:{
-                    latitude: 39.1344941,
-                    longitude: -94.5794168
+                    latitude: 39.13449,
+                    longitude: -94.57722
                   },
                 title:"Velo Garage",
                 description:"1403 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/veloGarage.png",
             },
             {
                 key: "5",
                 latlng:{
-                    latitude: 39.1354684,
-                    longitude: -94.5781218
+                    latitude: 39.13546,
+                    longitude: -94.57719
                   },
                 title:"The Brewkery",
                 description:"1443 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/brewkery.png",
             },
             {
                 key: "6",
                 latlng:{
-                    latitude: 39.1403488,
-                    longitude: -94.5803608
+                    latitude: 39.14034,
+                    longitude: -94.57817
                   },
                 title:"FM Music & Vinyl",
                 description:"206 E 18th Ave, North Kansas City, MO 64116",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/FMMusic.png",
             },
             {
                 key: "7",
                 latlng:{
-                    latitude: 39.1427636,
-                    longitude: -94.5798895
+                    latitude: 39.14275,
+                    longitude: -94.57773
                   },
-                title:"Christine's Firehouse on 20th",
+                title:"Christine's Firehouse on 20th Bar & Grill",
                 description:"220 E 20th Ave, North Kansas City, MO 64116",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/firehouse.png",
+            },
+            {
+                key: "8",
+                latlng:{
+                    latitude: 39.14037,
+                    longitude: -94.57756
+                  },
+                title:"River Aces",
+                description:"1800 Swift St, North Kansas City, MO 64116",
+                image:"../assets/POIs/RiverAces.png",
             }
         ]
     };
 
-export const poiCluster2 = 
+export const poiCluster2 =
     {
         polygon : {
             key: "2",
@@ -136,27 +146,27 @@ export const poiCluster2 =
             image:"../assets/POIs/calibrationdrawing.png",
             coordinates:[
               {
-                latitude: 39.143871,  
+                latitude: 39.143871,
                 longitude: -94.577197
               },
               {
-                latitude: 39.145161, 
+                latitude: 39.145161,
                 longitude: -94.568883
               },
               {
-                latitude: 39.143405, 
+                latitude: 39.143405,
                 longitude: -94.568657
               },
               {
-                latitude: 39.142922, 
+                latitude: 39.142922,
                 longitude: -94.571125
               },
               {
-                latitude: 39.140210, 
+                latitude: 39.140210,
                 longitude: -94.571168
               },
               {
-                latitude: 39.140309, 
+                latitude: 39.140309,
                 longitude: -94.577273
               }
             ],
@@ -169,31 +179,31 @@ export const poiCluster2 =
                 longitude: -94.580179
               },
               {
-                latitude: 39.138063, 
+                latitude: 39.138063,
                 longitude: -94.580314
               },
               {
-                latitude: 39.137599, 
+                latitude: 39.137599,
                 longitude: -94.578639
               },
               {
-                latitude: 39.127431, 
+                latitude: 39.127431,
                 longitude: -94.579217
               },
               {
-                latitude: 39.127106, 
+                latitude: 39.127106,
                 longitude: -94.578020
               },
               {
-                latitude: 39.127215, 
+                latitude: 39.127215,
                 longitude: -94.576963
               },
               {
-                latitude: 39.126069, 
+                latitude: 39.126069,
                 longitude: -94.576384
               },
               {
-                latitude: 39.125667, 
+                latitude: 39.125667,
                 longitude: -94.579955
               }
             ]
@@ -262,7 +272,7 @@ export const poiCluster2 =
         ]
     };
 
-export const poiCluster3 = 
+export const poiCluster3 =
     {
         polygon : {
             key: "3",
@@ -275,19 +285,19 @@ export const poiCluster3 =
                 longitude: -94.577330
               },
               {
-                latitude: 39.141366, 
+                latitude: 39.141366,
                 longitude: -94.580195
               },
               {
-                latitude: 39.139794, 
+                latitude: 39.139794,
                 longitude: -94.580281
               },
               {
-                latitude: 39.139744, 
+                latitude: 39.139744,
                 longitude: -94.579218
               },
               {
-                latitude: 39.140210, 
+                latitude: 39.140210,
                 longitude: -94.577341
               }
             ]
@@ -299,15 +309,15 @@ export const poiCluster3 =
                 longitude: -94.578309
               },
               {
-                latitude: 39.143306, 
+                latitude: 39.143306,
                 longitude: -94.580171
               },
               {
-                latitude: 39.138233, 
+                latitude: 39.138233,
                 longitude: -94.580228
               },
               {
-                latitude: 39.138316, 
+                latitude: 39.138316,
                 longitude: -94.578426
               }
             ],
@@ -377,7 +387,7 @@ export const poiCluster3 =
         ]
     };
 
-export const poiCluster4 = 
+export const poiCluster4 =
     {
         polygon : {
             key: "4",
@@ -390,31 +400,31 @@ export const poiCluster4 =
                 longitude: -94.580179
               },
               {
-                latitude: 39.138063, 
+                latitude: 39.138063,
                 longitude: -94.580314
               },
               {
-                latitude: 39.137599, 
+                latitude: 39.137599,
                 longitude: -94.578639
               },
               {
-                latitude: 39.127431, 
+                latitude: 39.127431,
                 longitude: -94.579217
               },
               {
-                latitude: 39.127106, 
+                latitude: 39.127106,
                 longitude: -94.578020
               },
               {
-                latitude: 39.127215, 
+                latitude: 39.127215,
                 longitude: -94.576963
               },
               {
-                latitude: 39.126069, 
+                latitude: 39.126069,
                 longitude: -94.576384
               },
               {
-                latitude: 39.125667, 
+                latitude: 39.125667,
                 longitude: -94.579955
               }
             ]
@@ -426,39 +436,39 @@ export const poiCluster4 =
                 longitude: -94.578421
               },
               {
-                latitude: 39.138229, 
+                latitude: 39.138229,
                 longitude: -94.580309
               },
               {
-                latitude: 39.125812, 
+                latitude: 39.125812,
                 longitude: -94.580384
               },
               {
-                latitude: 39.125804,  
-                longitude: -94.577026  
+                latitude: 39.125804,
+                longitude: -94.577026
               },
               {
-                latitude: 39.130606, 
+                latitude: 39.130606,
                 longitude: -94.576693
               },
               {
-                latitude: 39.132171, 
+                latitude: 39.132171,
                 longitude: -94.572080
               },
               {
-                latitude: 39.140143, 
+                latitude: 39.140143,
                 longitude: -94.571973
               },
               {
-                latitude: 39.140168,  
+                latitude: 39.140168,
                 longitude: -94.575502
               },
               {
-                latitude: 39.132337,  
+                latitude: 39.132337,
                 longitude: -94.575631
               },
               {
-                latitude: 39.132354,   
+                latitude: 39.132354,
                 longitude: -94.578345
               }
             ],
@@ -529,7 +539,7 @@ export const poiCluster4 =
     };
 
 
-export const poiClusters = 
+export const poiClusters =
 [
     poiCluster1,
     poiCluster2,
