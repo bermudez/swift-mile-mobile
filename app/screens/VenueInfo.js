@@ -20,16 +20,16 @@ function parseMarkers()
   {
     let markers = [];
     console.log("polygons----");
-    console.dir(POIClustersData);
+    // console.dir(POIClustersData);
     for (var i = POIClustersData.length - 1; i >= 0; i--) {
-      console.dir(POIClustersData[i].pois);
+      // console.dir(POIClustersData[i].pois);
       for (var j = POIClustersData[i].pois.length - 1; j >= 0; j--) {
         markers.push(POIClustersData[i].pois[j]);
-        console.dir(POIClustersData[i].pois[j]);
+        // console.dir(POIClustersData[i].pois[j]);
       }
     }
     console.log("Markers-----");
-    console.dir(markers);
+    // console.dir(markers);
     return markers;
   }
 

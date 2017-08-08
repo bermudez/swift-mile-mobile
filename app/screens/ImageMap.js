@@ -68,7 +68,7 @@ class Map extends React.Component {
 
     this.state.markers = this.parseMarkers();
     console.log("=========================");
-    console.dir(this.state.markers);
+    // console.dir(this.state.markers);
 
     this.state.selectedCluster = 0;
     this.state.polygons = poiClusters;
@@ -84,16 +84,16 @@ class Map extends React.Component {
   {
     let markers = [];
     console.log("polygons----");
-    console.dir(POIClustersData);
+    // console.dir(POIClustersData);
     for (var i = POIClustersData.length - 1; i >= 0; i--) {
-      console.dir(POIClustersData[i].pois);
+      // console.dir(POIClustersData[i].pois);
       for (var j = POIClustersData[i].pois.length - 1; j >= 0; j--) {
         markers.push(POIClustersData[i].pois[j]);
-        console.dir(POIClustersData[i].pois[j]);
+        // console.dir(POIClustersData[i].pois[j]);
       }
     }
     console.log("Markers-----");
-    console.dir(markers);
+    // console.dir(markers);
     return markers;
   }
 
@@ -105,7 +105,7 @@ class Map extends React.Component {
     if (typeof(e.nativeEvent.coordinate) !== 'undefined')
     {
       console.log("onPress event fired ");
-      console.dir(e.nativeEvent);
+      // console.dir(e.nativeEvent);
       var selectedPolygon = this.pointInPloygons(e.nativeEvent.coordinate);
       if(selectedPolygon)
       {
@@ -167,8 +167,8 @@ class Map extends React.Component {
       // ray-casting algorithm based on
       // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
       
-      console.dir(point);
-      console.dir(polygon);
+      // console.dir(point);
+      // console.dir(polygon);
       var x = point.latitude, y = point.longitude;
       
       var inside = false;
