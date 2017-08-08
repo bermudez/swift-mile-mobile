@@ -9,12 +9,12 @@ export const poiCluster1 =
         polygonOverlay : {
             coordinates:[
               {
-                latitude: 39.145139,
-                longitude: -94.578190
+                latitude: 39.145825,
+                longitude: -94.578231
               },
               {
-                latitude: 39.145119,
-                longitude: -94.577194
+                latitude: 39.143820,
+                longitude: -94.577297
               },
               {
                 latitude: 39.140267,
@@ -271,12 +271,12 @@ export const poiCluster3 =
         polygonOverlay : {
             coordinates:[
               {
-                latitude: 39.143006,
-                longitude: -94.578309
+                latitude: 39.143816,
+                longitude: -94.578263
               },
               {
-                latitude: 39.143306,
-                longitude: -94.580171
+                latitude: 39.143850,
+                longitude: -94.580221
               },
               {
                 latitude: 39.138233,
