@@ -520,62 +520,68 @@ export const poiCluster4 =
             {
                 key: "1",
                 latlng:{
-                    latitude: 39.126121,
-                    longitude: -94.5778552
+                    latitude: 39.12607,
+                    longitude: -94.5778
                   },
                 title:"The Big Rip Brewing Co.",
                 description:"216 E 9th Ave, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/BigRip.png",
+                markerImage:"../assets/POIs/marker-BigRip.png"
             },
             {
                 key: "2",
                 latlng:{
-                    latitude: 39.1261225,
-                    longitude: -94.5781265
+                    latitude: 39.12608,
+                    longitude: -94.57753
                   },
                 title:"Hawg Jaw BBQ",
                 description:"900 Swift St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/HawgJaw.png",
+                markerImage:"../assets/POIs/marker-HawgJaw.png"
             },
             {
                 key: "3",
                 latlng:{
-                    latitude: 39.1309265,
-                    longitude: -94.5779709
+                    latitude: 39.131,
+                    longitude: -94.57779
                   },
                 title:"Smokin Guns BBQ",
                 description:"1218 Swift St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/smokingunsbbq.png",
+                markerImage:"../assets/POIs/marker-smokingunsbbq.png"
             },
             {
                 key: "4",
                 latlng:{
-                    latitude: 39.1372784,
-                    longitude: -94.5800368
+                    latitude: 39.13697,
+                    longitude: -94.57993
                   },
                 title:"iWerx Co-Working Space",
                 description:"1520 Clay St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/iWerx.png",
+                markerImage:"../assets/POIs/marker-iWerx.png"
             },
             {
                 key: "5",
                 latlng:{
-                    latitude: 39.136253,
-                    longitude: -94.5727152
+                    latitude: 39.13623,
+                    longitude: -94.57261
                   },
                 title:"RoKC Climbing Gym",
                 description:"1501 Howell St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/ROKC.png",
+                markerImage:"../assets/POIs/marker-ROKC.png"
             },
             {
                 key: "6",
                 latlng:{
-                    latitude: 39.1319887,
-                    longitude: -94.5778827
+                    latitude: 39.13198,
+                    longitude: -94.57761
                   },
                 title:"Furniture Solution Gallery",
                 description:"1240 Swift St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/FurnitureSolutions.png",
+                markerImage:"../assets/POIs/marker-FurnitureSolutions.png"
             }
         ]
     };
