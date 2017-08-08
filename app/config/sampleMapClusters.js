@@ -151,7 +151,7 @@ export const poiCluster2 =
             key: "2",
             title:"Armourville",
             description:"Armourville",
-            image:"../assets/POIs/calibrationdrawing.png",
+            image:"../assets/POIs/cluster-Armourville.png",
             coordinates:[
               {
                 latitude: 39.143871,
@@ -314,7 +314,7 @@ export const poiCluster3 =
             key: "3",
             title:"Clay Corners",
             description:"Clay Corners",
-            image:"../assets/POIs/calibrationdrawing.png",
+            image:"../assets/POIs/cluster-ClayCorners.png",
             coordinates:[
               {
                 latitude: 39.141940,
@@ -363,62 +363,68 @@ export const poiCluster3 =
             {
                 key: "1",
                 latlng:{
-                    latitude: 39.140368,
-                    longitude: -94.579012
+                    latitude: 39.14033,
+                    longitude: -94.57891
                   },
                 title:"Cinder Block Brewery",
                 description:"110 E 18th Ave, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/CinderBlock.png",
+                markerImage:"../assets/POIs/marker-CinderBlock.png"
             },
             {
                 key: "2",
                 latlng:{
-                    latitude: 39.1414142,
-                    longitude: -94.5788768
+                    latitude: 39.14141,
+                    longitude: -94.57873
                   },
                 title:"Calibration Brewery",
                 description:"119 Armour Rd, North Kansas City, MO 64116 ",
                 image:"../assets/POIs/calibrationdrawing.png",
+                markerImage:"../assets/POIs/marker-calibrationdrawing.png"
             },
             {
                 key: "3",
                 latlng:{
-                    latitude: 39.1406447,
-                    longitude: -94.5789768
+                    latitude: 39.14065,
+                    longitude: -94.57887
                   },
-                title:"Paul & Jack's",
+                title:"Paul & Jack's Tavern",
                 description:"1808 Clay St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/Paul-and-Jacks.png",
+                markerImage:"../assets/POIs/marker-Paul-and-Jacks.png"
             },
             {
                 key: "4",
                 latlng:{
-                    latitude: 39.1402542,
-                    longitude: -94.581777
+                    latitude: 39.13942,
+                    longitude: -94.57921
                   },
                 title:"Restless Spirits Distillery",
                 description:"109 E 18th Ave, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/restlessSpirits.png",
+                markerImage:"../assets/POIs/marker-restlessSpirits.png"
             },
             {
                 key: "5",
                 latlng:{
-                    latitude: 39.1408481,
-                    longitude: -94.5796385
+                    latitude: 39.14084,
+                    longitude: -94.5795
                   },
                 title:"Repeal 18th",
                 description:"1825 Buchanan St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/Repeal18th.png",
+                markerImage:"../assets/POIs/marker-Repeal18th.png"
             },
             {
                 key: "6",
                 latlng:{
-                    latitude: 39.1400349,
-                    longitude: -94.5800312
+                    latitude: 39.14002,
+                    longitude: -94.57993
                   },
                 title:"Chicken N Pickle",
                 description:"1761 Burlington St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
+                image:"../assets/POIs/chickenNpickledrawing.png",
+                markerImage:"../assets/POIs/marker-chickenNpickledrawing.png"
             }
         ]
     };
