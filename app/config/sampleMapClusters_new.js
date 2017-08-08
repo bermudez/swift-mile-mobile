@@ -140,36 +140,28 @@ export const poiCluster2 =
         polygonOverlay : {
             coordinates:[
               {
-                latitude: 39.125494,
-                longitude: -94.580179
+                latitude: 39.140297,
+                longitude: -94.577265
               },
               {
-                latitude: 39.138063,
-                longitude: -94.580314
+                latitude: 39.140201,
+                longitude: -94.571144
               },
               {
-                latitude: 39.137599,
-                longitude: -94.578639
+                latitude: 39.142909,
+                longitude: -94.571128
               },
               {
-                latitude: 39.127431,
-                longitude: -94.579217
+                latitude: 39.143388,
+                longitude: -94.568655
               },
               {
-                latitude: 39.127106,
-                longitude: -94.578020
+                latitude: 39.145156,
+                longitude: -94.568875
               },
               {
-                latitude: 39.127215,
-                longitude: -94.576963
-              },
-              {
-                latitude: 39.126069,
-                longitude: -94.576384
-              },
-              {
-                latitude: 39.125667,
-                longitude: -94.579955
+                latitude: 39.143862,
+                longitude: -94.577206
               }
             ],
             fillColor:"rgba(194,24,91,0.5)",

@@ -4,25 +4,7 @@ export const poiCluster1 =
             key: "1",
             title:"Swift Mile",
             description:"Swift Mile",
-            image:"../assets/POIs/calibrationdrawing.png",
-            coordinates:[
-              {
-                latitude: 39.142664,
-                longitude: -94.577915
-              },
-              {
-                latitude: 39.142664,
-                longitude: -94.577068
-              },
-              {
-                latitude: 39.130597,
-                longitude: -94.576714
-              },
-              {
-                latitude: 39.130514,
-                longitude: -94.578119
-              }
-            ]
+            image:"../assets/POIs/calibrationdrawing.png"
         },
         polygonOverlay : {
             coordinates:[
@@ -153,72 +135,38 @@ export const poiCluster2 =
             key: "2",
             title:"Armourville",
             description:"Armourville",
-            image:"../assets/POIs/cluster-Armourville.png",
+            image:"../assets/POIs/cluster-Armourville.png"
+        },
+        polygonOverlay : {
             coordinates:[
               {
-                latitude: 39.143871,
-                longitude: -94.577197
+                latitude: 39.140297,
+                longitude: -94.577265
               },
               {
-                latitude: 39.145161,
-                longitude: -94.568883
+                latitude: 39.140201,
+                longitude: -94.571144
               },
               {
-                latitude: 39.143405,
-                longitude: -94.568657
+                latitude: 39.142909,
+                longitude: -94.571128
               },
               {
-                latitude: 39.142922,
-                longitude: -94.571125
+                latitude: 39.143388,
+                longitude: -94.568655
               },
               {
-                latitude: 39.140210,
-                longitude: -94.571168
+                latitude: 39.145156,
+                longitude: -94.568875
               },
               {
-                latitude: 39.140309,
-                longitude: -94.577273
+                latitude: 39.143862,
+                longitude: -94.577206
               }
             ],
             fillColor:"rgba(194,24,91,0.5)",
             strokeColor: "rgba(194,24,91,1)",
             strokeWidth: 2
-        },
-        polygonOverlay : {
-            coordinates:[
-              {
-                latitude: 39.125494,
-                longitude: -94.580179
-              },
-              {
-                latitude: 39.138063,
-                longitude: -94.580314
-              },
-              {
-                latitude: 39.137599,
-                longitude: -94.578639
-              },
-              {
-                latitude: 39.127431,
-                longitude: -94.579217
-              },
-              {
-                latitude: 39.127106,
-                longitude: -94.578020
-              },
-              {
-                latitude: 39.127215,
-                longitude: -94.576963
-              },
-              {
-                latitude: 39.126069,
-                longitude: -94.576384
-              },
-              {
-                latitude: 39.125667,
-                longitude: -94.579955
-              }
-            ]
         },
         pois:[
             {
@@ -318,29 +266,7 @@ export const poiCluster3 =
             key: "3",
             title:"Clay Corners",
             description:"Clay Corners",
-            image:"../assets/POIs/cluster-ClayCorners.png",
-            coordinates:[
-              {
-                latitude: 39.141940,
-                longitude: -94.577330
-              },
-              {
-                latitude: 39.141366,
-                longitude: -94.580195
-              },
-              {
-                latitude: 39.139794,
-                longitude: -94.580281
-              },
-              {
-                latitude: 39.139744,
-                longitude: -94.579218
-              },
-              {
-                latitude: 39.140210,
-                longitude: -94.577341
-              }
-            ]
+            image:"../assets/POIs/cluster-ClayCorners.png"
         },
         polygonOverlay : {
             coordinates:[
@@ -441,41 +367,7 @@ export const poiCluster4 =
             key: "4",
             title:"Southtowne",
             description:"Southtowne",
-            image:"../assets/POIs/calibrationdrawing.png",
-            coordinates:[
-              {
-                latitude: 39.125494,
-                longitude: -94.580179
-              },
-              {
-                latitude: 39.138063,
-                longitude: -94.580314
-              },
-              {
-                latitude: 39.137599,
-                longitude: -94.578639
-              },
-              {
-                latitude: 39.127431,
-                longitude: -94.579217
-              },
-              {
-                latitude: 39.127106,
-                longitude: -94.578020
-              },
-              {
-                latitude: 39.127215,
-                longitude: -94.576963
-              },
-              {
-                latitude: 39.126069,
-                longitude: -94.576384
-              },
-              {
-                latitude: 39.125667,
-                longitude: -94.579955
-              }
-            ]
+            image:"../assets/POIs/calibrationdrawing.png"
         },
         polygonOverlay : {
             coordinates:[
