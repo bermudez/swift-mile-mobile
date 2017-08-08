@@ -170,7 +170,7 @@ export const poiCluster2 =
         },
         pois:[
             {
-                key: "1",
+                key: "201",
                 latlng:{
                     latitude: 39.14226,
                     longitude: -94.57657
@@ -181,7 +181,7 @@ export const poiCluster2 =
                 markerImage:"../assets/POIs/marker-colonydrawing.png"
             },
             {
-                key: "2",
+                key: "202",
                 latlng:{
                     latitude: 39.14256,
                     longitude: -94.57569
@@ -192,7 +192,7 @@ export const poiCluster2 =
                 markerImage:"../assets/POIs/marker-Screenland.png"
             },
             {
-                key: "3",
+                key: "203",
                 latlng:{
                     latitude: 39.1422,
                     longitude: -94.57702
@@ -203,7 +203,7 @@ export const poiCluster2 =
                 markerImage:"../assets/POIs/marker-kelsos.png"
             },
             {
-                key: "4",
+                key: "204",
                 latlng:{
                     latitude: 39.1419,
                     longitude: -94.57656
@@ -214,7 +214,7 @@ export const poiCluster2 =
                 markerImage:"../assets/POIs/marker-Chappells.png"
             },
             {
-                key: "5",
+                key: "205",
                 latlng:{
                     latitude: 39.14183,
                     longitude: -94.57675
@@ -225,7 +225,7 @@ export const poiCluster2 =
                 markerImage:"../assets/POIs/marker-JerseyBoyz.png"
             },
             {
-                key: "6",
+                key: "206",
                 latlng:{
                     latitude: 39.14268,
                     longitude: -94.57506
@@ -236,7 +236,7 @@ export const poiCluster2 =
                 markerImage:"../assets/POIs/marker-TylerKingston.png"
             },
             {
-                key: "7",
+                key: "207",
                 latlng:{
                     latitude: 39.14472,
                     longitude: -94.56937
@@ -247,7 +247,7 @@ export const poiCluster2 =
                 markerImage:"../assets/POIs/marker-LittleStore.png"
             },
             {
-                key: "8",
+                key: "208",
                 latlng:{
                     latitude: 39.14259,
                     longitude: -94.57536
@@ -293,7 +293,7 @@ export const poiCluster3 =
         },
         pois:[
             {
-                key: "1",
+                key: "301",
                 latlng:{
                     latitude: 39.14033,
                     longitude: -94.57891
@@ -304,7 +304,7 @@ export const poiCluster3 =
                 markerImage:"../assets/POIs/marker-CinderBlock.png"
             },
             {
-                key: "2",
+                key: "302",
                 latlng:{
                     latitude: 39.14141,
                     longitude: -94.57873
@@ -315,7 +315,7 @@ export const poiCluster3 =
                 markerImage:"../assets/POIs/marker-calibrationdrawing.png"
             },
             {
-                key: "3",
+                key: "303",
                 latlng:{
                     latitude: 39.14065,
                     longitude: -94.57887
@@ -326,7 +326,7 @@ export const poiCluster3 =
                 markerImage:"../assets/POIs/marker-Paul-and-Jacks.png"
             },
             {
-                key: "4",
+                key: "304",
                 latlng:{
                     latitude: 39.13942,
                     longitude: -94.57921
@@ -337,7 +337,7 @@ export const poiCluster3 =
                 markerImage:"../assets/POIs/marker-restlessSpirits.png"
             },
             {
-                key: "5",
+                key: "305",
                 latlng:{
                     latitude: 39.14084,
                     longitude: -94.5795
@@ -348,7 +348,7 @@ export const poiCluster3 =
                 markerImage:"../assets/POIs/marker-Repeal18th.png"
             },
             {
-                key: "6",
+                key: "306",
                 latlng:{
                     latitude: 39.14002,
                     longitude: -94.57993
@@ -418,7 +418,7 @@ export const poiCluster4 =
         },
         pois:[
             {
-                key: "1",
+                key: "401",
                 latlng:{
                     latitude: 39.12607,
                     longitude: -94.5778
@@ -429,7 +429,7 @@ export const poiCluster4 =
                 markerImage:"../assets/POIs/marker-BigRip.png"
             },
             {
-                key: "2",
+                key: "402",
                 latlng:{
                     latitude: 39.12608,
                     longitude: -94.57753
@@ -440,7 +440,7 @@ export const poiCluster4 =
                 markerImage:"../assets/POIs/marker-HawgJaw.png"
             },
             {
-                key: "3",
+                key: "403",
                 latlng:{
                     latitude: 39.131,
                     longitude: -94.57779
@@ -451,7 +451,7 @@ export const poiCluster4 =
                 markerImage:"../assets/POIs/marker-smokingunsbbq.png"
             },
             {
-                key: "4",
+                key: "404",
                 latlng:{
                     latitude: 39.13697,
                     longitude: -94.57993
@@ -462,7 +462,7 @@ export const poiCluster4 =
                 markerImage:"../assets/POIs/marker-iWerx.png"
             },
             {
-                key: "5",
+                key: "405",
                 latlng:{
                     latitude: 39.13623,
                     longitude: -94.57261
@@ -473,7 +473,7 @@ export const poiCluster4 =
                 markerImage:"../assets/POIs/marker-ROKC.png"
             },
             {
-                key: "6",
+                key: "406",
                 latlng:{
                     latitude: 39.13198,
                     longitude: -94.57761

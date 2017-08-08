@@ -10,28 +10,55 @@ import {
   Image
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
-
-// import { poiClusters } from '../config/mapData';
 import { poiClusters } from '../config/sampleMapClusters';
-
 import markerImage from "../assets/POIs/calibrationdrawing.png"
-
+//source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
 const IOS = Platform.OS === 'ios';
 const ANDROID = Platform.OS === 'android';
-
-const MARKERS = [
-  createMarker(),
-  createMarker(2),
-  createMarker(3),
-  createMarker(4),
-];
+const POIClustersData = poiClusters;
+const POIMarkerItems = getMarkerItems();
 const DEFAULT_PADDING = { top: 40, right: 40, bottom: 40, left: 40 };
-function createMarker(modifier = 1) {
-  return {
-    latitude: 39.143828 - (0.01 * modifier),
-    longitude: -94.573043 - (0.01 * modifier)
-  };
+
+function renderMarker(marker)
+{
+  return (
+      <MapView.Marker
+            key={marker.key}
+            coordinate={marker.latlng}
+            title={marker.title}
+            description={marker.description}
+          >
+          <Image
+            style={{
+              height: 20,
+              width: 20
+            }}
+            source={markerImage}
+          />
+      </MapView.Marker>
+    );
 }
+
+function renderClusterMarkers(clusterPolygon)
+{
+  let markers = [];
+  for (var i = clusterPolygon.pois.length - 1; i >= 0; i--) {
+    markers.push(renderMarker(clusterPolygon.pois[i]));
+  }
+  return (
+      markers
+    )
+}
+function getMarkerItems()
+{
+  let tempItems = [];
+  for (var i = POIClustersData.length - 1; i >= 0; i--) {
+    tempItems.push(renderClusterMarkers(POIClustersData[i]));
+  }
+
+  return tempItems;
+}
+
 class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -39,106 +66,103 @@ class Map extends React.Component {
 
     };
 
-    this.state.markerPosition = {
-            height: 60,
-            width: 180
-          };
+    this.state.markers = this.parseMarkers();
+    console.log("=========================");
+    console.dir(this.state.markers);
 
-    console.log(poiClusters);
-    
+    this.state.selectedCluster = 0;
     this.state.polygons = poiClusters;
-    this.state.polygon={
-    	id: 1,
-    	coordinates:[
-          {
-            latitude: 39.141814, 
-            longitude: -94.578472
-          },
-          {
-            latitude: 39.142011, 
-            longitude: -94.577298
-          },
-          {
-            latitude: 39.145097, 
-            longitude: -94.577252
-          },
-          {
-            latitude: 39.145144, 
-            longitude: -94.578449
-          }
-		]
-    }
-    this.zoomToCluster = this.zoomToCluster.bind(this);
-    // this.renderClusters = this.renderClusters.bind(this);
     this.state.region = {
             latitude: 39.143828,
             longitude: -94.573043,
             latitudeDelta: 0.019,
             longitudeDelta: 0.0181,
           };
-
-    this.state.markers = [
-      {
-        key: "1",
-        latlng:{
-            latitude: 39.1355641,
-            longitude: -94.5857858
-          },
-        title:"test",
-        description:"test desc",
-        image:"../assets/POIs/calibrationdrawing.png"
-      },
-      {
-        key: "2",
-        latlng:{
-            latitude: 39.1355651,
-            longitude: -94.5857878
-          },
-        title:"test",
-        description:"test desc",
-        image:"../assets/POIs/calibrationdrawing.png"
-      }
-
-
-      ];
-
-  this.state.markerLatLongs = [
-      {
-        latitude: 39.1355641,
-        longitude: -94.5857858
-      },
-      {
-        latitude: 39.1355651,
-        longitude: -94.5857878
-      }
-    ];
   };
 
-  zoomToCluster(e){
-    console.log("zoomToCluster start");
-      console.dir(e.nativeEvent.coordinate);
-      
-      tmp = this.pointInPoly(e.nativeEvent.coordinate, this.state.polygon.coordinates);
-//this.state.markerLatLongs
-    this.map.fitToCoordinates(MARKERS, {
+  parseMarkers()
+  {
+    let markers = [];
+    console.log("polygons----");
+    console.dir(POIClustersData);
+    for (var i = POIClustersData.length - 1; i >= 0; i--) {
+      console.dir(POIClustersData[i].pois);
+      for (var j = POIClustersData[i].pois.length - 1; j >= 0; j--) {
+        markers.push(POIClustersData[i].pois[j]);
+        console.dir(POIClustersData[i].pois[j]);
+      }
+    }
+    console.log("Markers-----");
+    console.dir(markers);
+    return markers;
+  }
+
+  /**
+   * On clicking on map process click event
+   */
+  onPressMap(e)
+  {
+    if (typeof(e.nativeEvent.coordinate) !== 'undefined')
+    {
+      console.log("onPress event fired ");
+      console.dir(e.nativeEvent);
+      var selectedPolygon = this.pointInPloygons(e.nativeEvent.coordinate);
+      if(selectedPolygon)
+      {
+        var key = selectedPolygon.polygon.key;
+        if(this.state.selectedCluster!==key)
+        {
+          this.state.selectedCluster = key;
+          this.fitPolygonToScreen(selectedPolygon);
+        }
+      }      
+    }
+  }
+
+  /**
+   * check if input latlong is inside any of the polygons
+   * if yes return that polygon
+   * else return false
+   */
+  pointInPloygons(point) 
+  {
+    var tmpFlag = false;
+    for (var i = POIClustersData.length - 1; i >= 0; i--) {
+      tmpFlag = this.pointInPoly(point, POIClustersData[i].polygonOverlay.coordinates);
+      if(tmpFlag)
+      {
+        break;
+      }
+    }
+    if(tmpFlag)
+    {
+      return POIClustersData[i];
+    }
+    else
+    {
+      return tmpFlag;
+    }
+  }
+
+  /**
+   * Fit map to polygon coordinates
+   */
+  fitPolygonToScreen(polygon)
+  {
+    this.map.fitToCoordinates(polygon.polygonOverlay.coordinates, {
       edgePadding: DEFAULT_PADDING,
       animated: true,
     });
-      console.dir(tmp);
-      if(tmp)
-        {
-          console.log('Inside Polygon');
-        }else
-        {
-          console.log('Not Inside Polygon');
-        }
-      console.log("zoomToCluster center");
   }
 
   onRegionChange(region) {
     // this.state.region = region;
   }
 
+  /**
+   * Check if point(latlong object) is inside polygon
+   * Returns boolean true or false
+   */
   pointInPoly(point, polygon) {
       // ray-casting algorithm based on
       // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
@@ -170,10 +194,29 @@ class Map extends React.Component {
           ref={ref => { this.map = ref; }}
           provider={PROVIDER_GOOGLE}
           region={this.state.region}
-          onPress={e => this.zoomToCluster(e)}
+          onPress={e => this.onPressMap(e)}
           onRegionChange={this.onRegionChange}
           style={styles.map}
         >
+          {
+            this.state.markers.map(marker => (
+            <MapView.Marker
+              key={marker.key}
+              coordinate={marker.latlng}
+              title={marker.title}
+              description={marker.description}
+            >
+              <Image
+                style={{
+                  height: 20,
+                  width: 20
+                }}
+                source={markerImage}
+                
+              />
+            </MapView.Marker>
+          ))}
+
           {
             this.state.polygons.map(polygon => (
             <MapView.Polygon
@@ -181,9 +224,9 @@ class Map extends React.Component {
               coordinates={polygon.polygonOverlay.coordinates}
               strokeColor={polygon.polygonOverlay.strokeColor}
               fillColor={polygon.polygonOverlay.fillColor}
-              onPress={e => this.zoomToCluster(e, polygon.polygon.key)}
               strokeWidth={polygon.polygonOverlay.strokeWidth}
-            />
+            >
+            </MapView.Polygon>
           ))}
         </MapView>
       </View>
