@@ -9,8 +9,8 @@ export const poiCluster1 =
         polygonOverlay : {
             coordinates:[
               {
-                latitude: 39.145825,
-                longitude: -94.578231
+                latitude: 39.143798,
+                longitude: -94.578229
               },
               {
                 latitude: 39.143820,
