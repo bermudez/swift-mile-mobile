@@ -91,6 +91,7 @@ constructor(props) {
                         textStyle={{textAlign: 'center'}}
                         title={`Login`}
                     />
+
                     :
                     <Button
                         raised
@@ -101,6 +102,20 @@ constructor(props) {
                         title={`Logged in`}
                     />
                 }
+
+                    <Button
+                        buttonStyle={{backgroundColor: 'red', borderRadius: 10, margin: 10}}
+                        onPress={() => this.props.navigation.navigate('StartTour')}
+                        textStyle={{textAlign: 'center'}}
+                        title={`StartTour Screen`}
+                    />
+                    <Button
+                        buttonStyle={{backgroundColor: 'red', borderRadius: 10, margin: 10}}
+                        onPress={() => this.props.navigation.navigate('SignUp')}
+                        textStyle={{textAlign: 'center'}}
+                        title={`SignUp Screen`}
+                    />
+
             </View>
         )
     }
