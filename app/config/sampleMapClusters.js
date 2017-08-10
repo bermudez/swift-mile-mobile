@@ -4,7 +4,7 @@ export const poiCluster1 =
             key: "1",
             title:"Swift Mile",
             description:"Swift Mile",
-            image:"../assets/POIs/calibrationdrawing.png"
+            image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/calibrationdrawing.png"
         },
         polygonOverlay : {
             coordinates:[
@@ -46,8 +46,8 @@ export const poiCluster1 =
                   },
                 title:"Tapcade NKC",
                 description:"1735 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/tapcade.png",
-                markerImage:"../assets/POIs/marker-tapcade.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/tapcade.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-tapcade.png"
             },
             {
                 key: "2",
@@ -57,8 +57,8 @@ export const poiCluster1 =
                   },
                 title:"Pat's Pub",
                 description:"1315 Swift St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/patspubdrawing.png",
-                markerImage:"../assets/POIs/marker-patspubdrawing.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/patspubdrawing.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-patspubdrawing.png"
             },
             {
                 key: "3",
@@ -68,8 +68,8 @@ export const poiCluster1 =
                   },
                 title:"Grain to Glass",
                 description:"1611 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/grain2glass.png",
-                markerImage:"../assets/POIs/marker-grain2glass.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/grain2glass.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-grain2glass.png"
             },
             {
                 key: "4",
@@ -79,8 +79,8 @@ export const poiCluster1 =
                   },
                 title:"Velo Garage",
                 description:"1403 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/veloGarage.png",
-                markerImage:"../assets/POIs/marker-veloGarage.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/veloGarage.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-veloGarage.png"
             },
             {
                 key: "5",
@@ -90,8 +90,8 @@ export const poiCluster1 =
                   },
                 title:"The Brewkery",
                 description:"1443 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/brewkery.png",
-                markerImage:"../assets/POIs/marker-brewkery.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/brewkery.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-brewkery.png"
             },
             {
                 key: "6",
@@ -101,8 +101,8 @@ export const poiCluster1 =
                   },
                 title:"FM Music & Vinyl",
                 description:"206 E 18th Ave, North Kansas City, MO 64116",
-                image:"../assets/POIs/FMMusic.png",
-                markerImage:"../assets/POIs/marker-FMMusic.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/FMMusic.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-FMMusic.png"
             },
             {
                 key: "7",
@@ -112,8 +112,8 @@ export const poiCluster1 =
                   },
                 title:"Christine's Firehouse on 20th Bar & Grill",
                 description:"220 E 20th Ave, North Kansas City, MO 64116",
-                image:"../assets/POIs/firehouse.png",
-                markerImage:"../assets/POIs/marker-firehouse.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/firehouse.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-firehouse.png"
             },
             {
                 key: "8",
@@ -123,8 +123,8 @@ export const poiCluster1 =
                   },
                 title:"River Aces",
                 description:"1800 Swift St, North Kansas City, MO 64116",
-                image:"../assets/POIs/RiverAces.png",
-                markerImage:"../assets/POIs/marker-RiverAces.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/RiverAces.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-RiverAces.png"
             }
         ]
     };
@@ -135,7 +135,7 @@ export const poiCluster2 =
             key: "2",
             title:"Armourville",
             description:"Armourville",
-            image:"../assets/POIs/cluster-Armourville.png"
+            image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/cluster-Armourville.png"
         },
         polygonOverlay : {
             coordinates:[
@@ -177,8 +177,8 @@ export const poiCluster2 =
                   },
                 title:"Colony Espresso & Beer / RINO Music Venue",
                 description:"312 Armour Rd, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/colonydrawing.png",
-                markerImage:"../assets/POIs/marker-colonydrawing.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/colonydrawing.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-colonydrawing.png"
             },
             {
                 key: "202",
@@ -188,8 +188,8 @@ export const poiCluster2 =
                   },
                 title:"Screenland Armour Theater",
                 description:"408 Armour Rd, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/Screenland.png",
-                markerImage:"../assets/POIs/marker-Screenland.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Screenland.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Screenland.png"
             },
             {
                 key: "203",
@@ -199,8 +199,8 @@ export const poiCluster2 =
                   },
                 title:"Kelso's",
                 description:"300 Armour Rd, Kansas City, MO 64116 ",
-                image:"../assets/POIs/kelsos.png",
-                markerImage:"../assets/POIs/marker-kelsos.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/kelsos.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-kelsos.png"
             },
             {
                 key: "204",
@@ -210,8 +210,8 @@ export const poiCluster2 =
                   },
                 title:"Chappell's",
                 description:"323 Armour Rd, Kansas City, MO 64116 ",
-                image:"../assets/POIs/Chappells.png",
-                markerImage:"../assets/POIs/marker-Chappells.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Chappells.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Chappells.png"
             },
             {
                 key: "205",
@@ -221,8 +221,8 @@ export const poiCluster2 =
                   },
                 title:"Jersey Boyz Subs & Deli",
                 description:"315 Armour Rd, Kansas City, MO 64116 ",
-                image:"../assets/POIs/JerseyBoyz.png",
-                markerImage:"../assets/POIs/marker-JerseyBoyz.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/JerseyBoyz.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-JerseyBoyz.png"
             },
             {
                 key: "206",
@@ -232,8 +232,8 @@ export const poiCluster2 =
                   },
                 title:"Tyler Kingston Store",
                 description:"422 Armour Rd, Kansas City, MO 64116 ",
-                image:"../assets/POIs/TylerKingston.png",
-                markerImage:"../assets/POIs/marker-TylerKingston.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/TylerKingston.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-TylerKingston.png"
             },
             {
                 key: "207",
@@ -243,8 +243,8 @@ export const poiCluster2 =
                   },
                 title:"Little Store & Cafe",
                 description:"2107 Knox St, North Kansas City, MO 64116",
-                image:"../assets/POIs/LittleStore.png",
-                markerImage:"../assets/POIs/marker-LittleStore.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/LittleStore.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-LittleStore.png"
             },
             {
                 key: "208",
@@ -254,8 +254,8 @@ export const poiCluster2 =
                   },
                 title:"Shaka Noodle Shack",
                 description:"414 Armour Rd, Kansas City, MO 64116",
-                image:"../assets/POIs/Shaka.png",
-                markerImage:"../assets/POIs/marker-Shaka.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Shaka.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Shaka.png"
             }
         ]
     };
@@ -266,7 +266,7 @@ export const poiCluster3 =
             key: "3",
             title:"Clay Corners",
             description:"Clay Corners",
-            image:"../assets/POIs/cluster-ClayCorners.png"
+            image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/cluster-ClayCorners.png"
         },
         polygonOverlay : {
             coordinates:[
@@ -300,8 +300,8 @@ export const poiCluster3 =
                   },
                 title:"Cinder Block Brewery",
                 description:"110 E 18th Ave, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/CinderBlock.png",
-                markerImage:"../assets/POIs/marker-CinderBlock.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/CinderBlock.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-CinderBlock.png"
             },
             {
                 key: "302",
@@ -311,8 +311,8 @@ export const poiCluster3 =
                   },
                 title:"Calibration Brewery",
                 description:"119 Armour Rd, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/calibrationdrawing.png",
-                markerImage:"../assets/POIs/marker-calibrationdrawing.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/calibrationdrawing.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-calibrationdrawing.png"
             },
             {
                 key: "303",
@@ -322,8 +322,8 @@ export const poiCluster3 =
                   },
                 title:"Paul & Jack's Tavern",
                 description:"1808 Clay St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/Paul-and-Jacks.png",
-                markerImage:"../assets/POIs/marker-Paul-and-Jacks.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Paul-and-Jacks.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Paul-and-Jacks.png"
             },
             {
                 key: "304",
@@ -333,8 +333,8 @@ export const poiCluster3 =
                   },
                 title:"Restless Spirits Distillery",
                 description:"109 E 18th Ave, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/restlessSpirits.png",
-                markerImage:"../assets/POIs/marker-restlessSpirits.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/restlessSpirits.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-restlessSpirits.png"
             },
             {
                 key: "305",
@@ -344,8 +344,8 @@ export const poiCluster3 =
                   },
                 title:"Repeal 18th",
                 description:"1825 Buchanan St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/Repeal18th.png",
-                markerImage:"../assets/POIs/marker-Repeal18th.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Repeal18th.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Repeal18th.png"
             },
             {
                 key: "306",
@@ -355,8 +355,8 @@ export const poiCluster3 =
                   },
                 title:"Chicken N Pickle",
                 description:"1761 Burlington St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/chickenNpickledrawing.png",
-                markerImage:"../assets/POIs/marker-chickenNpickledrawing.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/chickenNpickledrawing.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-chickenNpickledrawing.png"
             }
         ]
     };
@@ -367,7 +367,7 @@ export const poiCluster4 =
             key: "4",
             title:"Southtowne",
             description:"Southtowne",
-            image:"../assets/POIs/calibrationdrawing.png"
+            image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/calibrationdrawing.png"
         },
         polygonOverlay : {
             coordinates:[
@@ -425,8 +425,8 @@ export const poiCluster4 =
                   },
                 title:"The Big Rip Brewing Co.",
                 description:"216 E 9th Ave, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/BigRip.png",
-                markerImage:"../assets/POIs/marker-BigRip.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/BigRip.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-BigRip.png"
             },
             {
                 key: "402",
@@ -436,8 +436,8 @@ export const poiCluster4 =
                   },
                 title:"Hawg Jaw BBQ",
                 description:"900 Swift St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/HawgJaw.png",
-                markerImage:"../assets/POIs/marker-HawgJaw.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/HawgJaw.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-HawgJaw.png"
             },
             {
                 key: "403",
@@ -447,8 +447,8 @@ export const poiCluster4 =
                   },
                 title:"Smokin Guns BBQ",
                 description:"1218 Swift St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/smokingunsbbq.png",
-                markerImage:"../assets/POIs/marker-smokingunsbbq.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/smokingunsbbq.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-smokingunsbbq.png"
             },
             {
                 key: "404",
@@ -458,8 +458,8 @@ export const poiCluster4 =
                   },
                 title:"iWerx Co-Working Space",
                 description:"1520 Clay St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/iWerx.png",
-                markerImage:"../assets/POIs/marker-iWerx.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/iWerx.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-iWerx.png"
             },
             {
                 key: "405",
@@ -469,8 +469,8 @@ export const poiCluster4 =
                   },
                 title:"RoKC Climbing Gym",
                 description:"1501 Howell St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/ROKC.png",
-                markerImage:"../assets/POIs/marker-ROKC.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/ROKC.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-ROKC.png"
             },
             {
                 key: "406",
@@ -480,8 +480,8 @@ export const poiCluster4 =
                   },
                 title:"Furniture Solution Gallery",
                 description:"1240 Swift St, North Kansas City, MO 64116 ",
-                image:"../assets/POIs/FurnitureSolutions.png",
-                markerImage:"../assets/POIs/marker-FurnitureSolutions.png"
+                image:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/FurnitureSolutions.png",
+                markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-FurnitureSolutions.png"
             }
         ]
     };

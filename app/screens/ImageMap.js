@@ -12,12 +12,36 @@ import {
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
 import { poiClusters } from '../config/sampleMapClusters';
 import markerImage from "../assets/POIs/calibrationdrawing.png"
-//source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+
+/* 
+ * Cache in marker images workes only for ios platform 
+ * add platform condition there  
+ */
 const IOS = Platform.OS === 'ios';
 const ANDROID = Platform.OS === 'android';
+
 const POIClustersData = poiClusters;
 const POIMarkerItems = getMarkerItems();
+const POIMarkerImages = getMarkerImages();
 const DEFAULT_PADDING = { top: 40, right: 40, bottom: 40, left: 40 };
+
+function getMarkerImages()
+{
+  let tempImages = [];
+  for (var i = POIClustersData.length - 1; i >= 0; i--) {
+    for (var j = POIClustersData[i].pois.length - 1; j >= 0; j--) {
+      // POIClustersData[i].pois[j]
+      console.log("Marker Key: ");
+      console.log(POIClustersData[i].pois[j].key);
+      console.log("Marker Image: ");
+      console.log(POIClustersData[i].pois[j].markerImage);
+      // tempImages[POIClustersData[i].pois[j].key] = require('image!$POIClustersData[i].pois[j].markerImage');
+
+    }
+  }
+
+  return tempImages;
+}
 
 function renderMarker(marker)
 {
@@ -33,7 +57,7 @@ function renderMarker(marker)
               height: 20,
               width: 20
             }}
-            source={markerImage}
+            source={{ uri: marker.markerImage}}
           />
       </MapView.Marker>
     );
@@ -211,7 +235,7 @@ class Map extends React.Component {
                   height: 20,
                   width: 20
                 }}
-                source={markerImage}
+                source={{ uri: marker.markerImage, cache: 'force-cache'}}
                 
               />
             </MapView.Marker>
