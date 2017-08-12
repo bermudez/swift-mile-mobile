@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SwiftMile.xcodeproj">
+      location = "group:/Users/enricobermudez/Documents/Github/swift-mile-mobile/ios/NKCGo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
