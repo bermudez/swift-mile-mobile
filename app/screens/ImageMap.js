@@ -24,6 +24,12 @@ const POIClustersData = poiClusters;
 const POIMarkerItems = getMarkerItems();
 const POIMarkerImages = getMarkerImages();
 const DEFAULT_PADDING = { top: 40, right: 40, bottom: 40, left: 40 };
+ 
+const LATITUDE = 39.135470;
+const LONGITUDE = -94.576219;
+const LATITUDE_DELTA = 0.019;
+const LONGITUDE_DELTA = 0.0181;
+const MAX_DELTA = 0.023;
 
 function getMarkerImages()
 {
@@ -97,10 +103,10 @@ class Map extends React.Component {
     this.state.selectedCluster = 0;
     this.state.polygons = poiClusters;
     this.state.region = {
-            latitude: 39.135470,
-            longitude: -94.576219,
-            latitudeDelta: 0.019,
-            longitudeDelta: 0.0181,
+            latitude: LATITUDE,
+            longitude: LONGITUDE,
+            latitudeDelta: LATITUDE_DELTA,
+            longitudeDelta: LONGITUDE_DELTA,
           };
   };
 
@@ -130,7 +136,7 @@ class Map extends React.Component {
     {
       console.log("onPress event fired ");
       // console.dir(e.nativeEvent);
-      var selectedPolygon = this.pointInPloygons(e.nativeEvent.coordinate);
+      var selectedPolygon = this.pointInPolygons(e.nativeEvent.coordinate);
       if(selectedPolygon)
       {
         var key = selectedPolygon.polygon.key;
@@ -148,7 +154,7 @@ class Map extends React.Component {
    * if yes return that polygon
    * else return false
    */
-  pointInPloygons(point) 
+  pointInPolygons(point) 
   {
     var tmpFlag = false;
     for (var i = POIClustersData.length - 1; i >= 0; i--) {
@@ -181,6 +187,13 @@ class Map extends React.Component {
 
   onRegionChange(region) {
     // this.state.region = region;
+  }
+
+  onRegionChangeComplete(region) {
+    // this.state.region = region;
+    console.log("region",region);
+    console.log("LATITUDE DELTA: ", this.state.region.latitudeDelta);
+    
   }
 
   /**
