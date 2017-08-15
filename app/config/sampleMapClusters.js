@@ -39,7 +39,7 @@ export const poiCluster1 =
         },
         pois:[
             {
-                key: "1",
+                key: "101",
                 latlng:{
                     latitude: 39.14008,
                     longitude: -94.57692
@@ -50,7 +50,7 @@ export const poiCluster1 =
                 markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-tapcade.png"
             },
             {
-                key: "2",
+                key: "102",
                 latlng:{
                     latitude: 39.13293,
                     longitude: -94.57718
@@ -61,7 +61,7 @@ export const poiCluster1 =
                 markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-patspubdrawing.png"
             },
             {
-                key: "3",
+                key: "103",
                 latlng:{
                     latitude: 39.13825,
                     longitude: -94.57712
@@ -72,7 +72,7 @@ export const poiCluster1 =
                 markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-grain2glass.png"
             },
             {
-                key: "4",
+                key: "104",
                 latlng:{
                     latitude: 39.13449,
                     longitude: -94.57722
@@ -83,7 +83,7 @@ export const poiCluster1 =
                 markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-veloGarage.png"
             },
             {
-                key: "5",
+                key: "105",
                 latlng:{
                     latitude: 39.13546,
                     longitude: -94.57719
@@ -94,7 +94,7 @@ export const poiCluster1 =
                 markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-brewkery.png"
             },
             {
-                key: "6",
+                key: "106",
                 latlng:{
                     latitude: 39.14034,
                     longitude: -94.57817
@@ -105,7 +105,7 @@ export const poiCluster1 =
                 markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-FMMusic.png"
             },
             {
-                key: "7",
+                key: "107",
                 latlng:{
                     latitude: 39.14275,
                     longitude: -94.57773
@@ -116,7 +116,7 @@ export const poiCluster1 =
                 markerImage:"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-firehouse.png"
             },
             {
-                key: "8",
+                key: "108",
                 latlng:{
                     latitude: 39.14037,
                     longitude: -94.57756
