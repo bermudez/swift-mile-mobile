@@ -57,9 +57,11 @@ class VenueInfo extends React.Component {
                   <Image 
                     style={{
                       height:200,
-                      width:200
+                      width:200,
+                      resizeMode: 'contain'
                     }}
-                    source={VenueImage}
+                    //source={VenueImage}
+                    source={{ uri: venue.image, cache: 'force-cache'}}
                     />
 
                 </View>
