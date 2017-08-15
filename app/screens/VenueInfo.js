@@ -51,7 +51,7 @@ class VenueInfo extends React.Component {
             {
             this.state.VenuesData.map(venue => (
               <View style={styles.slide1}>
-                <View>
+                <View style={styles.slide1}>
                   <Text style={styles.text}>{venue.title}</Text>
                   <Text style={styles.text}>{venue.description}</Text>
                   <Image 
