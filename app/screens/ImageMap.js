@@ -97,8 +97,8 @@ class Map extends React.Component {
     this.state.selectedCluster = 0;
     this.state.polygons = poiClusters;
     this.state.region = {
-            latitude: 39.143828,
-            longitude: -94.573043,
+            latitude: 39.135470,
+            longitude: -94.576219,
             latitudeDelta: 0.019,
             longitudeDelta: 0.0181,
           };
@@ -232,8 +232,9 @@ class Map extends React.Component {
             >
               <Image
                 style={{
-                  height: 20,
-                  width: 20
+                  height: 90,
+                  width: 90,
+                  resizeMode: 'contain'
                 }}
                 source={{ uri: marker.markerImage, cache: 'force-cache'}}
                 
