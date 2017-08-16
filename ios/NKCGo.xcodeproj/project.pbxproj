@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -46,11 +47,12 @@
 		696E3B791F35CC990004896F /* DummyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 696E3B541F35CC990004896F /* DummyView.m */; };
 		696E3B7B1F35CC990004896F /* RCTConvert+GMSMapViewType.m in Sources */ = {isa = PBXBuildFile; fileRef = 696E3B561F35CC990004896F /* RCTConvert+GMSMapViewType.m */; };
 		6E74FC6A532948F095B6F3D6 /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 567F4F4A931743ACA52517A6 /* MaterialIcons-Regular.ttf */; };
-		79FA4A816951D13AC725F13B /* libPods-SwiftMile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 087CA9D11BA7284DBA98530C /* libPods-SwiftMile.a */; };
+		79FA4A816951D13AC725F13B /* libPods-NKCGo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 087CA9D11BA7284DBA98530C /* libPods-NKCGo.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		84D6A2E5430F482993C9D813 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0186545057714457B21BA758 /* EvilIcons.ttf */; };
 		B4A22BC49B1046D99E130405 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A745F8B2824BA9B4B4D1F1 /* MaterialCommunityIcons.ttf */; };
 		B85A8E7E1D7A433790EE3D52 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B44A441176A942EDBAB1055D /* SimpleLineIcons.ttf */; };
+		BF3FE859ACA4444BB486CDA9 /* libPods-NKCGo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFEEB69E6F6AB3141BF42EB /* libPods-NKCGo.a */; };
 		C72558433F0D40BBBB973A0C /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E64EFF6BDD490C914326DA /* libRNVectorIcons.a */; };
 		CDDE975B3BEC482E971DF88A /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9264D5A7CA634309AB3B7420 /* MaterialIcons.ttf */; };
 /* End PBXBuildFile section */
@@ -283,26 +285,27 @@
 		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "../node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* SwiftMileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftMileTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* NKCGoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKCGoTests.m; sourceTree = "<group>"; };
 		0186545057714457B21BA758 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		083C61FA90964C98BEFD4FA6 /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
-		087CA9D11BA7284DBA98530C /* libPods-SwiftMile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftMile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		087CA9D11BA7284DBA98530C /* libPods-NKCGo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NKCGo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09493B42FB524DB492DD5F34 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		0AC4EA055793A08FA50A59AB /* Pods-SwiftMile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMile.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMile/Pods-SwiftMile.release.xcconfig"; sourceTree = "<group>"; };
+		0AC4EA055793A08FA50A59AB /* Pods-NKCGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NKCGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NKCGo/Pods-NKCGo.release.xcconfig"; sourceTree = "<group>"; };
+		0BFEEB69E6F6AB3141BF42EB /* libPods-NKCGo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NKCGo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* NKCGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKCGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SwiftMile/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SwiftMile/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../SwiftMile/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftMile/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SwiftMile/main.m; sourceTree = "<group>"; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NKCGo/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NKCGo/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../NKCGo/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NKCGo/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NKCGo/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		514C53324D1547D684476F9E /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
 		567F4F4A931743ACA52517A6 /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MaterialIcons-Regular.ttf"; path = "../app/fonts/MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		63C89536984082C4303CB229 /* Pods-SwiftMile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMile/Pods-SwiftMile.debug.xcconfig"; sourceTree = "<group>"; };
-		69632D7D1F35D641001E93BA /* SwiftMile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SwiftMile.entitlements; path = SwiftMile/SwiftMile.entitlements; sourceTree = "<group>"; };
+		63C89536984082C4303CB229 /* Pods-NKCGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NKCGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NKCGo/Pods-NKCGo.debug.xcconfig"; sourceTree = "<group>"; };
+		69632D7D1F35D641001E93BA /* NKCGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = NKCGo.entitlements; path = NKCGo/NKCGo.entitlements; sourceTree = "<group>"; };
 		696E3B311F35CC990004896F /* AIRGMSMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRGMSMarker.h; sourceTree = "<group>"; };
 		696E3B321F35CC990004896F /* AIRGMSMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRGMSMarker.m; sourceTree = "<group>"; };
 		696E3B331F35CC990004896F /* AIRGMSPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRGMSPolygon.h; sourceTree = "<group>"; };
@@ -341,6 +344,7 @@
 		696E3B541F35CC990004896F /* DummyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyView.m; sourceTree = "<group>"; };
 		696E3B551F35CC990004896F /* RCTConvert+GMSMapViewType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+GMSMapViewType.h"; sourceTree = "<group>"; };
 		696E3B561F35CC990004896F /* RCTConvert+GMSMapViewType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+GMSMapViewType.m"; sourceTree = "<group>"; };
+		700B1AB66485EC52C406911F /* Pods-NKCGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NKCGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NKCGo/Pods-NKCGo.release.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7DB14454B8934103B2C3807A /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -363,6 +367,7 @@
 		B2E64EFF6BDD490C914326DA /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		B44A441176A942EDBAB1055D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		E41966555C1D4291B89AFC84 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		FBD1C2A8A8954EC74BD84A5E /* Pods-NKCGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NKCGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NKCGo/Pods-NKCGo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,8 +387,9 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				4C565E0A0B654965AAB8A03C /* libAirMaps.a in Frameworks */,
-				79FA4A816951D13AC725F13B /* libPods-SwiftMile.a in Frameworks */,
+				79FA4A816951D13AC725F13B /* libPods-NKCGo.a in Frameworks */,
 				C72558433F0D40BBBB973A0C /* libRNVectorIcons.a in Frameworks */,
+				BF3FE859ACA4444BB486CDA9 /* libPods-NKCGo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,13 +438,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00E356EF1AD99517003FC87E /* SwiftMileTests */ = {
+		00E356EF1AD99517003FC87E /* NKCGoTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* SwiftMileTests.m */,
+				00E356F21AD99517003FC87E /* NKCGoTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = SwiftMileTests;
+			path = NKCGoTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -470,8 +476,10 @@
 		0E1F79F8C84C0A9A8337BB7D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				63C89536984082C4303CB229 /* Pods-SwiftMile.debug.xcconfig */,
-				0AC4EA055793A08FA50A59AB /* Pods-SwiftMile.release.xcconfig */,
+				63C89536984082C4303CB229 /* Pods-NKCGo.debug.xcconfig */,
+				0AC4EA055793A08FA50A59AB /* Pods-NKCGo.release.xcconfig */,
+				FBD1C2A8A8954EC74BD84A5E /* Pods-NKCGo.debug.xcconfig */,
+				700B1AB66485EC52C406911F /* Pods-NKCGo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -479,7 +487,8 @@
 		0FAAFFA2D1FD50E5D41E68A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				087CA9D11BA7284DBA98530C /* libPods-SwiftMile.a */,
+				087CA9D11BA7284DBA98530C /* libPods-NKCGo.a */,
+				0BFEEB69E6F6AB3141BF42EB /* libPods-NKCGo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -502,17 +511,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* SwiftMile */ = {
+		13B07FAE1A68108700A75B9A /* NKCGo */ = {
 			isa = PBXGroup;
 			children = (
-				69632D7D1F35D641001E93BA /* SwiftMile.entitlements */,
+				69632D7D1F35D641001E93BA /* NKCGo.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = SwiftMile;
+			name = NKCGo;
 			sourceTree = "<group>";
 		};
 		146834001AC3E56700842450 /* Products */ = {
@@ -646,9 +655,9 @@
 			isa = PBXGroup;
 			children = (
 				696E3B301F35CC990004896F /* AirGoogleMaps */,
-				13B07FAE1A68108700A75B9A /* SwiftMile */,
+				13B07FAE1A68108700A75B9A /* NKCGo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* SwiftMileTests */,
+				00E356EF1AD99517003FC87E /* NKCGoTests */,
 				8A7F5A811F3D2AEA00637B3F /* NKCGo */,
 				8A7F5A9A1F3D2AEB00637B3F /* NKCGoTests */,
 				8A7F5AA51F3D2AEB00637B3F /* NKCGoUITests */,
@@ -1090,13 +1099,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NKCGo/Pods-NKCGo-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftMile/Pods-SwiftMile-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NKCGo/Pods-NKCGo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2D4547DE05503AD7C087E1A /* [CP] Embed Pods Frameworks */ = {
@@ -1111,7 +1123,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftMile/Pods-SwiftMile-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NKCGo/Pods-NKCGo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E10B08C45C0F477519177918 /* [CP] Check Pods Manifest.lock */ = {
@@ -1120,13 +1132,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NKCGo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1165,7 +1180,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63C89536984082C4303CB229 /* Pods-SwiftMile.debug.xcconfig */;
+			baseConfigurationReference = FBD1C2A8A8954EC74BD84A5E /* Pods-NKCGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1186,7 +1201,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/SwiftMile\"",
+					"\"$(SRCROOT)/NKCGo\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1204,7 +1219,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AC4EA055793A08FA50A59AB /* Pods-SwiftMile.release.xcconfig */;
+			baseConfigurationReference = 700B1AB66485EC52C406911F /* Pods-NKCGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1224,7 +1239,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/SwiftMile\"",
+					"\"$(SRCROOT)/NKCGo\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

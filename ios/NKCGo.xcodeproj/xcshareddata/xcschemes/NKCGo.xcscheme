@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "SwiftMileTests.xctest"
-               BlueprintName = "SwiftMileTests"
+               BuildableName = "NKCGoTests.xctest"
+               BlueprintName = "NKCGoTests"
                ReferencedContainer = "container:NKCGo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -62,8 +62,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "SwiftMileTests.xctest"
-               BlueprintName = "SwiftMileTests"
+               BuildableName = "NKCGoTests.xctest"
+               BlueprintName = "NKCGoTests"
                ReferencedContainer = "container:NKCGo.xcodeproj">
             </BuildableReference>
          </TestableReference>
