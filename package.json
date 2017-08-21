@@ -1,0 +1,32 @@
+{
+  "name": "NKCGo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "amazon-cognito-identity-js": "^1.19.0",
+    "aws-sdk": "^2.100.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.46.0",
+    "react-native-aws3": "0.0.8",
+    "react-native-camera": "github:Xeroeta/react-native-camera",
+    "react-native-elements": "^0.16.0",
+    "react-native-maps": "^0.16.2",
+    "react-native-swiper": "^1.5.10",
+    "react-native-vector-icons": "^4.3.0",
+    "react-navigation": "^1.0.0-beta.11",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-jest": "20.0.3",
+    "babel-preset-react-native": "2.1.0",
+    "jest": "20.0.4",
+    "react-test-renderer": "16.0.0-alpha.12"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

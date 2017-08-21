@@ -1,0 +1,5 @@
+https://facebook.github.io/react-native/docs/getting-started.html
+
+https://github.com/airbnb/react-native-maps/issues/718#issuecomment-295585410
+
+
