@@ -2,21 +2,17 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-/* LoggedIn user screens */
+/* Main Menu Screens */
 import Menu from '../screens/Menu';
-import ImageMap from '../screens/ImageMap';
-import Map from '../screens/Map';
 import Schedule from '../screens/Schedule';
-import Badges from '../screens/Badges';
-import Faq from '../screens/Faq';
-import Snaps from '../screens/Snaps';
+import Map from '../screens/Map';
 import VenueInfo from '../screens/VenueInfo';
+import Badges from '../screens/Badges'; // Need login
+import Snaps from '../screens/Snaps'; // Need login
+import Me from '../screens/Me'; // Need login
+import About from '../screens/About';
 
-/* LoggedIn user screens */
-import Settings from '../screens/Settings';
-import Me from '../screens/Me';
-
-/* user LoggedOut user / onboarding screens */
+/* User on boarding screens */
 import Signin from '../screens/auth/Signin';
 import SignUp from '../screens/auth/SignUp';
 import StartTour from '../screens/onboarding/StartTour';
@@ -24,17 +20,17 @@ import WelcomeCarouselOne from '../screens/onboarding/WelcomeCarouselOne';
 import WelcomeCarouselTwo from '../screens/onboarding/WelcomeCarouselTwo';
 import WelcomeCarouselThree from '../screens/onboarding/WelcomeCarouselThree';
 
-export const LoggedInAppStack = StackNavigator({
+export const AppMainMenuStack = StackNavigator({
   Menu: {
     screen: Menu,
     navigationOptions: {
       title: 'Menu',
     },
   },
-  ImageMap: {
-    screen: ImageMap,
+  Schedule: {
+    screen: Schedule,
     navigationOptions: ({ navigation }) => ({
-      title: 'Map',
+      title: 'Schedule',
     }),
   },
   Map: {
@@ -43,10 +39,10 @@ export const LoggedInAppStack = StackNavigator({
       title: 'Map',
     }),
   },
-  Schedule: {
-    screen: Schedule,
+  VenueInfo: {
+    screen: VenueInfo,
     navigationOptions: ({ navigation }) => ({
-      title: 'Schedule',
+      title: 'VenueInfo',
     }),
   },
   Badges: {
@@ -55,27 +51,27 @@ export const LoggedInAppStack = StackNavigator({
       title: 'Badges',
     }),
   },
-  Faq: {
-    screen: Faq,
-    navigationOptions: ({ navigation }) => ({
-      title: 'FAQ',
-    }),
-  },
-  VenueInfo: {
-    screen: VenueInfo,
-    navigationOptions: ({ navigation }) => ({
-      title: 'VenueInfo',
-    }),
-  },
   Snaps: {
     screen: Snaps,
     navigationOptions: ({ navigation }) => ({
       title: 'Snaps',
     }),
   },
+  Me: {
+    screen: Me,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Me',
+    }),
+  },
+  About: {
+    screen: About,
+    navigationOptions: ({ navigation }) => ({
+      title: 'About',
+    }),
+  },
 });
 
-export const LoggedOutAppStack = StackNavigator({
+export const AppOnBoardingStack = StackNavigator({
   Signin: {
     screen: Signin,
     navigationOptions: ({ navigation }) => ({}),
@@ -102,43 +98,15 @@ export const LoggedOutAppStack = StackNavigator({
   }
 });
 
-export const Tabs = TabNavigator({
-  Menu: {
-    screen: LoggedInAppStack,
-    navigationOptions: {
-      tabBarLabel: 'Menu',
-      tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
-    },
-  },
-  Me: {
-    screen: Me,
-    navigationOptions: {
-      tabBarLabel: 'Me',
-      tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
-    },
-  },
-});
-
-export const SettingsStack = StackNavigator({
-  Settings: {
-    screen: Settings,
-    navigationOptions: {
-      title: 'Settings',
-    },
-  },
-});
-
 export const Root = StackNavigator({
-  LoggedOutAppStack:{
-    screen: LoggedOutAppStack,
+    AppMainMenuStack:{
+      screen: AppMainMenuStack,
+    },
+    AppOnBoardingStack: {
+      screen: AppOnBoardingStack,
+    },
   },
-  Tabs: {
-    screen: Tabs,
-  },
-  Settings: {
-    screen: SettingsStack,
-  },
-}, {
-  mode: 'modal',
-  headerMode: 'none',
-});
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  });

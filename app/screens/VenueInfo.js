@@ -40,6 +40,11 @@ class VenueInfo extends React.Component {
 
     this.state = {};
     this.state.VenuesData = VenuesData;
+
+    console.log("Inside VenueInfo constructor");
+    console.log("Inside VenueInfo constructor: props");
+    console.dir(props);
+
   };
 
   getVal(val){
@@ -50,7 +55,9 @@ class VenueInfo extends React.Component {
             <Swiper style={styles.wrapper} showsButtons={true}>
             {
             this.state.VenuesData.map(venue => (
-              <View style={styles.slide1}>
+              <View style={styles.slide1}
+                key={venue.key}
+              >
                 <View style={{ justifyContent: 'center' }}>
                   <Text style={styles.text}>{venue.title}</Text>
                   <Text style={styles.text}>{venue.description}</Text>

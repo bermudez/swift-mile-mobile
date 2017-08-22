@@ -5,7 +5,7 @@ import {
   ScrollView
 } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
-import { menuItems } from '../config/data';
+import { menuItems } from '../config/menuItems';
 
 class Menu extends Component {
   onNavigateTo = (menuItem) => {

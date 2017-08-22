@@ -10,11 +10,78 @@ import {
   Image
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
-
+import { poiClusters } from '../config/sampleMapClusters';
 import markerImage from "../assets/POIs/calibrationdrawing.png"
 
+/* 
+ * Cache in marker images workes only for ios platform 
+ * add platform condition there  
+ */
 const IOS = Platform.OS === 'ios';
 const ANDROID = Platform.OS === 'android';
+
+const POIClustersData = poiClusters;
+const POIMarkerItems = getMarkerItems();
+const POIMarkerImages = getMarkerImages();
+const DEFAULT_PADDING = { top: 40, right: 40, bottom: 40, left: 40 };
+
+function getMarkerImages()
+{
+  let tempImages = [];
+  for (var i = POIClustersData.length - 1; i >= 0; i--) {
+    for (var j = POIClustersData[i].pois.length - 1; j >= 0; j--) {
+      // POIClustersData[i].pois[j]
+      console.log("Marker Key: ");
+      console.log(POIClustersData[i].pois[j].key);
+      console.log("Marker Image: ");
+      console.log(POIClustersData[i].pois[j].markerImage);
+      // tempImages[POIClustersData[i].pois[j].key] = require('image!$POIClustersData[i].pois[j].markerImage');
+
+    }
+  }
+
+  return tempImages;
+}
+
+function renderMarker(marker)
+{
+  return (
+      <MapView.Marker
+            key={marker.key}
+            coordinate={marker.latlng}
+            title={marker.title}
+            description={marker.description}
+          >
+          <Image
+            style={{
+              height: 20,
+              width: 20
+            }}
+            source={{ uri: marker.markerImage}}
+          />
+      </MapView.Marker>
+    );
+}
+
+function renderClusterMarkers(clusterPolygon)
+{
+  let markers = [];
+  for (var i = clusterPolygon.pois.length - 1; i >= 0; i--) {
+    markers.push(renderMarker(clusterPolygon.pois[i]));
+  }
+  return (
+      markers
+    )
+}
+function getMarkerItems()
+{
+  let tempItems = [];
+  for (var i = POIClustersData.length - 1; i >= 0; i--) {
+    tempItems.push(renderClusterMarkers(POIClustersData[i]));
+  }
+
+  return tempItems;
+}
 
 class Map extends React.Component {
   constructor(props) {
@@ -22,60 +89,124 @@ class Map extends React.Component {
     this.state = {
 
     };
-    this.state.markerPosition = {
-            height: 60,
-            width: 180
-          };
-          
-    this.renderClusters = this.renderClusters.bind(this);
+
+    this.state.markers = this.parseMarkers();
+    console.log("=========================");
+    console.dir(this.state.markers);
+
+    this.state.selectedCluster = 0;
+    this.state.polygons = poiClusters;
     this.state.region = {
-            latitude: 39.1355641,
-            longitude: -94.5857858,
+            latitude: 39.143828,
+            longitude: -94.573043,
             latitudeDelta: 0.019,
             longitudeDelta: 0.0181,
           };
-
-    this.state.markers = [
-      {
-        key: "1",
-        latlng:{
-            latitude: 39.1355641,
-            longitude: -94.5857858
-          },
-        title:"test",
-        description:"test desc",
-        image:"../assets/POIs/calibrationdrawing.png"
-      },
-      {
-        key: "2",
-        latlng:{
-            latitude: 39.1355651,
-            longitude: -94.5857878
-          },
-        title:"test",
-        description:"test desc",
-        image:"../assets/POIs/calibrationdrawing.png"
-      }
-
-
-      ];
-    // this.setState({
-    //   ,
-    // });
   };
 
-  renderClusters(){
-    this.state.markerPosition = {
-            height: this.state.markerPosition.height + 300,
-            width: this.state.markerPosition.width + 90
-          };
-      console.dir(this.state.markerPosition);
-      console.log("Rendering the cluster POIs");
+  parseMarkers()
+  {
+    let markers = [];
+    console.log("polygons----");
+    // console.dir(POIClustersData);
+    for (var i = POIClustersData.length - 1; i >= 0; i--) {
+      // console.dir(POIClustersData[i].pois);
+      for (var j = POIClustersData[i].pois.length - 1; j >= 0; j--) {
+        markers.push(POIClustersData[i].pois[j]);
+        // console.dir(POIClustersData[i].pois[j]);
+      }
+    }
+    console.log("Markers-----");
+    // console.dir(markers);
+    return markers;
+  }
+
+  /**
+   * On clicking on map process click event
+   */
+  onPressMap(e)
+  {
+    if (typeof(e.nativeEvent.coordinate) !== 'undefined')
+    {
+      console.log("onPress event fired ");
+      // console.dir(e.nativeEvent);
+      var selectedPolygon = this.pointInPloygons(e.nativeEvent.coordinate);
+      if(selectedPolygon)
+      {
+        var key = selectedPolygon.polygon.key;
+        if(this.state.selectedCluster!==key)
+        {
+          this.state.selectedCluster = key;
+          this.fitPolygonToScreen(selectedPolygon);
+        }
+      }      
+    }
+  }
+
+  /**
+   * check if input latlong is inside any of the polygons
+   * if yes return that polygon
+   * else return false
+   */
+  pointInPloygons(point) 
+  {
+    var tmpFlag = false;
+    for (var i = POIClustersData.length - 1; i >= 0; i--) {
+      tmpFlag = this.pointInPoly(point, POIClustersData[i].polygonOverlay.coordinates);
+      if(tmpFlag)
+      {
+        break;
+      }
+    }
+    if(tmpFlag)
+    {
+      return POIClustersData[i];
+    }
+    else
+    {
+      return tmpFlag;
+    }
+  }
+
+  /**
+   * Fit map to polygon coordinates
+   */
+  fitPolygonToScreen(polygon)
+  {
+    this.map.fitToCoordinates(polygon.polygonOverlay.coordinates, {
+      edgePadding: DEFAULT_PADDING,
+      animated: true,
+    });
   }
 
   onRegionChange(region) {
     // this.state.region = region;
   }
+
+  /**
+   * Check if point(latlong object) is inside polygon
+   * Returns boolean true or false
+   */
+  pointInPoly(point, polygon) {
+      // ray-casting algorithm based on
+      // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
+      
+      // console.dir(point);
+      // console.dir(polygon);
+      var x = point.latitude, y = point.longitude;
+      
+      var inside = false;
+      for (var i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+          var xi = polygon[i].latitude, yi = polygon[i].longitude;
+          var xj = polygon[j].latitude, yj = polygon[j].longitude;
+          
+          var intersect = ((yi > y) != (yj > y))
+              && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+          if (intersect) inside = !inside;
+      }
+      
+      return inside;
+  };
 
   render() {
     const { region } = this.props;
@@ -84,30 +215,42 @@ class Map extends React.Component {
     return (
       <View style ={styles.container}>
         <MapView
+          ref={ref => { this.map = ref; }}
           provider={PROVIDER_GOOGLE}
           region={this.state.region}
+          onPress={e => this.onPressMap(e)}
           onRegionChange={this.onRegionChange}
           style={styles.map}
         >
-          {this.state.markers.map(marker => (
+          {
+            this.state.markers.map(marker => (
             <MapView.Marker
               key={marker.key}
               coordinate={marker.latlng}
               title={marker.title}
               description={marker.description}
-              onPress={this.renderClusters}
             >
-            <Image
-              style={{
-                height: this.state.markerPosition.height,
-                width: this.state.markerPosition.width
-              }}
-              source={markerImage}
-            >
-
-            </Image>
+              <Image
+                style={{
+                  height: 20,
+                  width: 20
+                }}
+                source={{ uri: marker.markerImage, cache: 'force-cache'}}
+                
+              />
             </MapView.Marker>
+          ))}
 
+          {
+            this.state.polygons.map(polygon => (
+            <MapView.Polygon
+              key={polygon.polygon.key}
+              coordinates={polygon.polygonOverlay.coordinates}
+              strokeColor={polygon.polygonOverlay.strokeColor}
+              fillColor={polygon.polygonOverlay.fillColor}
+              strokeWidth={polygon.polygonOverlay.strokeWidth}
+            >
+            </MapView.Polygon>
           ))}
         </MapView>
       </View>
@@ -131,8 +274,4 @@ const styles = StyleSheet.create({
 
 });
 
-// 39.141073, -94.577119
-// 39.141057, -94.576175
-// 39.141997, -94.576218
-// 39.141856, -94.577077
 module.exports = Map;

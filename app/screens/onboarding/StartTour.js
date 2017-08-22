@@ -14,6 +14,15 @@ class StartTour extends Component {
     console.log(screenHeight);
     console.log("width: ");
     console.log(screenWidth);
+
+    const { params } = this.props.navigation.state;
+
+    console.log("Inside start Tour constructor");
+    console.log("Inside start Tour constructor: props");
+    console.dir(props);
+    console.log("Inside start Tour constructor: params");
+    console.dir(params);
+
   }
   render() {
 

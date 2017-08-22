@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, View, TextInput } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, AsyncStorage, TextInput } from 'react-native';
 import { FormLabel, FormInput, Tile, List, ListItem, Button, FormValidationMessage } from 'react-native-elements';
 import config from '../../config/params.js';
 import {
@@ -12,9 +12,15 @@ export let theUserToken = '';
 
 class Signin extends Component {
 
-constructor(props) {
+    constructor(props) {
         super(props);
         const { params } = this.props.navigation.state;
+
+        console.log("Inside login constructor");
+        console.log("Inside login constructor: props");
+        console.dir(props);
+        console.log("Inside login constructor: params");
+        console.dir(params);
 
         this.loading = false;
         this.state = {
@@ -22,6 +28,20 @@ constructor(props) {
             password: '',
             loading: false,
         };
+    }
+
+    componentDidMount(){
+        AsyncStorage.getItem("@theUserToken").then(value => {
+            if(value == null){
+                 this.state.loading = false;
+                 console.log("User not Logged In");
+            }
+            else
+            {
+                console.log("User Already Logged In - redirect to next intended state");
+                console.log("Token: ");
+                console.log(value);
+            }}) // Add some error handling, also you can simply do this.setState({fistLaunch: value == null})
     }
 
     login(username, password) {
@@ -60,8 +80,13 @@ constructor(props) {
             const userToken = await this.login(this.state.username, this.state.password);
             console.log('a user token for loggin in', userToken);
             theUserToken = userToken;
+            const storeUserToken = await AsyncStorage.setItem("@theUserToken", theUserToken)
             /* Give Rest API call here - create or update user */
-            this.props.navigation.navigate('ImageMap');
+            this.props.navigation.navigate('ImageMap', {}, {
+                type: "Navigation/NAVIGATE", 
+                routeName: "ImageMap", 
+                params: {venueKey: "Venue12"}
+            });
         }
         catch(e) {
             console.log('login error occublue');
