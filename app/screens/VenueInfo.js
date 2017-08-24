@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  Button
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { poiClusters } from '../config/sampleMapClusters';
@@ -74,6 +75,14 @@ class VenueInfo extends React.Component {
 
   };
 
+  showCheckInScreen(e)
+  {
+    if(typeof(e.nativeEvent.target) !== 'undefined')
+    {
+      this.props.navigation.navigate('CameraScreen', {venueKey: e.nativeEvent.target});
+    }
+  }
+
   componentDidMount()
   {
     // this.swiper.index = this.state.initialSlide;
@@ -115,7 +124,13 @@ class VenueInfo extends React.Component {
                 <View>
                   <Text style={styles.text}>Venue Offers Goes here</Text>
                   <Text style={styles.text}>Venue Offers Goes here</Text>
-                  <Text style={styles.text}>Venue Offers Goes here</Text>
+                  <Button
+                    key={venue.key}
+                    onPress={e => this.showCheckInScreen(e)}
+                    title="CheckIn Here"
+                    color="#841584"
+                    accessibilityLabel="Checkin here by taking a selfie"
+                  />
                 </View>
 
               </View>              

@@ -54,3 +54,4 @@ fastlane/screenshots
 
 
 app/config/params.js
+app/config/s3Config.js

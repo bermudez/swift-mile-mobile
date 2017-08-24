@@ -7,6 +7,7 @@ import Menu from '../screens/Menu';
 import Schedule from '../screens/Schedule';
 import Map from '../screens/Map';
 import VenueInfo from '../screens/VenueInfo';
+import CameraScreen from '../screens/CameraScreen'; // Need login
 import Badges from '../screens/Badges'; // Need login
 import Snaps from '../screens/Snaps'; // Need login
 import Me from '../screens/Me'; // Need login
@@ -49,6 +50,12 @@ export const AppMainMenuStack = StackNavigator({
     screen: Badges,
     navigationOptions: ({ navigation }) => ({
       title: 'Badges',
+    }),
+  },
+  CameraScreen: {
+    screen: CameraScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'CheckIn',
     }),
   },
   Snaps: {

@@ -1,0 +1,11 @@
+export function config()
+{
+
+	return {
+        USER_TEMP_UPLOAD_BUCKET: '<Bucket>',
+        USER_TEMP_UPLOAD_BUCKET_PREFIX: '<prefix>',
+        USER_TEMP_UPLOAD_BUCKET_ACCESS: '<key>',
+        USER_TEMP_UPLOAD_BUCKET_SEC: '<sec>',
+        USER_TEMP_UPLOAD_BUCKET_REGION: '<region>',
+    };
+}
