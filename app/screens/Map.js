@@ -7,11 +7,11 @@ import {
   ScrollView,
   Text,
   Switch,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
 import { poiClusters } from '../config/sampleMapClusters';
-import markerImage from "../assets/POIs/calibrationdrawing.png"
 
 /* 
  * Cache in marker images workes only for ios platform 
@@ -21,67 +21,7 @@ const IOS = Platform.OS === 'ios';
 const ANDROID = Platform.OS === 'android';
 
 const POIClustersData = poiClusters;
-const POIMarkerItems = getMarkerItems();
-const POIMarkerImages = getMarkerImages();
 const DEFAULT_PADDING = { top: 40, right: 40, bottom: 40, left: 40 };
-
-function getMarkerImages()
-{
-  let tempImages = [];
-  for (var i = POIClustersData.length - 1; i >= 0; i--) {
-    for (var j = POIClustersData[i].pois.length - 1; j >= 0; j--) {
-      // POIClustersData[i].pois[j]
-      console.log("Marker Key: ");
-      console.log(POIClustersData[i].pois[j].key);
-      console.log("Marker Image: ");
-      console.log(POIClustersData[i].pois[j].markerImage);
-      // tempImages[POIClustersData[i].pois[j].key] = require('image!$POIClustersData[i].pois[j].markerImage');
-
-    }
-  }
-
-  return tempImages;
-}
-
-function renderMarker(marker)
-{
-  return (
-      <MapView.Marker
-            key={marker.key}
-            coordinate={marker.latlng}
-            title={marker.title}
-            description={marker.description}
-          >
-          <Image
-            style={{
-              height: 20,
-              width: 20
-            }}
-            source={{ uri: marker.markerImage}}
-          />
-      </MapView.Marker>
-    );
-}
-
-function renderClusterMarkers(clusterPolygon)
-{
-  let markers = [];
-  for (var i = clusterPolygon.pois.length - 1; i >= 0; i--) {
-    markers.push(renderMarker(clusterPolygon.pois[i]));
-  }
-  return (
-      markers
-    )
-}
-function getMarkerItems()
-{
-  let tempItems = [];
-  for (var i = POIClustersData.length - 1; i >= 0; i--) {
-    tempItems.push(renderClusterMarkers(POIClustersData[i]));
-  }
-
-  return tempItems;
-}
 
 class Map extends React.Component {
   constructor(props) {
@@ -89,6 +29,7 @@ class Map extends React.Component {
     this.state = {
 
     };
+    const { params } = this.props.navigation.state;
 
     this.state.markers = this.parseMarkers();
     console.log("=========================");
@@ -119,6 +60,23 @@ class Map extends React.Component {
     console.log("Markers-----");
     // console.dir(markers);
     return markers;
+  }
+
+  onPressMarker(e)
+  {
+    console.log("Marker Pressed");
+    console.dir(e.nativeEvent);
+    if(typeof(e.nativeEvent.action) !== 'undefined' && e.nativeEvent.action=='marker-press')
+    {
+      if(typeof(e.nativeEvent.target) !== 'undefined')
+      {
+        this.props.navigation.navigate('VenueInfo', {}, {
+                type: "Navigation/NAVIGATE", 
+                routeName: "VenueInfo", 
+                params: {venueKey: e.nativeEvent.target}
+            });
+      }
+    }
   }
 
   /**
@@ -179,9 +137,10 @@ class Map extends React.Component {
     });
   }
 
-  onRegionChange(region) {
-    // this.state.region = region;
-  }
+  // onRegionChange(region) {
+  //   // this.state.region = region;
+  // }
+  // onRegionChange={this.onRegionChange}
 
   /**
    * Check if point(latlong object) is inside polygon
@@ -217,9 +176,8 @@ class Map extends React.Component {
         <MapView
           ref={ref => { this.map = ref; }}
           provider={PROVIDER_GOOGLE}
-          region={this.state.region}
+          initialRegion={this.state.region}
           onPress={e => this.onPressMap(e)}
-          onRegionChange={this.onRegionChange}
           style={styles.map}
         >
           {
@@ -228,6 +186,7 @@ class Map extends React.Component {
               key={marker.key}
               coordinate={marker.latlng}
               title={marker.title}
+              onPress={e => this.onPressMarker(e)}
               description={marker.description}
             >
               <Image
@@ -236,7 +195,6 @@ class Map extends React.Component {
                   width: 20
                 }}
                 source={{ uri: marker.markerImage, cache: 'force-cache'}}
-                
               />
             </MapView.Marker>
           ))}
