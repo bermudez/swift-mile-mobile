@@ -70,11 +70,7 @@ class Map extends React.Component {
     {
       if(typeof(e.nativeEvent.target) !== 'undefined')
       {
-        this.props.navigation.navigate('VenueInfo', {}, {
-                type: "Navigation/NAVIGATE", 
-                routeName: "VenueInfo", 
-                params: {venueKey: e.nativeEvent.target}
-            });
+        this.props.navigation.navigate('VenueInfo', {venueKey: e.nativeEvent.target});
       }
     }
   }
