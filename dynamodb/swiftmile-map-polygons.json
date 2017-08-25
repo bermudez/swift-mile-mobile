@@ -1,0 +1,172 @@
+{
+  "swiftmile-map-polygons": [
+    {
+        "PutRequest": {
+            "Item":
+              {
+                "key": {"N":"1"},
+                "title": {"S": "Swift Mile"},
+                "description": {"S": "Swift Mile"},
+                "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/calibrationdrawing.png"},
+                "coordinates": {"M": {
+                  "1": {"M": {
+                    "latitude": {"N":"39.143798"},
+                    "longitude": {"N":"-94.578229"}
+                  }},
+                  "2": {"M": {
+                    "latitude": {"N":"39.143820"},
+                    "longitude": {"N":"-94.577297"}
+                  }},
+                  "3": {"M": {
+                    "latitude": {"N":"39.140267"},
+                    "longitude": {"N":"-94.577330"}
+                  }},
+                  "4": {"M": {
+                    "latitude": {"N":"39.140173"},
+                    "longitude": {"N":"-94.575552"}
+                  }},
+                  "5": {"M": {
+                    "latitude": {"N":"39.132381"},
+                    "longitude": {"N":"-94.575704"}
+                  }},
+                  "6": {"M": {
+                    "latitude": {"N":"39.132405"},
+                    "longitude": {"N":"-94.578306"}
+                  }}
+                }},
+                "fillcolor": {"S": "rgba(161,194,250,0.5)"},
+                "strokeColor": {"S": "rgba(161,194,250,1)"},
+                "strokeWidth": {"N":"2"}
+              }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item":
+              {
+                "key": {"N":"2"},
+                "title": {"S": "Armourville"},
+                "description": {"S": "Armourville"},
+                "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/cluster-Armourville.png"},
+                "coordinates": {"M": {
+                  "1": {"M": {
+                    "latitude": {"N":"39.140297"},
+                    "longitude": {"N":"-94.577265"}
+                  }},
+                  "2": {"M": {
+                    "latitude": {"N":"39.140201"},
+                    "longitude": {"N":"-94.571144"}
+                  }},
+                  "3": {"M": {
+                    "latitude": {"N":"39.142909"},
+                    "longitude": {"N":"-94.571128"}
+                  }},
+                  "4": {"M": {
+                    "latitude": {"N":"39.143388"},
+                    "longitude": {"N":"-94.568655"}
+                  }},
+                  "5": {"M": {
+                    "latitude": {"N":"39.145156"},
+                    "longitude": {"N":"-94.568875"}
+                  }},
+                  "6": {"M": {
+                    "latitude": {"N":"39.143862"},
+                    "longitude": {"N":"-94.577206"}
+                  }}
+                }},
+                "fillcolor": {"S": "rgba(194,24,91,0.5)"},
+                "strokeColor": {"S": "rgba(194,24,91,1)"},
+                "strokeWidth": {"N":"2"}
+              }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item":
+              {
+                "key": {"N":"3"},
+                "title": {"S": "Clay Corners"},
+                "description": {"S": "Clay Corners"},
+                "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/cluster-ClayCorners.png"},
+                "coordinates": {"M": {
+                  "1": {"M": {
+                    "latitude": {"N":"39.143816"},
+                    "longitude": {"N":"-94.578263"}
+                  }},
+                  "2": {"M": {
+                    "latitude": {"N":"39.143850"},
+                    "longitude": {"N":"-94.580221"}
+                  }},
+                  "3": {"M": {
+                    "latitude": {"N":"39.138233"},
+                    "longitude": {"N":"-94.580228"}
+                  }},
+                  "4": {"M": {
+                    "latitude": {"N":"39.138316"},
+                    "longitude": {"N":"-94.578426"}
+                  }}
+                }},
+                "fillcolor": {"S": "rgba(9,113,56,0.5)"},
+                "strokeColor": {"S": "rgba(9,113,56,1)"},
+                "strokeWidth": {"N":"2"}
+              }
+        }
+    },
+    {
+        "PutRequest": {
+            "Item":
+              {
+                "key": {"N":"4"},
+                "title": {"S": "Southtowne"},
+                "description": {"S": "Southtowne"},
+                "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/calibrationdrawing.png"},
+                "coordinates": {"M": {
+                  "1": {"M": {
+                    "latitude": {"N":"39.138229"},
+                    "longitude": {"N":"-94.578421"}
+                  }},
+                  "2": {"M": {
+                    "latitude": {"N":"39.138229"},
+                    "longitude": {"N":"-94.580309"}
+                  }},
+                  "3": {"M": {
+                    "latitude": {"N":"39.125812"},
+                    "longitude": {"N":"-94.580384"}
+                  }},
+                  "4": {"M": {
+                    "latitude": {"N":"39.125804"},
+                    "longitude": {"N":"-94.577026"}
+                  }},
+                  "5": {"M": {
+                    "latitude": {"N":"39.130606"},
+                    "longitude": {"N":"-94.576693"}
+                  }},
+                  "6": {"M": {
+                    "latitude": {"N":"39.132171"},
+                    "longitude": {"N":"-94.572080"}
+                  }},
+                  "7": {"M": {
+                    "latitude": {"N":"39.140143"},
+                    "longitude": {"N":"-94.571973"}
+                  }},
+                  "8": {"M": {
+                    "latitude": {"N":"39.140168"},
+                    "longitude": {"N":"-94.575502"}
+                  }},
+                  "9": {"M": {
+                    "latitude": {"N":"39.132337"},
+                    "longitude": {"N":"-94.575631"}
+                  }},
+                  "10": {"M": {
+                    "latitude": {"N":"39.132354"},
+                    "longitude": {"N":"-94.578345"}
+                  }}
+                }},
+                "fillcolor": {"S": "rgba(2,136,209,0.5)"},
+                "strokeColor": {"S": "rgba(2,136,209,1)"},
+                "strokeWidth": {"N":"2"}
+              }
+        }
+    }
+  ]
+}

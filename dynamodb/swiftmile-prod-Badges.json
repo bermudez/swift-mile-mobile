@@ -1,0 +1,191 @@
+{
+    "swiftmile-prod-Badges": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "key": {"N": "1"},
+                    "badgeName": {"S": "App User Badge"},
+                    "description": {"S":"App User Badge"},
+                    "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/AppUser.png"},
+                    "max_granted": {"N": "9999999"},
+                    "eventStart": {"N": "1501560060000"},
+                    "eventEnd": {"N": "1504994400000"},
+                    "number_granted": {"N": "0"}
+                }
+              }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "key": {"N": "2"},
+                    "badgeName": {"S": "Ruler of Armourville"},
+                    "description": {"S":"Ruler of Armourville"},
+                    "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/ArmourvilleBadge.png"},
+                    "max_granted": {"N": "1"},
+                    "eventStart": {"N": "1504976400000"},
+                    "eventEnd": {"N": "1504994400000"},
+                    "number_granted": {"N": "0"}
+                }
+              }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "3"},
+                  "badgeName": {"S": "Athlete"},
+                  "description": {"S":"Athlete Badge"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/Athlete.png"},
+                  "max_granted": {"N": "6"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "4"},
+                  "badgeName": {"S": "A/V Club"},
+                  "description": {"S":"A/V Club Badge"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/AVClub.png"},
+                  "max_granted": {"N": "6"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "5"},
+                  "badgeName": {"S": "Beer Baron Badge"},
+                  "description": {"S":"Beer Baron Badge"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/BeerBaronBadge.png"},
+                  "max_granted": {"N": "6"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "6"},
+                  "badgeName": {"S": "NKC Classics"},
+                  "description": {"S":"NKC Classics Badge"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/Classic.png"},
+                  "max_granted": {"N": "6"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "7"},
+                  "badgeName": {"S": "Ruler of Clay Corners"},
+                  "description": {"S":"Ruler of Clay Corners"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/ClayCornersBadge.png"},
+                  "max_granted": {"N": "1"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "8"},
+                  "badgeName": {"S": "Explorer"},
+                  "description": {"S":"Explorer Badge"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/Explorer.png"},
+                  "max_granted": {"N": "6"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "9"},
+                  "badgeName": {"S": "Foodie"},
+                  "description": {"S":"Foodie Badge"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/Foodie.png"},
+                  "max_granted": {"N": "6"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "10"},
+                  "badgeName": {"S": "Meat Heat"},
+                  "description": {"S":"Meat Head Badge"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/MeatHead.png"},
+                  "max_granted": {"N": "6"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "11"},
+                  "badgeName": {"S": "Ruler of Southtowne"},
+                  "description": {"S":"Ruler of Southtowne"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/SouthtowneBadge.png"},
+                  "max_granted": {"N": "1"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "12"},
+                  "badgeName": {"S": "Ruler of The Swift Mile"},
+                  "description": {"S":"Ruler of The Swift Mile"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/SwiftMileBadge.png"},
+                  "max_granted": {"N": "1"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {  "PutRequest": {
+              "Item": {
+                  "key": {"N": "13"},
+                  "badgeName": {"S": "Artist"},
+                  "description": {"S":"Artist Badge"},
+                  "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/Artist.png"},
+                  "max_granted": {"N": "6"},
+                  "eventStart": {"N": "1504976400000"},
+                  "eventEnd": {"N": "1504994400000"},
+                  "number_granted": {"N": "0"}
+              }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "key": {"N": "14"},
+                    "badgeName": {"S": "Pint Glass Winner"},
+                    "description": {"S":"Pint Glass Winner"},
+                    "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-badges/PintWinnerBadge.png"},
+                    "max_granted": {"N": "190"},
+                    "eventStart": {"N": "1504976400000"},
+                    "eventEnd": {"N": "1504994400000"},
+                    "number_granted": {"N": "0"}
+                }
+              }
+        }
+
+
+    ]
+}

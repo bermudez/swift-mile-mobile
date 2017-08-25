@@ -1,0 +1,59 @@
+{
+    "swiftmile-prod-venue": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "key": {"N": "101"},
+                    "poiCluster": {"N": "1"},
+                    "latlng":{"M":
+                        {
+                        "latitude": {"N":"39.14008"},
+                        "longitude": {"N":"-94.57692"}
+                        }
+                      },
+                    "title": {"S": "Tapcade NKC"},
+                    "description": {"S":"1735 Swift St, North Kansas City, MO 64116"},
+                    "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/tapcade.png"},
+                    "markerImage": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-tapcade.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "102"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.13293"},
+                        "longitude": {"N":"-94.57718"}
+                      }
+                    },
+                    "title": {"S" : "Pat's Pub"},
+                    "description": {"S" : "1315 Swift St, North Kansas City, MO 64116 "},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/patspubdrawing.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-patspubdrawing.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "103"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.13825"},
+                        "longitude": {"N":"-94.57712"}
+                      }
+                    },
+                    "title": {"S" : "Grain to Glass"},
+                    "description": {"S" : "1611 Swift St, North Kansas City, MO 64116"},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/grain2glass.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-grain2glass.png"}
+                }
+              }
+          }
+
+
+
+    ]
+}

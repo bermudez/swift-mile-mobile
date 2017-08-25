@@ -1,0 +1,484 @@
+{
+    "swiftmile-prod-venue": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "key": {"N": "101"},
+                    "poiCluster": {"N": "1"},
+                    "latlng":{"M":
+                        {
+                        "latitude": {"N":"39.14008"},
+                        "longitude": {"N":"-94.57692"}
+                        }
+                      },
+                    "title": {"S": "Tapcade NKC"},
+                    "description": {"S":"1735 Swift St, North Kansas City, MO 64116"},
+                    "image": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/tapcade.png"},
+                    "markerImage": {"S": "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-tapcade.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "102"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.13293"},
+                        "longitude": {"N":"-94.57718"}
+                      }
+                    },
+                    "title": {"S" : "Pat's Pub"},
+                    "description": {"S" : "1315 Swift St, North Kansas City, MO 64116 "},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/patspubdrawing.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-patspubdrawing.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "103"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.13825"},
+                        "longitude": {"N":"-94.57712"}
+                      }
+                    },
+                    "title": {"S" : "Grain to Glass"},
+                    "description": {"S" : "1611 Swift St, North Kansas City, MO 64116"},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/grain2glass.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-grain2glass.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "104"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.13449"},
+                        "longitude": {"N":"-94.57722"}
+                      }
+                    },
+                    "title": {"S" : "Velo Garage"},
+                    "description": {"S" : "1403 Swift St, North Kansas City, MO 64116"},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/veloGarage.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-veloGarage.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "105"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.13546"},
+                        "longitude": {"N":"-94.57719"}
+                      }
+                    },
+                    "title": {"S" : "The Brewkery"},
+                    "description": {"S" : "1443 Swift St, North Kansas City, MO 64116"},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/brewkery.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-brewkery.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "106"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.14034"},
+                        "longitude": {"N":"-94.57817"}
+                      }
+                    },
+                    "title": {"S" : "FM Music & Vinyl"},
+                    "description": {"S" : "206 E 18th Ave, North Kansas City, MO 64116"},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/FMMusic.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-FMMusic.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "107"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.14275"},
+                        "longitude": {"N":"-94.57773"}
+                      }
+                    },
+                    "title": {"S" : "Christine's Firehouse on 20th Bar & Grill"},
+                    "description": {"S" : "220 E 20th Ave, North Kansas City, MO 64116"},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/firehouse.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-firehouse.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N":  "108"},
+                    "poiCluster": {"N": "1"},
+                    "latlng": {"M": {
+                        "latitude": {"N":"39.14037"},
+                        "longitude": {"N":"-94.57756"}
+                      }
+                    },
+                    "title": {"S" : "River Aces"},
+                    "description": {"S" : "1800 Swift St, North Kansas City, MO 64116"},
+                    "image": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/RiverAces.png"},
+                    "markerImage": {"S" : "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-RiverAces.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "201"},
+                    "poiCluster": {"N": "2"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14226"},
+                        "longitude": {"N": "-94.57657"}
+                      }
+                    },
+                    "title": {"S": "Colony Espresso & Beer / RINO Music Venue"},
+                    "description": {"S":"312 Armour Rd, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/colonydrawing.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-colonydrawing.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "202"},
+                    "poiCluster": {"N": "2"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14256"},
+                        "longitude": {"N": "-94.57569"}
+                      }
+                    },
+                    "title": {"S": "Screenland Armour Theater"},
+                    "description": {"S":"408 Armour Rd, North Kansas City, MO 64116"},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Screenland.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Screenland.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "203"},
+                    "poiCluster": {"N": "2"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.1422"},
+                        "longitude": {"N": "-94.57702"}
+                      }
+                    },
+                    "title": {"S": "Kelso's"},
+                    "description": {"S":"300 Armour Rd, Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/kelsos.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-kelsos.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "204"},
+                    "poiCluster": {"N": "2"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.1419"},
+                        "longitude": {"N": "-94.57656"}
+                      }
+                    },
+                    "title": {"S": "Chappell's"},
+                    "description": {"S":"323 Armour Rd, Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Chappells.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Chappells.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "205"},
+                    "poiCluster": {"N": "2"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14183"},
+                        "longitude": {"N": "-94.57675"}
+                      }
+                    },
+                    "title": {"S": "Jersey Boyz Subs & Deli"},
+                    "description": {"S":"315 Armour Rd, Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/JerseyBoyz.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-JerseyBoyz.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "206"},
+                    "poiCluster": {"N": "2"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14268"},
+                        "longitude": {"N": "-94.57506"}
+                      }
+                    },
+                    "title": {"S": "Tyler Kingston Store"},
+                    "description": {"S":"422 Armour Rd, Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/TylerKingston.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-TylerKingston.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "207"},
+                    "poiCluster": {"N": "2"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14472"},
+                        "longitude": {"N": "-94.56937"}
+                      }
+                    },
+                    "title": {"S": "Little Store & Cafe"},
+                    "description": {"S":"2107 Knox St, North Kansas City, MO 64116"},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/LittleStore.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-LittleStore.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "208"},
+                    "poiCluster": {"N": "2"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14259"},
+                        "longitude": {"N": "-94.57536"}
+                      }
+                    },
+                    "title": {"S": "Shaka Noodle Shack"},
+                    "description": {"S":"414 Armour Rd, Kansas City, MO 64116"},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Shaka.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Shaka.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "301"},
+                    "poiCluster": {"N": "3"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14033"},
+                        "longitude": {"N": "-94.57891"}
+                      }
+                    },
+                    "title": {"S": "Cinder Block Brewery"},
+                    "description": {"S":"110 E 18th Ave, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/CinderBlock.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-CinderBlock.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "302"},
+                    "poiCluster": {"N": "3"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14141"},
+                        "longitude": {"N": "-94.57873"}
+                      }
+                    },
+                    "title": {"S": "Calibration Brewery"},
+                    "description": {"S":"119 Armour Rd, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/calibrationdrawing.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-calibrationdrawing.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "303"},
+                    "poiCluster": {"N": "3"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14065"},
+                        "longitude": {"N": "-94.57887"}
+                      }
+                    },
+                    "title": {"S": "Paul & Jack's Tavern"},
+                    "description": {"S":"1808 Clay St, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Paul-and-Jacks.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Paul-and-Jacks.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "304"},
+                    "poiCluster": {"N": "3"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.13942"},
+                        "longitude": {"N": "-94.57921"}
+                      }
+                    },
+                    "title": {"S": "Restless Spirits Distillery"},
+                    "description": {"S":"109 E 18th Ave, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/restlessSpirits.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-restlessSpirits.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "305"},
+                    "poiCluster": {"N": "3"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14084"},
+                        "longitude": {"N": "-94.5795"}
+                      }
+                    },
+                    "title": {"S": "Repeal 18th"},
+                    "description": {"S":"1825 Buchanan St, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/Repeal18th.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-Repeal18th.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "306"},
+                    "poiCluster": {"N": "3"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.14002"},
+                        "longitude": {"N": "-94.57993"}
+                      }
+                    },
+                    "title": {"S": "Chicken N Pickle"},
+                    "description": {"S":"1761 Burlington St, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/chickenNpickledrawing.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-chickenNpickledrawing.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "401"},
+                    "poiCluster": {"N": "4"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.12607"},
+                        "longitude": {"N": "-94.5778"}
+                      }
+                    },
+                    "title": {"S": "The Big Rip Brewing Co."},
+                    "description": {"S":"216 E 9th Ave, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/BigRip.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-BigRip.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "402"},
+                    "poiCluster": {"N": "4"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.12608"},
+                        "longitude": {"N": "-94.57753"}
+                      }
+                    },
+                    "title": {"S": "Hawg Jaw BBQ"},
+                    "description": {"S":"900 Swift St, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/HawgJaw.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-HawgJaw.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "403"},
+                    "poiCluster": {"N": "4"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.131"},
+                        "longitude": {"N": "-94.57779"}
+                      }
+                    },
+                    "title": {"S": "Smokin Guns BBQ"},
+                    "description": {"S":"1218 Swift St, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/smokingunsbbq.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-smokingunsbbq.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "404"},
+                    "poiCluster": {"N": "4"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.13697"},
+                        "longitude": {"N": "-94.57993"}
+                      }
+                    },
+                    "title": {"S": "iWerx Co-Working Space"},
+                    "description": {"S":"1520 Clay St, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/iWerx.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-iWerx.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "405"},
+                    "poiCluster": {"N": "4"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.13623"},
+                        "longitude": {"N": "-94.57261"}
+                      }
+                    },
+                    "title": {"S": "RoKC Climbing Gym"},
+                    "description": {"S":"1501 Howell St, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/ROKC.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-ROKC.png"}
+                }
+              }
+          },
+          {
+              "PutRequest": {
+                  "Item": {
+                    "key": {"N": "406"},
+                    "poiCluster": {"N": "4"},
+                    "latlng":{"M":  {
+                        "latitude": {"N": "39.13198"},
+                        "longitude": {"N": "-94.57761"}
+                      }
+                    },
+                    "title": {"S": "Furniture Solution Gallery"},
+                    "description": {"S":"1240 Swift St, North Kansas City, MO 64116 "},
+                    "image": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-pois/FurnitureSolutions.png"},
+                    "markerImage": {"S":"https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/app-images/map-markers/marker-FurnitureSolutions.png"}
+                }
+              }
+          }
+
+
+
+    ]
+}
