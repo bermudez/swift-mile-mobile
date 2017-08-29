@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, ScrollView, View, Image, BackgroundImage, StyleSheet, Dimensions } from 'react-native';
 
-import { mybadges } from '../config/badges'
+// import { mybadges } from '../config/badges'
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
@@ -13,7 +13,7 @@ class Badges extends React.Component {
     super(props);
 
     this.state = {};
-    this.state.mybadges = mybadges;
+    this.state.mybadges = null;
 
     console.log("Inside Badges constructor");
     // console.log("Inside Badges constructor: props");
