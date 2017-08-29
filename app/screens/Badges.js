@@ -23,7 +23,7 @@ class Badges extends React.Component {
 
   componentWillMount()
   {
-     // this.fetchData();
+      this.fetchData();
   }
   fetchData() {
     fetch(BASE_URL, {
