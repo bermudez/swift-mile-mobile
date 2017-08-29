@@ -32,9 +32,7 @@ class Map extends React.Component {
     const { params } = this.props.navigation.state;
 
     this.state.markers = this.parseMarkers();
-    // console.log("=========================");
-    // console.dir(this.state.markers);
-
+    this.props.markers = this.state.markers;
     this.state.selectedCluster = 0;
     this.state.polygons = poiClusters;
     this.state.region = {
@@ -45,32 +43,38 @@ class Map extends React.Component {
           };
   };
 
+  val2key(val,array){
+    for (var key in array) {
+      this_val = array[key];
+      if(this_val.key == val){
+          return key;
+          break;
+      }
+    }
+  }
+
   parseMarkers()
   {
     let markers = [];
-    console.log("polygons----");
-    // console.dir(POIClustersData);
     for (var i = POIClustersData.length - 1; i >= 0; i--) {
-      // console.dir(POIClustersData[i].pois);
       for (var j = POIClustersData[i].pois.length - 1; j >= 0; j--) {
         markers.push(POIClustersData[i].pois[j]);
-        // console.dir(POIClustersData[i].pois[j]);
       }
     }
-    console.log("Markers-----");
-    // console.dir(markers);
     return markers;
   }
 
-  onPressMarker(e)
+  onPressMarker(e, venue_key)
   {
-    console.log("Marker Pressed");
-    // console.dir(e.nativeEvent);
+
     if(typeof(e.nativeEvent.action) !== 'undefined' && e.nativeEvent.action=='marker-press')
     {
       if(typeof(e.nativeEvent.target) !== 'undefined')
       {
-        this.props.navigation.navigate('VenueInfo', {venueKey: e.nativeEvent.target});
+        let markers_array = this.parseMarkers();
+        let venue_index_key = this.val2key(venue_key, markers_array);
+        this.props.screenProps.currentVenueIndex = venue_index_key;
+        this.props.navigation.navigate('VenueInfo', {venueKey: venue_key});
       }
     }
   }
@@ -82,8 +86,6 @@ class Map extends React.Component {
   {
     if (typeof(e.nativeEvent.coordinate) !== 'undefined')
     {
-      console.log("onPress event fired ");
-      // console.dir(e.nativeEvent);
       var selectedPolygon = this.pointInPloygons(e.nativeEvent.coordinate);
       if(selectedPolygon)
       {
@@ -141,8 +143,6 @@ class Map extends React.Component {
       // ray-casting algorithm based on
       // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
       
-      // console.dir(point);
-      // console.dir(polygon);
       var x = point.latitude, y = point.longitude;
       
       var inside = false;
@@ -160,7 +160,6 @@ class Map extends React.Component {
 
   render() {
     const { region } = this.props;
-    console.log(region);
 
     return (
       <View style ={styles.container}>
@@ -177,14 +176,11 @@ class Map extends React.Component {
               key={marker.key}
               coordinate={marker.latlng}
               title={marker.title}
-              onPress={e => this.onPressMarker(e)}
+              onPress={e => this.onPressMarker(e, marker.key)}
               description={marker.description}
             >
               <Image
-                style={{
-                  height: 20,
-                  width: 20
-                }}
+                style={styles.mapMarker}
                 source={{ uri: marker.markerImage, cache: 'force-cache'}}
               />
             </MapView.Marker>
@@ -217,8 +213,8 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject
   },
   mapMarker: {
-    height: 30,
-    width: 90
+    height: 20,
+    width: 60
   },
 
 });

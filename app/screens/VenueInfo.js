@@ -68,20 +68,22 @@ class VenueInfo extends React.Component {
     const { params } = this.props.navigation.state;
     // console.log("Parameters: ---");
     // console.dir(params);
-
+    // this.props.initialSlide = 2;
     this.state = {};
     this.state.userLoggedIn = false;
     this.state.initialSlide = 10;
     this.state.VenuesData = VenuesData;
     if(typeof(params) !== 'undefined' && typeof(params.venueKey) !== 'undefined')
     {
-      // this.state.initialSlide = val2key(params.venueKey,VenuesData);
-      // console.log("Swiper index");
+      // this.props.initialSlide = val2key(params.venueKey,VenuesData);
+      console.log("Swiper index");
+      // console.log(this.props.initialSlide);
       // console.log(val2key(params.venueKey,VenuesData));
       // this.swiper.index = params.venueKey;
     }
     else
     {
+      // this.props.initialSlide = 10;
       console.log("venueKey not found");
     }
 
@@ -193,7 +195,7 @@ class VenueInfo extends React.Component {
           return (
               <Swiper style={styles.wrapper} 
               showsButtons={true}
-              index={this.state.initialSlide}
+              index={this.props.screenProps.currentVenueIndex}
               ref={ref => { this.swiper = ref; }}
               >
               {
