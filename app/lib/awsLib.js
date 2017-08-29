@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config from '../config/params.js';
 import AWS from 'aws-sdk/dist/aws-sdk-react-native';
 
 export async function invokeApig(

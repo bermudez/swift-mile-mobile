@@ -10,6 +10,16 @@ export default {
         MAX_ATTACHMENT_SIZE: 5000000,
     },
     s3: {
-        BUCKET: '<S3 BUCKET>'
+        USER_TEMP_UPLOAD_BUCKET: '<User images upload bucket>',
+        USER_TEMP_UPLOAD_BUCKET_PREFIX: 'uploads/',
+        USER_TEMP_UPLOAD_BUCKET_ACCESS: '<Access key for S3 bucket - only upload access>',
+        USER_TEMP_UPLOAD_BUCKET_SEC: '<access SEC for same bucket>',
+        USER_TEMP_UPLOAD_BUCKET_REGION: '<S3 bucket region>'
+    },
+    auth0: {
+      clientId: "{client id}",
+      domain: "{domain}",
+      connection: "{conection name}"
     }
+
 };

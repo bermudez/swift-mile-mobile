@@ -133,11 +133,6 @@ class Map extends React.Component {
     });
   }
 
-  // onRegionChange(region) {
-  //   // this.state.region = region;
-  // }
-  // onRegionChange={this.onRegionChange}
-
   /**
    * Check if point(latlong object) is inside polygon
    * Returns boolean true or false

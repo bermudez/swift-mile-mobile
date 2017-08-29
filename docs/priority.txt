@@ -1,0 +1,10 @@
+#1) Snapshots
+#2) Background images
+#3) Facebook / Google+ / LinkedIn login
+(((But use twitter instead of linkedin)))
+#4) Color of Swift Mile polygon overlay (yellow)
+#5) Cleanup Venue Detail screen
+#6) Push Notifications
+#7) Badge Reward system
+#8) Mobile phone # at signup
+#9) Button system for Menu

@@ -1,6 +1,7 @@
 package com.nkcgo;
 
 import com.facebook.react.ReactActivity;
+import com.auth0.react.A0Auth0Package;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;

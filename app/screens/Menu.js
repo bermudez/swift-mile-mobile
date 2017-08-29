@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  ScrollView
+  ScrollView,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableHighlight
 } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import { menuItems } from '../config/menuItems';
+
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
+const UI_IMAGES_BASE_URL = 'https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/ui-images/';
 
 class Menu extends Component {
   onNavigateTo = (menuItem) => {
@@ -14,19 +22,51 @@ class Menu extends Component {
 
   render() {
     return (
-      <ScrollView>
-        <List>
-          {menuItems.map((menuItem) => (
-            <ListItem
-              key={menuItem.title}
-              title={`${menuItem.title.toUpperCase()}`}
-              onPress={() => this.onNavigateTo(menuItem)}
-            />
-          ))}
-        </List>
+      <ScrollView style={{ flex:1 }}>
+      <View style={styles.container}>
+          <Image
+            source={{ uri: UI_IMAGES_BASE_URL + "Background-MainMenu.png" }}
+            style={ styles.image }
+          >
+            
+              {
+                menuItems.map((menuItem) => (
+
+                <TouchableHighlight 
+                  key={menuItem.title}
+                  onPress={() => this.onNavigateTo(menuItem)}
+                  >
+                  <Image
+                    style={ styles.btn }
+                    source={{uri: UI_IMAGES_BASE_URL+menuItem.image}}
+                  />
+                </TouchableHighlight>
+              ))}
+            
+          </Image>
+        </View>
       </ScrollView>
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  image: {
+    width: deviceWidth,
+    height: deviceHeight,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  btn: {
+    width: 200,
+    height: 50,
+    paddingTop: 30,
+    marginBottom: 30,
+  }
+});
 
 export default Menu;

@@ -5,12 +5,19 @@ import {
   Text,
   View,
   Image,
-  Button
+  Button,
+  BackgroundImage,
+  Dimensions,
+  ScrollView,
+  AsyncStorage
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { poiClusters } from '../config/sampleMapClusters';
 import VenueImage from "../assets/POIs/calibrationdrawing.png"
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
+
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
 
 const POIClustersData = poiClusters;
 const IOS = Platform.OS === 'ios';
@@ -55,6 +62,7 @@ class VenueInfo extends React.Component {
     console.dir(params);
 
     this.state = {};
+    this.state.userLoggedIn = false;
     this.state.initialSlide = 10;
     this.state.VenuesData = VenuesData;
     if(typeof(params) !== 'undefined' && typeof(params.venueKey) !== 'undefined')
@@ -87,6 +95,13 @@ class VenueInfo extends React.Component {
   {
     // this.swiper.index = this.state.initialSlide;
     this.swiper.index = 3;
+    AsyncStorage.getItem("@userIdToken").then(userIdToken => {
+      console.log("User Already LoggedIn - VenueInfo Page");
+      this.state.userLoggedIn = true;
+    }).catch(error => 
+            {
+              alert("Authentication check failed!")
+            });
   }
 
   getVal(val){
@@ -95,71 +110,91 @@ class VenueInfo extends React.Component {
 
   render() {
           return (
-            <Swiper style={styles.wrapper} 
-            showsButtons={true}
-            index={this.state.initialSlide}
-            ref={ref => { this.swiper = ref; }}
-            >
-            {
-            this.state.VenuesData.map(venue => (
-              <View style={styles.slide1}
-                key={venue.key}
+              <Swiper style={styles.wrapper} 
+              showsButtons={true}
+              index={this.state.initialSlide}
+              ref={ref => { this.swiper = ref; }}
               >
-                <View style={{ justifyContent: 'center' }}>
-                  <Text style={styles.text}>{venue.title}</Text>
-                  <Text style={styles.text}>{venue.description}</Text>
-                  <Image 
-                    style={{
-                      height:200,
-                      width:200
-                    }}
-                    source={{ uri: venue.markerImage, cache: 'force-cache'}}
-                    />
+              {
+              this.state.VenuesData.map(venue => (
+                <View style={styles.slide1}
+                  key={venue.key}
+                >
+                <Image
+                  key={venue.key}
+                  source={{ uri: "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/ui-images/Background-Venues.png" }}
+                  style={ styles.image }
+                  >
+                  <View 
+                    style={{ justifyContent: 'center' }}
+                    >
+                    <Text style={styles.text}>{venue.title}</Text>
+                    <Text style={styles.text}>{venue.description}</Text>
+                    <Image 
+                      style={{
+                        height:200,
+                        width:200
+                      }}
+                      source={{ uri: venue.markerImage, cache: 'force-cache'}}
+                      />
 
-                </View>
+                  </View>
 
-                <View>
-                  <Text style={styles.text}>Venue Directions Map Goes here</Text>
-                </View>
-                <View>
-                  <Text style={styles.text}>Venue Offers Goes here</Text>
-                  <Text style={styles.text}>Venue Offers Goes here</Text>
-                  <Button
-                    key={venue.key}
-                    onPress={e => this.showCheckInScreen(e)}
-                    title="CheckIn Here"
-                    color="#841584"
-                    accessibilityLabel="Checkin here by taking a selfie"
-                  />
-                </View>
-
-              </View>              
-            ))}
-            
-          </Swiper>
+                  <View 
+                    style={{ justifyContent: 'center' }}
+                   >
+                    <Text style={styles.text}>Venue Directions Map Goes here</Text>
+                  </View>
+                  <View
+                    style={{ justifyContent: 'center' }}
+                  >
+                    <Text style={styles.text}>Venue Offers Goes here</Text>
+                    <Text style={styles.text}>Venue Offers Goes here</Text>
+                    {
+                      this.state.userLoggedIn ?
+                      <Button
+                        key={venue.key}
+                        onPress={e => this.showCheckInScreen(e)}
+                        title="Login to CheckIn Here"
+                        color="#841584"
+                        accessibilityLabel="Checkin here by taking a selfie"
+                      />
+                      :
+                      <Button
+                        key={venue.key}
+                        onPress={e => this.props.navigation.navigate('Login', {venueKey: e.nativeEvent.target}) }
+                        title="CheckIn Here"
+                        color="#841584"
+                        accessibilityLabel="Login to checkin here"
+                      />
+                    }
+                  </View>
+                </Image>    
+                </View>              
+              ))}
+              
+            </Swiper>
       );
     }
   }
 var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  image:{
+    width: deviceWidth,
+    height: deviceHeight,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   wrapper: {
   },
   slide1: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
+    alignItems: 'center'
   },
   text: {
     color: '#fff',
