@@ -6,10 +6,17 @@ import { Button } from 'react-native-vector-icons/Ionicons';
 import { s3 } from '../config/params';
 
 const s3Config = s3;
+
+const BASE_URL = 'https://y86lpymaph.execute-api.us-east-2.amazonaws.com/prd/snaps/';
+
 export default class CameraScreen extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    console.log(props);
+    var { params } = this.props.navigation.state;
+    this.props.venueKey = params.venueKey;
+    // this.props.screenProps.userToken = "SettingUserTokenTest1";
     this.takePicture = this.takePicture.bind(this);
   }
   takePicture() {
@@ -41,11 +48,50 @@ export default class CameraScreen extends Component {
             throw new Error('Failed to upload image to S3', response);
           }
           console.log('*** BODY ***', response.body);
+          // var uploaded_file_key = response.body.postResponse.key;
+          this.saveData(response.body.postResponse.key);
           // If image is successfully put in S3 redirect to previous venue screen
           //else show error message
         });
       })
       .catch(err => console.error(err));
+  }
+
+  saveData(key) {
+    let userIdToken_temp = this.props.screenProps.userToken;
+    console.log("Upload start(Saving to DB)");
+    fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + userIdToken_temp
+                },
+      body: JSON.stringify({
+            image_url: key,
+            venue: this.props.venueKey,
+        })
+    })
+    .then((response) => response.json(true))
+    .then((responseData) => {
+      console.log("received checkIn upload status from server");
+      // console.log(JSON.parse(responseData.body));
+      // console.log(responseData.body[0]['max_granted']);
+      // console.log(typeof(JSON.parse(responseData.body)));
+      console.log(responseData);
+
+      // this.state.mybadges = JSON.parse(responseData.body);
+      // this.setState({mybadges: JSON.parse(responseData.body)});
+      // console.log(this.state.mybadges);
+      // this.state.mybadges = JSON.parse(responseData.body);
+        // console.log(typeof(this.state.mybadges));
+    })
+    .catch((error) => {
+                console.log(error);
+
+                    // Alert.alert('problem while fetching badges data');
+                })
+    .done();
   }
 
   render() {
@@ -64,7 +110,7 @@ export default class CameraScreen extends Component {
           size={60}
           backgroundColor="transparent"
           style={{ justifyContent: 'center' }}
-          onPress={this.takePicture}
+          onPress={e => this.takePicture(e)}
         />
       </View>
     );

@@ -1,81 +1,84 @@
 import React, { Component } from 'react';
-import { ScrollView, Image, AsyncStorage, View, BackgroundImage, StyleSheet, Dimensions } from 'react-native';
-import { UserCheckIns } from '../config/sampleSnapImages';
-import { invokeApig } from '../lib/awsLib';
+import { ScrollView, Text, Image, AsyncStorage, View, BackgroundImage, StyleSheet, Dimensions } from 'react-native';
+import Signin from './auth/Auth0Signin';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
-
+const BASE_URL = 'https://y86lpymaph.execute-api.us-east-2.amazonaws.com/prd/snaps/';
+const USER_IMAGES_BASE_URL = 'https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/';
 class Snaps extends Component {
   constructor(props)
   {
+    console.log("Inside Snaps List - constructor");
+
     super(props);
-    this.state = {
-      userCheckIns: UserCheckIns
-    };
+    this.state = {};
+    this.state.myCheckIns = null;
   }
 
   componentDidMount(){
 
-    AsyncStorage.getItem("@theUserToken").then(value => {
-      if(value == null){
-         console.log("User not Logged In");
-         // this.props.navigation.navigate('Signin', {});
-      }
-      else
-      {
-        console.log("User Already Logged In - redirect to next intended state");
-        console.log("Token: ");
-        console.log(value);
-
-          try {
-              let resultdata = this.getUser(value);
-              console.log("ResultData - start");
-            //   resultdata.then(onSuccess: (result) => resolve(
-            //         alert(result)
-            //         ),
-            //     onFailure: (err) => reject(err),
-            // );
-              console.log("ResultData - end");
-            }
-            catch(e) {
-              alert(e);
-              this.setState({ isLoading: false });
-            }
-
-
-      }}) // Add some error handling, also you can simply do this.setState({fistLaunch: value == null})
+    if(this.props.screenProps.userLoggedIn)
+    {
+      this.fetchData();
+    }
+    else
+    {
+      this.props.navigation.navigate('Signin', {NKCLastScreen: 'snaps'});
+    }
   }
 
-  getUser(theUserToken)
+  fetchData()
   {
-    let data = invokeApig({
-      path: 'users/',
+    let userIdToken_temp = this.props.screenProps.userToken;
+    fetch(BASE_URL, {
       method: 'GET',
-      body: '',
-    }, theUserToken);
-
-    return data;
+      headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + userIdToken_temp
+                }
+    })
+    .then((response) => response.json(true))
+    .then((responseData) => {
+      console.log("received response data from server");
+      this.setState({myCheckIns: JSON.parse(responseData.body)});
+      console.log(responseData);
+    })
+    .catch((error) => {
+                console.log(error);
+                })
+    .done();
   }
 
   render() {
     return (
       <ScrollView>
-      <View style={styles.container}>
-      {
-        this.state.userCheckIns.map(userCheckIn => (
-          <View 
-            key={userCheckIn.key}
-            style={styles.checkin_wrapper}
-          >
-          <Image
-            style={ styles.checkinImage }
-            source={{ uri: userCheckIn.url, cache: 'force-cache'}}
-          />
-          </View>
-        ))
-      }
-      </View>
+        <View style={styles.container}>
+          {
+            !this.state.myCheckIns ?
+            <Text 
+              style={ styles.checkin_wrapper} 
+            >
+              Loading your checking, please wait...
+            </Text>
+            : this.state.myCheckIns.length==0 ?
+            <Text style={ styles.checkin_wrapper} >No checking...</Text>
+            :
+            this.state.myCheckIns.map((myCheckIn) => (
+            <View 
+              key={myCheckIn.id}
+              style={styles.checkin_wrapper}
+            >
+              <Image
+                source={{ uri: USER_IMAGES_BASE_URL + myCheckIn.image_url, cache: 'force-cache'}}
+                style={ styles.checkinImage }
+              >
+              </Image>
+              </View>
+              ))
+          }
+        </View>
       </ScrollView>
     );
   }
@@ -87,10 +90,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-  },
-  badge_title:{
-    fontSize: 19,
-    fontWeight: 'bold',
   },
   checkin_wrapper:{
     width: 200,

@@ -14,7 +14,7 @@ import Me from '../screens/Me'; // Need login
 import About from '../screens/About';
 
 /* User on boarding screens */
-import Signin from '../screens/auth/Signin';
+import Signin from '../screens/auth/Auth0Signin';
 import SignUp from '../screens/auth/SignUp';
 import StartTour from '../screens/onboarding/StartTour';
 import WelcomeCarouselOne from '../screens/onboarding/WelcomeCarouselOne';

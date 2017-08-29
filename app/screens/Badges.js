@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, ScrollView, View, Image, BackgroundImage, StyleSheet, Dimensions } from 'react-native';
-
-// import { mybadges } from '../config/badges'
+import Signin from './auth/Auth0Signin';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
@@ -11,26 +10,37 @@ const BASE_URL = 'https://y86lpymaph.execute-api.us-east-2.amazonaws.com/prd/bad
 class Badges extends React.Component {
   constructor(props) {
     super(props);
-
+    // this.props.screenProps.userLoggedIn
     this.state = {};
     this.state.mybadges = null;
 
     console.log("Inside Badges constructor");
-    // console.log("Inside Badges constructor: props");
-    // console.dir(props);
-
   };
 
+  logloadedBAdges()
+  {
+    console.log(this.state.mybadges);
+  }
   componentWillMount()
   {
+    if(this.props.screenProps.userLoggedIn)
+    {
       this.fetchData();
+    }
+    else
+    {
+      this.props.navigation.navigate('Signin', {NKCLastScreen: 'badges'});
+    }
   }
   fetchData() {
+
+    let userIdToken_temp = this.props.screenProps.userToken;
     fetch(BASE_URL, {
       method: 'GET',
       headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + userIdToken_temp
                 }
     })
     .then((response) => response.json(true))
@@ -40,12 +50,16 @@ class Badges extends React.Component {
       // console.log(responseData.body[0]['max_granted']);
       // console.log(typeof(JSON.parse(responseData.body)));
       // console.log(responseData.body.json());
-      this.state.setState({mybadges: JSON.parse(responseData.body)});
+      // this.state.mybadges = JSON.parse(responseData.body);
+      this.setState({mybadges: JSON.parse(responseData.body)});
+      // console.log(this.state.mybadges);
       // this.state.mybadges = JSON.parse(responseData.body);
         // console.log(typeof(this.state.mybadges));
     })
     .catch((error) => {
-                    Alert.alert('problem while fetching badges data');
+                console.log(error);
+
+                    // Alert.alert('problem while fetching badges data');
                 })
     .done();
   }
@@ -59,11 +73,17 @@ class Badges extends React.Component {
             source={{ uri: "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/ui-images/Background-Badges.png" }}
             style={ styles.image }
           >
+          
           {
             !this.state.mybadges ?
-            <Text>Loading your badges, please wait...</Text>
+            <Text 
+              onPress={e => this.logloadedBAdges(e) }
+              style={ styles.badge_wrapper} 
+            >
+              Loading your badges, please wait...
+            </Text>
             : this.state.mybadges.length==0 ?
-            <Text>No badges awarded...</Text>
+            <Text style={ styles.badge_wrapper} >No badges awarded...</Text>
             :
             this.state.mybadges.map((mybadge) => (
             <View 

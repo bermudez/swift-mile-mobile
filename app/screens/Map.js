@@ -32,8 +32,8 @@ class Map extends React.Component {
     const { params } = this.props.navigation.state;
 
     this.state.markers = this.parseMarkers();
-    console.log("=========================");
-    console.dir(this.state.markers);
+    // console.log("=========================");
+    // console.dir(this.state.markers);
 
     this.state.selectedCluster = 0;
     this.state.polygons = poiClusters;
@@ -65,7 +65,7 @@ class Map extends React.Component {
   onPressMarker(e)
   {
     console.log("Marker Pressed");
-    console.dir(e.nativeEvent);
+    // console.dir(e.nativeEvent);
     if(typeof(e.nativeEvent.action) !== 'undefined' && e.nativeEvent.action=='marker-press')
     {
       if(typeof(e.nativeEvent.target) !== 'undefined')

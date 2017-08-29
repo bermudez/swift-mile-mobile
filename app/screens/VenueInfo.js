@@ -5,16 +5,24 @@ import {
   Text,
   View,
   Image,
-  Button,
   BackgroundImage,
   Dimensions,
   ScrollView,
   AsyncStorage
 } from 'react-native';
 import Swiper from 'react-native-swiper';
+import { Button } from 'react-native-elements';
 import { poiClusters } from '../config/sampleMapClusters';
 import VenueImage from "../assets/POIs/calibrationdrawing.png"
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
+
+import ConfigObj from '../config/params';
+import Auth0 from 'react-native-auth0';
+const auth0Obj = new Auth0({ domain: ConfigObj.auth0.domain, clientId: ConfigObj.auth0.clientId });
+
+const API_BASE_URL = 'https://y86lpymaph.execute-api.us-east-2.amazonaws.com/prd/';
+
+const S3_ASSETS_BASE_URL = 'https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/ui-images/';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
@@ -26,7 +34,7 @@ const VenuesData = parseMarkers();
 
 function parseMarkers()
   {
-    console.log("Parsing Markers!");
+    // console.log("Parsing Markers!");
     let markers = [];
     // console.log("polygons----");
     // console.dir(POIClustersData);
@@ -38,7 +46,7 @@ function parseMarkers()
       }
     }
     // console.log("Markers-----");
-    console.dir(markers);
+    // console.dir(markers);
     return markers;
   }
 
@@ -58,8 +66,8 @@ class VenueInfo extends React.Component {
     super(props);
 
     const { params } = this.props.navigation.state;
-    console.log("Parameters: ---");
-    console.dir(params);
+    // console.log("Parameters: ---");
+    // console.dir(params);
 
     this.state = {};
     this.state.userLoggedIn = false;
@@ -68,8 +76,8 @@ class VenueInfo extends React.Component {
     if(typeof(params) !== 'undefined' && typeof(params.venueKey) !== 'undefined')
     {
       // this.state.initialSlide = val2key(params.venueKey,VenuesData);
-      console.log("Swiper index");
-      console.log(val2key(params.venueKey,VenuesData));
+      // console.log("Swiper index");
+      // console.log(val2key(params.venueKey,VenuesData));
       // this.swiper.index = params.venueKey;
     }
     else
@@ -91,13 +99,85 @@ class VenueInfo extends React.Component {
     }
   }
 
+  checkAuth(e)
+  {
+    console.log("Inside CheckAuth");
+        AsyncStorage.getItem("@userIdToken").then(userIdToken => {
+            if(userIdToken == null){
+                 // this.state.loading = false;
+                 auth0Obj
+            .webAuth
+            .authorize({scope: 'openid email', audience: 'https://fiduciam.auth0.com/userinfo'})
+            .then(credentials =>{
+              // console.log('Credentials start - ');
+              // console.log(credentials); 
+              // console.log('- credentials end');
+              // Successfully authenticated
+              // Store the accessToken
+              // const storeUserToken = await AsyncStorage.setItem("@userIdToken", userIdToken);
+              const storeUserToken = AsyncStorage.setItem("@userIdToken", credentials.idToken);
+              this.setState({userLoggedIn: true});
+              this.setState({userIdToken: credentials.idToken});
+              this.props.screenProps.userToken = credentials.idToken;
+              this.props.screenProps.userLoggedIn = true;
+
+              fetch(API_BASE_URL+'users/', {
+                    method: 'POST',
+                    headers: {
+                              'Accept': 'application/json',
+                              'Content-Type': 'application/json',
+                              'Authorization': 'Bearer ' + this.props.screenProps.userToken
+                              }
+                  })
+                  .then((response) => response.json(true))
+                  .then((responseData) => {
+                    console.log("received response data from server");
+                    // console.log(JSON.parse(responseData.body));
+                    this.props.screenProps.userId = responseData.body.id;
+                  })
+                  .catch((error) => { console.log(error); })
+                  .done();
+
+
+
+
+
+
+            }
+            ).catch(error => 
+            {
+              alert("Authentication failed!")
+              // console.log('Error occured - ');
+              // console.log(error);
+            });
+            }
+            else
+            {
+              this.props.screenProps.userToken = userIdToken;
+              // this.props.navigation.navigate('Menu', {});
+                // console.log("User Already Logged In - redirect to next intended state");
+                // console.log(userIdToken);
+            }})
+            .catch(error => 
+        {
+          console.log('Error occured - ');
+          console.log(error);
+        });
+
+// @userIdToken
+// @tokenExpiration
+// @userId
+// @firstTimeUser
+
+  }
+
   componentDidMount()
   {
     // this.swiper.index = this.state.initialSlide;
     this.swiper.index = 3;
     AsyncStorage.getItem("@userIdToken").then(userIdToken => {
       console.log("User Already LoggedIn - VenueInfo Page");
-      this.state.userLoggedIn = true;
+      this.setState({userLoggedIn: true});
     }).catch(error => 
             {
               alert("Authentication check failed!")
@@ -122,7 +202,7 @@ class VenueInfo extends React.Component {
                 >
                 <Image
                   key={venue.key}
-                  source={{ uri: "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/ui-images/Background-Venues.png" }}
+                  source={{ uri: S3_ASSETS_BASE_URL+"Background-Venues.png", cache: 'force-cache' }}
                   style={ styles.image }
                   >
                   <View 
@@ -151,21 +231,23 @@ class VenueInfo extends React.Component {
                     <Text style={styles.text}>Venue Offers Goes here</Text>
                     <Text style={styles.text}>Venue Offers Goes here</Text>
                     {
-                      this.state.userLoggedIn ?
+                      !this.state.userLoggedIn ?
                       <Button
                         key={venue.key}
-                        onPress={e => this.showCheckInScreen(e)}
+                        onPress={e => this.checkAuth(e) }
                         title="Login to CheckIn Here"
-                        color="#841584"
+                        textStyle={{textAlign: 'center'}}
+                        buttonStyle={{backgroundColor: 'blue', borderRadius: 10, margin: 10}}
                         accessibilityLabel="Checkin here by taking a selfie"
                       />
                       :
                       <Button
                         key={venue.key}
-                        onPress={e => this.props.navigation.navigate('Login', {venueKey: e.nativeEvent.target}) }
+                        onPress={e => this.showCheckInScreen(e)}
                         title="CheckIn Here"
-                        color="#841584"
-                        accessibilityLabel="Login to checkin here"
+                        textStyle={{textAlign: 'center'}}
+                        buttonStyle={{backgroundColor: 'blue', borderRadius: 10, margin: 10}}
+                        accessibilityLabel="Checkin here by taking a selfie"
                       />
                     }
                   </View>
