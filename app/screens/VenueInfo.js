@@ -13,7 +13,7 @@ import {
 import Swiper from 'react-native-swiper';
 import { Button } from 'react-native-elements';
 import { poiClusters } from '../config/sampleMapClusters';
-import VenueImage from "../assets/POIs/calibrationdrawing.png"
+import VenueBackgroundImage from "../assets/UI/Background-Venues.png"
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
 
 import ConfigObj from '../config/params';
@@ -186,6 +186,7 @@ class VenueInfo extends React.Component {
 
   getVal(val){
     console.warn(val);
+    //source={{ uri: S3_ASSETS_BASE_URL+"Background-Venues.png", cache: 'force-cache' }}
   }
 
   render() {
@@ -202,7 +203,7 @@ class VenueInfo extends React.Component {
                 >
                 <Image
                   key={venue.key}
-                  source={{ uri: S3_ASSETS_BASE_URL+"Background-Venues.png", cache: 'force-cache' }}
+                  source={VenueBackgroundImage}
                   style={ styles.image }
                   >
                   <View 
