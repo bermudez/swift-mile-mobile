@@ -60,6 +60,10 @@ function parseMarkers()
     }
   }
 
+  function indexToVenueKey(index, array)
+  {
+    return array[index].key;
+  }
 class VenueInfo extends React.Component {
 
   constructor(props) {
@@ -70,22 +74,22 @@ class VenueInfo extends React.Component {
     // console.dir(params);
     // this.props.initialSlide = 2;
     this.state = {};
-    this.state.userLoggedIn = false;
-    this.state.initialSlide = 10;
+    this.state.userLoggedIn = this.props.screenProps.userLoggedIn;
+    // this.state.initialSlide = 10;
     this.state.VenuesData = VenuesData;
-    if(typeof(params) !== 'undefined' && typeof(params.venueKey) !== 'undefined')
-    {
+    // if(typeof(params) !== 'undefined' && typeof(params.venueKey) !== 'undefined')
+    // {
       // this.props.initialSlide = val2key(params.venueKey,VenuesData);
-      console.log("Swiper index");
+      // console.log("Swiper index");
       // console.log(this.props.initialSlide);
-      // console.log(val2key(params.venueKey,VenuesData));
+       // console.log(val2key(params.venueKey,VenuesData));
       // this.swiper.index = params.venueKey;
-    }
-    else
-    {
+    // }
+    // else
+    // {
       // this.props.initialSlide = 10;
-      console.log("venueKey not found");
-    }
+      // console.log("venueKey not found");
+    // }
 
     // console.log("Inside VenueInfo constructor");
     // console.log("Inside VenueInfo constructor: props");
@@ -93,15 +97,15 @@ class VenueInfo extends React.Component {
 
   };
 
-  showCheckInScreen(e)
+  showCheckInScreen(e, venue_key)
   {
     if(typeof(e.nativeEvent.target) !== 'undefined')
     {
-      this.props.navigation.navigate('CameraScreen', {venueKey: e.nativeEvent.target});
+      this.props.navigation.navigate('CameraScreen', {venueKey: venue_key});
     }
   }
 
-  checkAuth(e)
+  checkAuth(e, venue_key)
   {
     console.log("Inside CheckAuth");
         AsyncStorage.getItem("@userIdToken").then(userIdToken => {
@@ -136,6 +140,18 @@ class VenueInfo extends React.Component {
                     console.log("received response data from server");
                     // console.log(JSON.parse(responseData.body));
                     this.props.screenProps.userId = responseData.body.id;
+                    /**/
+                    //redirect to Camera screen
+                    console.log("Venue key");
+                    console.log(venue_key);
+
+                    // var venue_key = indexToVenueKey(this.swiper.index, VenuesData);
+                    // console.log("Current Swiper index");
+                    // console.log(this.swiper.index);
+                    // console.log("Venue data");
+                    // console.log(VenuesData);
+                    this.props.navigation.navigate('CameraScreen', {venueKey: venue_key});
+                    /**/
                   })
                   .catch((error) => { console.log(error); })
                   .done();
@@ -176,20 +192,21 @@ class VenueInfo extends React.Component {
   componentDidMount()
   {
     // this.swiper.index = this.state.initialSlide;
-    this.swiper.index = 3;
-    AsyncStorage.getItem("@userIdToken").then(userIdToken => {
-      console.log("User Already LoggedIn - VenueInfo Page");
-      this.setState({userLoggedIn: true});
-    }).catch(error => 
-            {
-              alert("Authentication check failed!")
-            });
+    // this.swiper.index = 3;
+    // AsyncStorage.getItem("@userIdToken").then(userIdToken => {
+    //   console.log("User Already LoggedIn - VenueInfo Page");
+    //   console.log(userIdToken);
+    //   // this.setState({userLoggedIn: true});
+    // }).catch(error => 
+    //         {
+    //           alert("Authentication check failed!")
+    //         });
   }
 
-  getVal(val){
-    console.warn(val);
-    //source={{ uri: S3_ASSETS_BASE_URL+"Background-Venues.png", cache: 'force-cache' }}
-  }
+  // getVal(val){
+  //   console.warn(val);
+  //   //source={{ uri: S3_ASSETS_BASE_URL+"Background-Venues.png", cache: 'force-cache' }}
+  // }
 
   render() {
           return (
@@ -237,7 +254,7 @@ class VenueInfo extends React.Component {
                       !this.state.userLoggedIn ?
                       <Button
                         key={venue.key}
-                        onPress={e => this.checkAuth(e) }
+                        onPress={e => this.checkAuth(e, venue.key) }
                         title="Login to CheckIn Here"
                         textStyle={{textAlign: 'center'}}
                         buttonStyle={{backgroundColor: 'blue', borderRadius: 10, margin: 10}}
@@ -246,7 +263,7 @@ class VenueInfo extends React.Component {
                       :
                       <Button
                         key={venue.key}
-                        onPress={e => this.showCheckInScreen(e)}
+                        onPress={e => this.showCheckInScreen(e, venue.key)}
                         title="CheckIn Here"
                         textStyle={{textAlign: 'center'}}
                         buttonStyle={{backgroundColor: 'blue', borderRadius: 10, margin: 10}}

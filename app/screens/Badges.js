@@ -1,10 +1,16 @@
 import React from 'react';
-import { Text, ScrollView, View, Image, BackgroundImage, StyleSheet, Dimensions } from 'react-native';
+import { Text, ScrollView, View, Image, BackgroundImage, AsyncStorage, StyleSheet, Dimensions } from 'react-native';
 import Signin from './auth/Auth0Signin';
+
+import ConfigObj from '../config/params';
+import Auth0 from 'react-native-auth0';
+const auth0Obj = new Auth0({ domain: ConfigObj.auth0.domain, clientId: ConfigObj.auth0.clientId });
+
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 
+const API_BASE_URL = 'https://y86lpymaph.execute-api.us-east-2.amazonaws.com/prd/';
 const BASE_URL = 'https://y86lpymaph.execute-api.us-east-2.amazonaws.com/prd/badges/';
 
 class Badges extends React.Component {
@@ -23,15 +29,80 @@ class Badges extends React.Component {
   }
   componentWillMount()
   {
-    if(this.props.screenProps.userLoggedIn)
-    {
-      this.fetchData();
-    }
-    else
-    {
-      this.props.navigation.navigate('Signin', {NKCLastScreen: 'badges'});
-    }
+    this.checkAuth();    
+    // if(this.props.screenProps.userLoggedIn)
+    // {
+    //   this.fetchData();
+    // }
+    // else
+    // {
+    //   this.props.navigation.navigate('Signin', {NKCLastScreen: 'badges'});
+    // }
   }
+
+// @userIdToken
+// @tokenExpiration
+// @userId
+// @firstTimeUser
+checkAuth()
+  {
+    AsyncStorage.getItem("@userIdToken").then(userIdToken => {
+      if(userIdToken == null){
+           auth0Obj
+      .webAuth
+      .authorize({scope: 'openid email', audience: 'https://fiduciam.auth0.com/userinfo'})
+      .then(credentials =>{
+        const storeUserToken = AsyncStorage.setItem("@userIdToken", credentials.idToken);
+        this.setState({userLoggedIn: true});
+        this.setState({userIdToken: credentials.idToken});
+        this.props.screenProps.userToken = credentials.idToken;
+        this.props.screenProps.userLoggedIn = true;
+
+        fetch(API_BASE_URL+'users/', {
+              method: 'POST',
+              headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + this.props.screenProps.userToken
+                        }
+            })
+            .then((response) => response.json(true))
+            .then((responseData) => {
+              console.log("received response data from server");
+              // console.log(JSON.parse(responseData.body));
+              this.props.screenProps.userId = responseData.body.id;
+              /**/
+              this.fetchData();
+              /**/
+            })
+            .catch((error) => { console.log(error); })
+            .done();
+
+
+
+
+
+
+        }
+        ).catch(error => 
+        {
+          alert("Authentication failed!")
+          // console.log('Error occured - ');
+          console.log(error);
+        });
+        }
+        else
+        {
+          this.props.screenProps.userToken = userIdToken;
+          this.fetchData();
+        }})
+        .catch(error => 
+    {
+      console.log('Error occured - ');
+      console.log(error);
+    });
+  }
+
   fetchData() {
 
     let userIdToken_temp = this.props.screenProps.userToken;

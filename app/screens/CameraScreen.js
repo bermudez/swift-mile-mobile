@@ -15,10 +15,14 @@ export default class CameraScreen extends Component {
     super(props);
     console.log(props);
     var { params } = this.props.navigation.state;
-    this.props.venueKey = params.venueKey;
+    // this.props.navigation.state.params.venueKey
+    this.props.currentVenueKey = params.venueKey;
+    console.log("Camera Sccreen - Current Venue Key - ");
+    console.log(params.venueKey);
     // this.props.screenProps.userToken = "SettingUserTokenTest1";
     this.takePicture = this.takePicture.bind(this);
   }
+
   takePicture() {
     this.camera.capture()
       .then((data) => {
@@ -60,6 +64,10 @@ export default class CameraScreen extends Component {
   saveData(key) {
     let userIdToken_temp = this.props.screenProps.userToken;
     console.log("Upload start(Saving to DB)");
+    console.log("image_url");
+    console.log(key);
+    console.log("venue");
+    console.log(this.props.navigation.state.params.venueKey);
     fetch(BASE_URL, {
       method: 'POST',
       headers: {
@@ -69,7 +77,7 @@ export default class CameraScreen extends Component {
                 },
       body: JSON.stringify({
             image_url: key,
-            venue: this.props.venueKey,
+            venue: this.props.navigation.state.params.venueKey
         })
     })
     .then((response) => response.json(true))
@@ -79,7 +87,7 @@ export default class CameraScreen extends Component {
       // console.log(responseData.body[0]['max_granted']);
       // console.log(typeof(JSON.parse(responseData.body)));
       console.log(responseData);
-
+      this.props.navigation.goBack();
       // this.state.mybadges = JSON.parse(responseData.body);
       // this.setState({mybadges: JSON.parse(responseData.body)});
       // console.log(this.state.mybadges);

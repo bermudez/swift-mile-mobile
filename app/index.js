@@ -13,6 +13,9 @@ class App extends Component {
 	}
 
 	componentDidMount(){
+        /* Clear all local storage items */
+        // AsyncStorage.clear();
+        console.log("Clearning all local storage done!");
         AsyncStorage.getItem("@userId").then(value => {
             if(value != null){
                  this.setState({userId: value});
