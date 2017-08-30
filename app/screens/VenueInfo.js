@@ -23,6 +23,7 @@ const auth0Obj = new Auth0({ domain: ConfigObj.auth0.domain, clientId: ConfigObj
 const API_BASE_URL = 'https://y86lpymaph.execute-api.us-east-2.amazonaws.com/prd/';
 
 const S3_ASSETS_BASE_URL = 'https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/ui-images/';
+const UI_IMAGES_BASE_URL = 'https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/ui-images/';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
@@ -222,7 +223,7 @@ class VenueInfo extends React.Component {
                 >
                 <Image
                   key={venue.key}
-                  source={VenueBackgroundImage}
+                  source={{uri: UI_IMAGES_BASE_URL + "Background-Venues.png", cache: 'force-cache'}}
                   style={ styles.image }
                   >
                   <View
