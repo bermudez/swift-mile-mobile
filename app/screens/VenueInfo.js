@@ -226,7 +226,7 @@ class VenueInfo extends React.Component {
                   style={ styles.image }
                   >
                   <View 
-                    style={{ justifyContent: 'center' }}
+                    style={{ justifyContent: 'center', alignItems: 'center' }}
                     >
                     <Text style={styles.text}>{venue.title}</Text>
                     <Text style={styles.text}>{venue.description}</Text>
@@ -240,16 +240,9 @@ class VenueInfo extends React.Component {
 
                   </View>
 
-                  <View 
-                    style={{ justifyContent: 'center' }}
-                   >
-                    <Text style={styles.text}>Venue Directions Map Goes here</Text>
-                  </View>
                   <View
                     style={{ justifyContent: 'center' }}
                   >
-                    <Text style={styles.text}>Venue Offers Goes here</Text>
-                    <Text style={styles.text}>Venue Offers Goes here</Text>
                     {
                       !this.state.userLoggedIn ?
                       <Button

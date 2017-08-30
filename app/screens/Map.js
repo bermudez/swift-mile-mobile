@@ -181,6 +181,7 @@ class Map extends React.Component {
             >
               <Image
                 style={styles.mapMarker}
+                resizeMode='contain'
                 source={{ uri: marker.markerImage, cache: 'force-cache'}}
               />
             </MapView.Marker>
@@ -213,8 +214,8 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject
   },
   mapMarker: {
-    height: 20,
-    width: 60
+    height: 85,
+    width: 85
   },
 
 });

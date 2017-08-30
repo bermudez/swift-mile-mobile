@@ -38,6 +38,7 @@ class Menu extends Component {
                   >
                   <Image
                     style={ styles.btn }
+                    resizeMode='contain'
                     source={{uri: UI_IMAGES_BASE_URL+menuItem.image}}
                   />
                 </TouchableHighlight>
