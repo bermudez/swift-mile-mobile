@@ -28,17 +28,5 @@ export const menuItems = [
   "screen":"Snaps",
   "screenTitle":"Snaps",
   "image":"MainMenu-MySnapsRepositoryButton.png"
-},
-{
-  "title": "Me-removed",
-  "screen":"Me",
-  "screenTitle":"Me",
-  "image":"MainMenu-MySnapsRepositoryButton.png"
-},
-{
-  "title": "About-removed",
-  "screen":"About",
-  "screenTitle":"About",
-  "image":"MainMenu-MySnapsRepositoryButton.png"
 }
 ];
