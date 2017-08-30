@@ -146,7 +146,9 @@ checkAuth()
           >
 
           {
+
             !this.state.mybadges ?
+
             <Text
               onPress={e => this.logloadedBAdges(e) }
               style={ styles.badge_wrapper}
@@ -157,6 +159,7 @@ checkAuth()
             <Text style={ styles.badge_wrapper} >No badges awarded...</Text>
             :
             this.state.mybadges.map((mybadge) => (
+
             <View
               key={mybadge.key}
               style={styles.badge_wrapper}
@@ -167,7 +170,9 @@ checkAuth()
                 />
                 <Text>{mybadge.badgeName}</Text>
             </View>
+
             ))
+
           }
 
           </Image>
@@ -187,7 +192,7 @@ const styles = StyleSheet.create({
     fontSize: 19,
     fontWeight: 'bold',
     textAlign: 'center',
-    backgroundColor: 'transparent',
+    //backgroundColor: 'transparent',
     //backgroundColor: 'rgba(0,0,0,0)',
   },
   badge_wrapper:{
@@ -195,6 +200,9 @@ const styles = StyleSheet.create({
     height: 100,
     padding: 10,
     margin: 15,
+    // flexDirection: 'row',
+    // flexWrap: 'wrap',
+    // justifyContent: 'center',
     // borderRadius: 4,
     // borderWidth: 0.5,
     // borderColor: '#d6d7da',
