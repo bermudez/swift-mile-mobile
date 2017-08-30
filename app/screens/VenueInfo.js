@@ -116,7 +116,7 @@ class VenueInfo extends React.Component {
             .authorize({scope: 'openid email', audience: 'https://fiduciam.auth0.com/userinfo'})
             .then(credentials =>{
               // console.log('Credentials start - ');
-              // console.log(credentials); 
+              // console.log(credentials);
               // console.log('- credentials end');
               // Successfully authenticated
               // Store the accessToken
@@ -162,7 +162,7 @@ class VenueInfo extends React.Component {
 
 
             }
-            ).catch(error => 
+            ).catch(error =>
             {
               alert("Authentication failed!")
               // console.log('Error occured - ');
@@ -176,7 +176,7 @@ class VenueInfo extends React.Component {
                 // console.log("User Already Logged In - redirect to next intended state");
                 // console.log(userIdToken);
             }})
-            .catch(error => 
+            .catch(error =>
         {
           console.log('Error occured - ');
           console.log(error);
@@ -197,7 +197,7 @@ class VenueInfo extends React.Component {
     //   console.log("User Already LoggedIn - VenueInfo Page");
     //   console.log(userIdToken);
     //   // this.setState({userLoggedIn: true});
-    // }).catch(error => 
+    // }).catch(error =>
     //         {
     //           alert("Authentication check failed!")
     //         });
@@ -210,7 +210,7 @@ class VenueInfo extends React.Component {
 
   render() {
           return (
-              <Swiper style={styles.wrapper} 
+              <Swiper style={styles.wrapper}
               showsButtons={true}
               index={this.props.screenProps.currentVenueIndex}
               ref={ref => { this.swiper = ref; }}
@@ -225,16 +225,17 @@ class VenueInfo extends React.Component {
                   source={VenueBackgroundImage}
                   style={ styles.image }
                   >
-                  <View 
+                  <View
                     style={{ justifyContent: 'center', alignItems: 'center' }}
                     >
                     <Text style={styles.text}>{venue.title}</Text>
                     <Text style={styles.text}>{venue.description}</Text>
-                    <Image 
+                    <Image
                       style={{
                         height:200,
                         width:200
                       }}
+                      resizeMode='contain'
                       source={{ uri: venue.markerImage, cache: 'force-cache'}}
                       />
 
@@ -264,10 +265,10 @@ class VenueInfo extends React.Component {
                       />
                     }
                   </View>
-                </Image>    
-                </View>              
+                </Image>
+                </View>
               ))}
-              
+
             </Swiper>
       );
     }
