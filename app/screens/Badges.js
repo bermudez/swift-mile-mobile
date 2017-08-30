@@ -29,7 +29,7 @@ class Badges extends React.Component {
   }
   componentWillMount()
   {
-    this.checkAuth();    
+    this.checkAuth();
     // if(this.props.screenProps.userLoggedIn)
     // {
     //   this.fetchData();
@@ -84,7 +84,7 @@ checkAuth()
 
 
         }
-        ).catch(error => 
+        ).catch(error =>
         {
           alert("Authentication failed!")
           // console.log('Error occured - ');
@@ -96,7 +96,7 @@ checkAuth()
           this.props.screenProps.userToken = userIdToken;
           this.fetchData();
         }})
-        .catch(error => 
+        .catch(error =>
     {
       console.log('Error occured - ');
       console.log(error);
@@ -144,12 +144,12 @@ checkAuth()
             source={{ uri: "https://s3.us-east-2.amazonaws.com/swiftmile-app-assets/ui-images/Background-Badges.png" }}
             style={ styles.image }
           >
-          
+
           {
             !this.state.mybadges ?
-            <Text 
+            <Text
               onPress={e => this.logloadedBAdges(e) }
-              style={ styles.badge_wrapper} 
+              style={ styles.badge_wrapper}
             >
               Loading your badges, please wait...
             </Text>
@@ -157,20 +157,19 @@ checkAuth()
             <Text style={ styles.badge_wrapper} >No badges awarded...</Text>
             :
             this.state.mybadges.map((mybadge) => (
-            <View 
+            <View
               key={mybadge.key}
               style={styles.badge_wrapper}
             >
-              <Image
-                source={{ uri: mybadge.image }}
-                style={ styles.badgeImage }
-              >
-                <Text>{mybadge.badgeName}!</Text>  
-              </Image>
-              </View>
-              ))
+                <Image
+                  source={{ uri: mybadge.image, cache: 'force-cache' }}
+                  style={ styles.badgeImage }
+                />
+                <Text>{mybadge.badgeName}</Text>
+            </View>
+            ))
           }
-          
+
           </Image>
         </View>
       </ScrollView>
@@ -187,16 +186,19 @@ const styles = StyleSheet.create({
   badge_title:{
     fontSize: 19,
     fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: 'transparent',
+    //backgroundColor: 'rgba(0,0,0,0)',
   },
   badge_wrapper:{
     width: 100,
     height: 100,
     padding: 10,
-    margin: 10,
-    borderRadius: 4,
-    borderWidth: 0.5,
-    borderColor: '#d6d7da',
-    borderColor: '#d6d7da'
+    margin: 15,
+    // borderRadius: 4,
+    // borderWidth: 0.5,
+    // borderColor: '#d6d7da',
+    // borderColor: '#d6d7da'
 
   },
   image: {

@@ -78,7 +78,7 @@ checkAuth()
 
 
         }
-        ).catch(error => 
+        ).catch(error =>
         {
           alert("Authentication failed!")
           // console.log('Error occured - ');
@@ -90,7 +90,7 @@ checkAuth()
           this.props.screenProps.userToken = userIdToken;
           this.fetchData();
         }})
-        .catch(error => 
+        .catch(error =>
     {
       console.log('Error occured - ');
       console.log(error);
@@ -126,16 +126,16 @@ checkAuth()
         <View style={styles.container}>
           {
             !this.state.myCheckIns ?
-            <Text 
-              style={ styles.checkin_wrapper} 
+            <Text
+              style={ styles.checkin_wrapper}
             >
-              Loading your checkins, please wait...
+              Loading your check-ins, please wait...
             </Text>
             : this.state.myCheckIns.length==0 ?
-            <Text style={ styles.checkin_wrapper} >No checking...</Text>
+            <Text style={ styles.checkin_wrapper} >You have not checked-in anywhere.</Text>
             :
             this.state.myCheckIns.map((myCheckIn) => (
-            <View 
+            <View
               key={myCheckIn.id}
               style={styles.checkin_wrapper}
             >
