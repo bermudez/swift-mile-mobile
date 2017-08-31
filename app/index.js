@@ -14,7 +14,7 @@ class App extends Component {
 
 	componentDidMount(){
         /* Clear all local storage items */
-        // AsyncStorage.clear();
+        AsyncStorage.clear();
         console.log("Clearning all local storage done!");
         AsyncStorage.getItem("@userId").then(value => {
             if(value != null){
@@ -53,7 +53,7 @@ class App extends Component {
             });
     	console.log("App Root - constructor post AsyncStorage.");
     }
-    
+
     setUserToken(userToken)
     {
         this.setState({
@@ -62,7 +62,7 @@ class App extends Component {
     }
 
   render() {
-  	
+
     return <Root screenProps={{ userId: this.state.userId, userToken: this.state.userToken, firstTimeUser: this.state.firstTimeUser, userLoggedIn: this.state.userLoggedIn }} />;
   }
 }

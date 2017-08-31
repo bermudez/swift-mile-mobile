@@ -28,11 +28,11 @@ class Menu extends Component {
             source={{ uri: UI_IMAGES_BASE_URL + "Background-MainMenu.png" }}
             style={ styles.image }
           >
-            
+
               {
                 menuItems.map((menuItem) => (
 
-                <TouchableHighlight 
+                <TouchableHighlight
                   key={menuItem.title}
                   onPress={() => this.onNavigateTo(menuItem)}
                   >
@@ -43,7 +43,7 @@ class Menu extends Component {
                   />
                 </TouchableHighlight>
               ))}
-            
+
           </Image>
         </View>
       </ScrollView>
@@ -67,6 +67,14 @@ const styles = StyleSheet.create({
     height: 50,
     paddingTop: 30,
     marginBottom: 30,
+    marginLeft: 5,
+    marginRight: 5,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#007aff',
+    backgroundColor: '#fff'
+    //flex: 1,
+    //alignSelf: 'stretch',
   }
 });
 

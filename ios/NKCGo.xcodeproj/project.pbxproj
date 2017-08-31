@@ -1494,7 +1494,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = us.fiduciam.NKCGo;
+				PRODUCT_BUNDLE_IDENTIFIER = us.fiduciam.nkcgo;
 				PRODUCT_NAME = NKCGo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1522,7 +1522,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = us.fiduciam.NKCGo;
+				PRODUCT_BUNDLE_IDENTIFIER = us.fiduciam.nkcgo;
 				PRODUCT_NAME = NKCGo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
