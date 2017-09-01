@@ -22,3 +22,10 @@ $ rm -rf ~/Library/Developer/Xcode/DerivedData
 
 Kill packager
 $ kill $(lsof -t -i:8081);
+
+
+Relsease Bundle
+react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios; cp ios/main.jsbundle ios/NKCGo
+
+Dev Bundle
+react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios; cp ios/main.jsbundle ios/NKCGo

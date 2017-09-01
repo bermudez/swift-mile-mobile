@@ -10,6 +10,7 @@ import {
   ScrollView,
   AsyncStorage
 } from 'react-native';
+import getDirections from 'react-native-google-maps-directions'
 import Swiper from 'react-native-swiper';
 import { Button } from 'react-native-elements';
 import { poiClusters } from '../config/sampleMapClusters';
@@ -78,6 +79,9 @@ class VenueInfo extends React.Component {
     this.state.userLoggedIn = this.props.screenProps.userLoggedIn;
     // this.state.initialSlide = 10;
     this.state.VenuesData = VenuesData;
+    this.state.current_latitude = null;
+    this.state.current_longitude = null;
+
     // if(typeof(params) !== 'undefined' && typeof(params.venueKey) !== 'undefined')
     // {
       // this.props.initialSlide = val2key(params.venueKey,VenuesData);
@@ -190,8 +194,50 @@ class VenueInfo extends React.Component {
 
   }
 
+  handleGetDirections(e, curr_venue_key, curr_venue_latlong)
+  {
+    if(!this.state.current_latitude || !this.state.current_longitude)
+    {
+      console.log("Lat/Long not initialised");
+      /* return if getting co-ordinates failed or not initialised */
+      // return; 
+    }
+    else
+    {
+      console.log("Lat/Long initialised");
+      console.log("curr_venue_latlong");
+      console.log(curr_venue_latlong);
+      
+      const data = {
+         source: {
+          latitude: this.state.current_latitude,
+          longitude: this.state.current_longitude
+        },
+        destination: curr_venue_latlong,
+        params: [
+          {
+            key: "dirflg",
+            value: "w"
+          }
+        ]
+      };
+      getDirections(data);
+    }
+  }
+
   componentDidMount()
   {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.setState({
+          current_latitude: position.coords.latitude,
+          current_longitude: position.coords.longitude,
+          error: null,
+        });
+      },
+      (error) => this.setState({ error: error.message }),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+    );
     // this.swiper.index = this.state.initialSlide;
     // this.swiper.index = 3;
     // AsyncStorage.getItem("@userIdToken").then(userIdToken => {
@@ -203,6 +249,7 @@ class VenueInfo extends React.Component {
     //           alert("Authentication check failed!")
     //         });
   }
+
 
   // getVal(val){
   //   console.warn(val);
@@ -230,7 +277,7 @@ class VenueInfo extends React.Component {
                     style={{ justifyContent: 'center', alignItems: 'center' }}
                     >
                     <Text style={styles.text}>{venue.title}</Text>
-                    <Text style={styles.text}>{venue.description}</Text>
+                    <Text style={styles.text2}>{venue.description}</Text>
                     <Image
                       style={{
                         height:200,
@@ -266,6 +313,18 @@ class VenueInfo extends React.Component {
                       />
                     }
                   </View>
+                  <View
+                    style={{ justifyContent: 'center' }}
+                  >
+                    <Button
+                      key={venue.key}
+                      onPress={(e) => this.handleGetDirections(e, venue.key, venue.latlng)}
+                      title="Navigate to this venue!"
+                      textStyle={{textAlign: 'center'}}
+                      buttonStyle={{backgroundColor: 'blue', borderRadius: 10, margin: 10}}
+                      accessibilityLabel="Navigate to this venue!"
+                    />
+                  </View>
                 </Image>
                 </View>
               ))}
@@ -296,6 +355,11 @@ var styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: 30,
+    fontWeight: 'bold',
+  },
+  text2: {
+    color: '#0cf',
+    fontSize: 24,
     fontWeight: 'bold',
   }
 });

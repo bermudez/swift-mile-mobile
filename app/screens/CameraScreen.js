@@ -14,6 +14,10 @@ export default class CameraScreen extends Component {
   constructor(props) {
     super(props);
     console.log(props);
+    this.state = {
+      cameraType : 'front',
+      mirrorMode : false
+    }
     var { params } = this.props.navigation.state;
     // this.props.navigation.state.params.venueKey
     this.props.currentVenueKey = params.venueKey;
@@ -21,6 +25,21 @@ export default class CameraScreen extends Component {
     console.log(params.venueKey);
     // this.props.screenProps.userToken = "SettingUserTokenTest1";
     this.takePicture = this.takePicture.bind(this);
+  }
+
+  changeCameraType() {
+    if(this.state.cameraType === 'back') {
+      this.setState({
+        cameraType : 'front',
+        mirror : true
+      })
+    }
+    else {
+      this.setState({
+        cameraType : 'back',
+        mirror : false
+      })
+    }
   }
 
   takePicture() {
@@ -109,9 +128,13 @@ export default class CameraScreen extends Component {
           ref={(cam) => {
             this.camera = cam;
           }}
+          type={Camera.constants.Type.front}
           style={styles.cameraContainer}
           aspect={Camera.constants.Aspect.fill}
           captureAudio={false}
+          type={this.state.cameraType}
+          mirrorImage={this.state.mirrorMode}
+          captureQuality={"medium"}
         />
         <Button
           name="ios-camera-outline"
@@ -119,6 +142,13 @@ export default class CameraScreen extends Component {
           backgroundColor="transparent"
           style={{ justifyContent: 'center' }}
           onPress={e => this.takePicture(e)}
+        />
+        <Button
+          name="ios-reverse-camera-outline"
+          size={60}
+          backgroundColor="transparent"
+          style={{ justifyContent: 'center' }}
+          onPress={this.changeCameraType.bind(this)}
         />
       </View>
     );

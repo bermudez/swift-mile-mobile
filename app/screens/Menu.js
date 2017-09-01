@@ -28,7 +28,21 @@ class Menu extends Component {
             source={{ uri: UI_IMAGES_BASE_URL + "Background-MainMenu.png" }}
             style={ styles.image }
           >
+              <View
+                style={ styles.logoContainer }
+              >
+                <Image
+                  style={ styles.logo }
+                  source={{ uri: UI_IMAGES_BASE_URL + "AppLoadingSplashPage-SwiftMile.png" }}
+                />
 
+                <Image
+                  style={ styles.logo }
+                  source={{ uri: UI_IMAGES_BASE_URL + "AppLoadingSplashPagePintPathLogo.png" }}
+                />
+
+
+              </View>
               {
                 menuItems.map((menuItem) => (
 
@@ -75,6 +89,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
     //flex: 1,
     //alignSelf: 'stretch',
+  },
+  logoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+    marginBottom: 40
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    paddingTop: 10,
+    padding: 10,
+    resizeMode: 'contain',
+    alignItems: 'center'
   }
 });
 
