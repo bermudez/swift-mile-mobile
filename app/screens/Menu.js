@@ -79,8 +79,8 @@ const styles = StyleSheet.create({
   btn: {
     width: 200,
     height: 50,
-    paddingTop: 30,
-    marginBottom: 30,
+    paddingTop: 20,
+    marginBottom: 20,
     marginLeft: 5,
     marginRight: 5,
     borderRadius: 5,
@@ -94,11 +94,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
-    marginBottom: 40
+    marginBottom: 20,
+    flex: 1,
+    flexDirection: "row"
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 190,
+    height: 190,
     paddingTop: 10,
     padding: 10,
     resizeMode: 'contain',

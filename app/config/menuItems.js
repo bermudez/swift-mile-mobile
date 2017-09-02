@@ -28,5 +28,11 @@ export const menuItems = [
   "screen":"Snaps",
   "screenTitle":"Snaps",
   "image":"MainMenu-MySnapsRepositoryButton.png"
+},
+{
+  "title": "About the NKCGo App",
+  "screen":"About",
+  "screenTitle":"About the NKCGo App",
+  "image":"MainMenu-AboutButton.png"
 }
 ];
