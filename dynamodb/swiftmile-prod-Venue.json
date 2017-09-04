@@ -1,10 +1,12 @@
 {
-    "swiftmile-prod-venue": [
+    "swiftmile-prod-Venue": [
         {
             "PutRequest": {
                 "Item": {
                     "key": {"N": "101"},
                     "poiCluster": {"N": "1"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":
                         {
                         "latitude": {"N":"39.14008"},
@@ -23,6 +25,8 @@
                   "Item": {
                     "key": {"N":  "102"},
                     "poiCluster": {"N": "1"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng": {"M": {
                         "latitude": {"N":"39.13293"},
                         "longitude": {"N":"-94.57718"}
@@ -40,6 +44,8 @@
                   "Item": {
                     "key": {"N":  "103"},
                     "poiCluster": {"N": "1"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng": {"M": {
                         "latitude": {"N":"39.13825"},
                         "longitude": {"N":"-94.57712"}
@@ -57,6 +63,8 @@
                   "Item": {
                     "key": {"N":  "104"},
                     "poiCluster": {"N": "1"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng": {"M": {
                         "latitude": {"N":"39.13449"},
                         "longitude": {"N":"-94.57722"}
@@ -74,6 +82,8 @@
                   "Item": {
                     "key": {"N":  "105"},
                     "poiCluster": {"N": "1"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng": {"M": {
                         "latitude": {"N":"39.13546"},
                         "longitude": {"N":"-94.57719"}
@@ -91,6 +101,8 @@
                   "Item": {
                     "key": {"N":  "106"},
                     "poiCluster": {"N": "1"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng": {"M": {
                         "latitude": {"N":"39.14034"},
                         "longitude": {"N":"-94.57817"}
@@ -108,6 +120,8 @@
                   "Item": {
                     "key": {"N":  "107"},
                     "poiCluster": {"N": "1"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng": {"M": {
                         "latitude": {"N":"39.14275"},
                         "longitude": {"N":"-94.57773"}
@@ -125,6 +139,8 @@
                   "Item": {
                     "key": {"N":  "108"},
                     "poiCluster": {"N": "1"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng": {"M": {
                         "latitude": {"N":"39.14037"},
                         "longitude": {"N":"-94.57756"}
@@ -142,6 +158,8 @@
                   "Item": {
                     "key": {"N": "201"},
                     "poiCluster": {"N": "2"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14226"},
                         "longitude": {"N": "-94.57657"}
@@ -159,6 +177,8 @@
                   "Item": {
                     "key": {"N": "202"},
                     "poiCluster": {"N": "2"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14256"},
                         "longitude": {"N": "-94.57569"}
@@ -176,6 +196,8 @@
                   "Item": {
                     "key": {"N": "203"},
                     "poiCluster": {"N": "2"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.1422"},
                         "longitude": {"N": "-94.57702"}
@@ -193,6 +215,8 @@
                   "Item": {
                     "key": {"N": "204"},
                     "poiCluster": {"N": "2"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.1419"},
                         "longitude": {"N": "-94.57656"}
@@ -210,6 +234,8 @@
                   "Item": {
                     "key": {"N": "205"},
                     "poiCluster": {"N": "2"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14183"},
                         "longitude": {"N": "-94.57675"}
@@ -227,6 +253,8 @@
                   "Item": {
                     "key": {"N": "206"},
                     "poiCluster": {"N": "2"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14268"},
                         "longitude": {"N": "-94.57506"}
@@ -244,6 +272,8 @@
                   "Item": {
                     "key": {"N": "207"},
                     "poiCluster": {"N": "2"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14472"},
                         "longitude": {"N": "-94.56937"}
@@ -261,6 +291,8 @@
                   "Item": {
                     "key": {"N": "208"},
                     "poiCluster": {"N": "2"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14259"},
                         "longitude": {"N": "-94.57536"}
@@ -278,6 +310,8 @@
                   "Item": {
                     "key": {"N": "301"},
                     "poiCluster": {"N": "3"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14033"},
                         "longitude": {"N": "-94.57891"}
@@ -295,6 +329,8 @@
                   "Item": {
                     "key": {"N": "302"},
                     "poiCluster": {"N": "3"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14141"},
                         "longitude": {"N": "-94.57873"}
@@ -312,6 +348,8 @@
                   "Item": {
                     "key": {"N": "303"},
                     "poiCluster": {"N": "3"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14065"},
                         "longitude": {"N": "-94.57887"}
@@ -329,6 +367,8 @@
                   "Item": {
                     "key": {"N": "304"},
                     "poiCluster": {"N": "3"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.13942"},
                         "longitude": {"N": "-94.57921"}
@@ -346,6 +386,8 @@
                   "Item": {
                     "key": {"N": "305"},
                     "poiCluster": {"N": "3"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14084"},
                         "longitude": {"N": "-94.5795"}
@@ -363,6 +405,8 @@
                   "Item": {
                     "key": {"N": "306"},
                     "poiCluster": {"N": "3"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.14002"},
                         "longitude": {"N": "-94.57993"}
@@ -380,6 +424,8 @@
                   "Item": {
                     "key": {"N": "401"},
                     "poiCluster": {"N": "4"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.12607"},
                         "longitude": {"N": "-94.5778"}
@@ -397,6 +443,8 @@
                   "Item": {
                     "key": {"N": "402"},
                     "poiCluster": {"N": "4"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.12608"},
                         "longitude": {"N": "-94.57753"}
@@ -414,6 +462,8 @@
                   "Item": {
                     "key": {"N": "403"},
                     "poiCluster": {"N": "4"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.131"},
                         "longitude": {"N": "-94.57779"}
@@ -431,6 +481,8 @@
                   "Item": {
                     "key": {"N": "404"},
                     "poiCluster": {"N": "4"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.13697"},
                         "longitude": {"N": "-94.57993"}
@@ -448,6 +500,8 @@
                   "Item": {
                     "key": {"N": "405"},
                     "poiCluster": {"N": "4"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.13623"},
                         "longitude": {"N": "-94.57261"}
@@ -465,6 +519,8 @@
                   "Item": {
                     "key": {"N": "406"},
                     "poiCluster": {"N": "4"},
+                    "showInMap": {"S": "Yes"},
+                    "showInVenueList": {"S": "Yes"},
                     "latlng":{"M":  {
                         "latitude": {"N": "39.13198"},
                         "longitude": {"N": "-94.57761"}
