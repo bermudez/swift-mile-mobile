@@ -322,20 +322,41 @@ id regionAsJSON(MKCoordinateRegion region) {
 
   if(bounds.northEast.longitude >= bounds.southWest.longitude) {
     //Standard case
-    center = CLLocationCoordinate2DMake((bounds.southWest.latitude + bounds.northEast.latitude) / 2,
-                                        (bounds.southWest.longitude + bounds.northEast.longitude) / 2);
-    longitudeDelta = bounds.northEast.longitude - bounds.southWest.longitude;
+      center = CLLocationCoordinate2DMake((bounds.southWest.latitude + bounds.northEast.latitude) / 2,
+                                          (bounds.southWest.longitude + bounds.northEast.longitude) / 2);
+      longitudeDelta = bounds.northEast.longitude - bounds.southWest.longitude;
+      
   } else {
     //Region spans the international dateline
     center = CLLocationCoordinate2DMake((bounds.southWest.latitude + bounds.northEast.latitude) / 2,
                                         (bounds.southWest.longitude + bounds.northEast.longitude + 360) / 2);
     longitudeDelta = bounds.northEast.longitude + 360 - bounds.southWest.longitude;
   }
+  
+  //Hack------
+  if(bounds.southWest.latitude < 1)
+  {
+    center = CLLocationCoordinate2DMake(39.143828,-94.573043);
+    longitudeDelta = 0.0181;
+    latitudeDelta = 0.019;
+  }
+  
   MKCoordinateSpan span = MKCoordinateSpanMake(latitudeDelta, longitudeDelta);
   return MKCoordinateRegionMake(center, span);
 }
 
 + (GMSCameraPosition*) makeGMSCameraPositionFromMap:(GMSMapView *)map andMKCoordinateRegion:(MKCoordinateRegion)region {
+  
+  //Hack to set camera position to default region
+  //if lattitude is near zero
+  if(region.center.latitude < 1)
+  {
+    region.center.latitude = 39.143828;
+    region.center.longitude = -94.573043;
+//    region.span.latitudeDelta = 0.019;
+//    region.span.longitudeDelta = 0.0181;
+  }
+
   float latitudeDelta = region.span.latitudeDelta * 0.5;
   float longitudeDelta = region.span.longitudeDelta * 0.5;
 

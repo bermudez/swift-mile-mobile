@@ -23,6 +23,12 @@ const ANDROID = Platform.OS === 'android';
 const POIClustersData = poiClusters;
 const DEFAULT_PADDING = { top: 40, right: 40, bottom: 40, left: 40 };
 
+const mapIntitialRegion = {
+            latitude: 39.143828,
+            longitude: -94.573043,
+            latitudeDelta: 0.019,
+            longitudeDelta: 0.0181,
+          };
 class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -41,6 +47,7 @@ class Map extends React.Component {
             latitudeDelta: 0.019,
             longitudeDelta: 0.0181,
           };
+    this.onRegionChange = this.onRegionChange.bind(this);
   };
 
   val2key(val,array){
@@ -62,6 +69,17 @@ class Map extends React.Component {
       }
     }
     return markers;
+  }
+
+  parseCoordinates()
+  {
+    let coordinates = [];
+    for (var i = POIClustersData.length - 1; i >= 0; i--) {
+      for (var j = POIClustersData[i].polygonOverlay.coordinates.length - 1; j >= 0; j--) {
+        coordinates.push(POIClustersData[i].polygonOverlay.coordinates[j]);
+      }
+    }
+    return coordinates;
   }
 
   onPressMarker(e, venue_key)
@@ -158,15 +176,43 @@ class Map extends React.Component {
       return inside;
   };
 
+  onRegionChange(region)
+  {
+    /* Hack to initialise region when null */
+    // if(region.latitude<1)
+    // {
+    //   region = {
+    //         latitude: 39.143828,
+    //         longitude: -94.573043,
+    //         latitudeDelta: 0.019,
+    //         longitudeDelta: 0.0181,
+    //       };
+    //   this.setState({region});
+    // }
+    
+    console.log(region);
+  }
+
+  onMapReady(e)
+  {
+    let marker_coordinates = this.parseCoordinates();
+    this.map.fitToCoordinates(marker_coordinates, {
+      edgePadding: DEFAULT_PADDING,
+      animated: true,
+    });
+  }
   render() {
     const { region } = this.props;
-
+    //cacheEnabled={false}
+    //onRegionChange={e => this.onRegionChange(e)}
     return (
       <View style ={styles.container}>
         <MapView
+          onLayout={e => this.onMapReady(e)}
           ref={ref => { this.map = ref; }}
           provider={PROVIDER_GOOGLE}
-          initialRegion={this.state.region}
+          initialRegion={mapIntitialRegion}
+          
           onPress={e => this.onPressMap(e)}
           style={styles.map}
         >
