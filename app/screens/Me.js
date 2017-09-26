@@ -1,94 +1,83 @@
 import React, { Component } from 'react';
-import { ScrollView, View, StyleSheet, Text, TouchableHighlight } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { globalStyles } from '../globals/styles';
-import ConfigObj from '../config/params';
-import Auth0 from 'react-native-auth0';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions
+} from 'react-native';
 
-const auth0Obj = new Auth0({ domain: ConfigObj.auth0.domain, clientId: ConfigObj.auth0.clientId });
+import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
+import Polyline from '@mapbox/polyline';
 
-class Me extends Component {
-
-  constructor(props)
-  {
-  	super(props);
-  	console.log(ConfigObj.auth0);
-  }
-  componentDidMount()
-  {
-  	//, audience: 'https://fiduciam.auth0.com/userinfo'
-
-	auth0Obj
-	    .webAuth
-	    .authorize({scope: 'openid email', audience: 'https://fiduciam.auth0.com/userinfo'})
-	    .then(credentials =>{
-	    	console.log('Credentials start - ');
-	    	console.log(credentials);	
-	    	console.log('- credentials end');
-	      // Successfully authenticated
-	      // Store the accessToken
-	    })
-	    .catch(error => 
-	    	{
-	    		console.log('Error occured - ');
-	    		console.log(error);
-	    	}
-	    );
-
+export default class Me extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      coords: []
+    }
   }
 
-  checkAuth()
-  {
-        AsyncStorage.getItem("@userIdToken").then(userIdToken => {
-            if(userIdToken == null){
-                 this.state.loading = false;
-                 auth0Obj
-				    .webAuth
-				    .authorize({scope: 'openid email', audience: 'https://fiduciam.auth0.com/userinfo'})
-				    .then(credentials =>{
-				    	console.log('Credentials start - ');
-				    	console.log(credentials);	
-				    	console.log('- credentials end');
-				      // Successfully authenticated
-				      // Store the accessToken
-				    	// const storeUserToken = await AsyncStorage.setItem("@userIdToken", userIdToken);
-				    	const storeUserToken = AsyncStorage.setItem("@userIdToken", userIdToken);
-				    	this.props.navigation.goBack();
-				    }
-				    ).catch(error => 
-			    	{
-			    		alert("Authentication failed!")
-			    		// console.log('Error occured - ');
-			    		// console.log(error);
-			    	});
-            }
-            else
-            {
-            	this.props.navigation.navigate('Menu', {});
-                console.log("User Already Logged In - redirect to next intended state");
-                console.log(userIdToken);
-            }})
-            .catch(error => 
-	    	{
-	    		console.log('Error occured - ');
-	    		console.log(error);
-	    	});
-
-// @userIdToken
-// @tokenExpiration
-// @userId
-// @firstTimeUser
-
+  componentDidMount() {
+  	// 39.134486, -94.577239
+  	// 39.139903, -94.576692
+    // find your origin and destination point coordinates and pass it to our method.
+    // I am using Bursa,TR -> Istanbul,TR for this example
+    this.getDirections("39.134486, -94.577239", "39.139903, -94.576692")
   }
+
+  async getDirections(startLoc, destinationLoc) {
+        try {
+            let resp = await fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=${ startLoc }&destination=${ destinationLoc }`)
+            let respJson = await resp.json();
+            console.log(respJson);
+            let points = Polyline.decode(respJson.routes[0].overview_polyline.points);
+            let coords = points.map((point, index) => {
+                return  {
+                    latitude : point[0],
+                    longitude : point[1]
+                }
+            })
+            this.setState({coords: coords})
+            return coords
+        } catch(error) {
+            alert(error)
+            return error
+        }
+    }
 
   render() {
-
+  	//39.135909, -94.577443
     return (
-      <ScrollView>
+      <View>
+        <MapView 
+          provider={PROVIDER_GOOGLE}
+          style={styles.map} initialRegion={{
+	          latitude:39.135909, 
+	          longitude:-94.577443, 
+	          latitudeDelta: 0.00922,
+	          longitudeDelta: 0.00421
+	        }}>
 
-      </ScrollView>
+        <MapView.Polyline 
+            coordinates={this.state.coords}
+            strokeWidth={2}
+            strokeColor="red"/>
+
+        </MapView>
+      </View>
     );
   }
 }
 
-export default Me;
+const styles = StyleSheet.create({
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height
+  },
+});

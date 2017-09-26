@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  PermissionsAndroid,
   Platform,
   View,
   StyleSheet,
@@ -12,6 +13,12 @@ import {
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
 import { poiClusters } from '../config/sampleMapClusters';
+import isEqual from 'lodash/isEqual';
+
+const GEOLOCATION_OPTIONS = { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 };
+const ANCHOR = { x: 0.5, y: 0.5 };
+
+const colorOfmyLocationMapMarker = 'blue';
 
 /* 
  * Cache in marker images workes only for ios platform 
@@ -29,12 +36,37 @@ const mapIntitialRegion = {
             latitudeDelta: 0.019,
             longitudeDelta: 0.0181,
           };
+
+// const propTypes = {
+//   ...MapView.Marker.propTypes,
+//   // override this prop to make it optional
+//   coordinate: PropTypes.shape({
+//     latitude: PropTypes.number.isRequired,
+//     longitude: PropTypes.number.isRequired,
+//   }),
+//   children: PropTypes.node,
+//   geolocationOptions: PropTypes.shape({
+//     enableHighAccuracy: PropTypes.bool,
+//     timeout: PropTypes.number,
+//     maximumAge: PropTypes.number,
+//   }),
+//   heading: PropTypes.number,
+//   enableHack: PropTypes.bool,
+// };
+
+// const defaultProps = {
+//   enableHack: false,
+//   geolocationOptions: GEOLOCATION_OPTIONS,
+// };
+
 class Map extends React.Component {
   constructor(props) {
     super(props);
+    this.mounted = false;
     this.state = {
-
+      myPosition: null
     };
+
     const { params } = this.props.navigation.state;
 
     this.state.markers = this.parseMarkers();
@@ -47,8 +79,60 @@ class Map extends React.Component {
             latitudeDelta: 0.019,
             longitudeDelta: 0.0181,
           };
+    this.latitude = null;
+    this.longitude = null;
+    this.error = null;
     this.onRegionChange = this.onRegionChange.bind(this);
   };
+
+  // componentDidMount() {
+  //   this.mounted = true;
+  //   // If you supply a coordinate prop, we won't try to track location automatically
+  //   if (this.props.coordinate) return;
+
+  //   if (Platform.OS === 'android') {
+  //     PermissionsAndroid.requestPermission(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION)
+  //       .then(granted => {
+  //         if (granted && this.mounted) this.watchLocation();
+  //       });
+  //   } else {
+  //     this.watchLocation();
+  //   }
+  // }
+  // watchLocation() {
+  //   // eslint-disable-next-line no-undef
+  //   this.watchID = navigator.geolocation.watchPosition((position) => {
+  //     const myLastPosition = this.state.myPosition;
+  //     const myPosition = position.coords;
+  //     if (!isEqual(myPosition, myLastPosition)) {
+  //       this.setState({ myPosition });
+  //     }
+  //   }, null, this.props.geolocationOptions);
+  // }
+  // componentWillUnmount() {
+  //   this.mounted = false;
+  //   // eslint-disable-next-line no-undef
+  //   if (this.watchID) navigator.geolocation.clearWatch(this.watchID);
+  // }
+
+  componentDidMount() {
+    this.watchId = navigator.geolocation.watchPosition(
+      (position) => {
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          myPosition: position.coords,
+          error: null,
+        });
+      },
+      (error) => this.setState({ error: error.message }),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000, distanceFilter: 10 },
+    );
+  }
+
+  componentWillUnmount() {
+    navigator.geolocation.clearWatch(this.watchId);
+  }
 
   val2key(val,array){
     for (var key in array) {
@@ -203,19 +287,39 @@ class Map extends React.Component {
   }
   render() {
     const { region } = this.props;
+
+    // let { heading, coordinate } = this.props;
+    // if (!coordinate) {
+    //   const { myPosition } = this.state;
+    //   if (!myPosition) return null;
+    //   coordinate = myPosition;
+    //   heading = myPosition.heading;
+    // }
+
+    // const rotate = (typeof heading === 'number' && heading >= 0) ? `${heading}deg` : null;
+
     //cacheEnabled={false}
     //onRegionChange={e => this.onRegionChange(e)}
+    //provider={PROVIDER_GOOGLE}
     return (
       <View style ={styles.container}>
         <MapView
           onLayout={e => this.onMapReady(e)}
           ref={ref => { this.map = ref; }}
-          provider={PROVIDER_GOOGLE}
+
           initialRegion={mapIntitialRegion}
           
           onPress={e => this.onPressMap(e)}
           style={styles.map}
         >
+
+              <MapView.Marker
+                anchor={ANCHOR}
+                style={styles.mapMarker}
+                coordinate={this.state.myPosition}
+              >
+              </MapView.Marker>
+
           {
             this.state.markers.map(marker => (
             <MapView.Marker
@@ -265,5 +369,13 @@ const styles = StyleSheet.create({
   },
 
 });
+
+
+const SIZE = 35;
+const HALO_RADIUS = 6;
+const ARROW_SIZE = 7;
+const ARROW_DISTANCE = 6;
+const HALO_SIZE = SIZE + HALO_RADIUS;
+const HEADING_BOX_SIZE = HALO_SIZE + ARROW_SIZE + ARROW_DISTANCE;
 
 module.exports = Map;
