@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "16.0.0-alpha.12",
+    "react": "16.0.0",
     "react-native": "0.46.0",
     "react-native-elements": "^0.15.0",
     "react-native-maps": "^0.15.3",
