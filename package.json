@@ -12,7 +12,7 @@
     "react-native-elements": "^0.15.0",
     "react-native-maps": "^0.15.3",
     "react-native-swiper": "^1.5.5",
-    "react-native-vector-icons": "^4.3.0",
+    "react-native-vector-icons": "^6.4.1",
     "react-navigation": "^1.0.0-beta.11",
     "amazon-cognito-identity-js": "^1.19.0",
     "aws-sdk": "^2.92.0"
