@@ -4,18 +4,21 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
-    "react": "16.0.0-alpha.12",
-    "react-native": "0.46.0",
+    "react": "16.5.0",
+    "react-native": "0.64.0",
     "react-native-elements": "^0.15.0",
     "react-native-maps": "^0.15.3",
     "react-native-swiper": "^1.5.5",
-    "react-native-vector-icons": "^4.3.0",
-    "react-navigation": "^1.0.0-beta.11",
+    "react-native-vector-icons": "^6.4.1",
+    "react-navigation": "^2.0.0",
     "amazon-cognito-identity-js": "^1.19.0",
-    "aws-sdk": "^2.92.0"
+    "aws-sdk": "^2.814.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "babel-jest": "20.0.3",
@@ -25,5 +28,6 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "snyk": true
 }
