@@ -13,7 +13,7 @@
     "react-native-maps": "^0.15.3",
     "react-native-swiper": "^1.5.5",
     "react-native-vector-icons": "^4.3.0",
-    "react-navigation": "^1.0.0-beta.11",
+    "react-navigation": "^5.0.0",
     "amazon-cognito-identity-js": "^1.19.0",
     "aws-sdk": "^2.92.0"
   },
