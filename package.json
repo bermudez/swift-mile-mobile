@@ -14,7 +14,7 @@
     "react-native-swiper": "^1.5.5",
     "react-native-vector-icons": "^4.3.0",
     "react-navigation": "^1.0.0-beta.11",
-    "amazon-cognito-identity-js": "^1.19.0",
+    "amazon-cognito-identity-js": "^2.0.0",
     "aws-sdk": "^2.92.0"
   },
   "devDependencies": {
